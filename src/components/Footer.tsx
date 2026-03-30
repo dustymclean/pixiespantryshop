@@ -1,8 +1,3 @@
-import { Link } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { Shield, Award, BookOpen } from 'lucide-react';
 
@@ -34,48 +29,22 @@ export default function Footer() {
           <div>
             <h4 className="text-[10px] font-black uppercase tracking-[0.4em] mb-8 text-stone-400">REGISTRY</h4>
             <ul className="space-y-5 text-[11px] font-bold text-stone-600 uppercase tracking-[0.2em]">
-              {/* External link: Use <a> to go to the subdomain */}
               <li>
-                <a href="https://vapes.pixiespantryshop.com" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500 transition-colors">
+                <a href="https://vapes.pixiespantryshop.com" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500 transition-colors">
                   PROVISIONS
-                </Link>
+                </a>
               </li>
-              {/* Internal links: Use <Link> for SPA navigation */}
-              <li>
-                <Link to="/" className="hover:text-rose-500 transition-colors">
-                  MAIN PORTAL
-                </Link>
-              </li>
-              <li>
-                <Link to="/audit" className="hover:text-rose-500 transition-colors">
-                  THE AUDIT
-                </Link>
-              </li>
+              <li><Link to="/" className="hover:text-rose-500 transition-colors">MAIN PORTAL</Link></li>
+              <li><Link to="/audit" className="hover:text-rose-500 transition-colors">THE AUDIT</Link></li>
             </ul>
           </div>
           <div>
             <h4 className="text-[10px] font-black uppercase tracking-[0.4em] mb-8 text-stone-400">SANCTUARY</h4>
             <ul className="space-y-5 text-[11px] font-bold text-stone-600 uppercase tracking-[0.2em]">
-              <li>
-                <Link to="/sanctuary" className="hover:text-rose-500 transition-colors">
-                  KNOWLEDGE BASE
-                </Link>
-              </li>
-              <li>
-                <Link to="/logistics" className="hover:text-rose-500 transition-colors">
-                  LOGISTICS
-                </Link>
-              </li>
-              <li>
-                <Link to="/warranty" className="hover:text-rose-500 transition-colors">
-                  WARRANTY
-                </Link>
-              </li>
-              <li>
-                <Link to="/support" className="hover:text-rose-500 transition-colors">
-                  SUPPORT DESK
-                </Link>
-              </li>
+              <li><Link to="/sanctuary" className="hover:text-rose-500 transition-colors">KNOWLEDGE BASE</Link></li>
+              <li><Link to="/logistics" className="hover:text-rose-500 transition-colors">LOGISTICS</Link></li>
+              <li><Link to="/warranty" className="hover:text-rose-500 transition-colors">WARRANTY</Link></li>
+              <li><Link to="/support" className="hover:text-rose-500 transition-colors">SUPPORT DESK</Link></li>
             </ul>
           </div>
         </div>
