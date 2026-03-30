@@ -5,7 +5,6 @@ export default function Footer() {
   return (
     <footer className="bg-[#FAFAFA] pt-32 pb-16 px-6 border-t border-stone-200 relative overflow-hidden text-left">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 mb-24">
-        
         <div className="lg:col-span-5 space-y-10">
           <div className="flex items-center gap-3">
             <img src="https://i.imgur.com/vmJPD4c.png" alt="Logo" className="h-16 w-auto object-contain" />
@@ -24,16 +23,11 @@ export default function Footer() {
              <p className="text-xs font-bold text-stone-900 uppercase tracking-widest">BUILT BY DUSTY MCLEAN // MYNODE</p>
           </div>
         </div>
-        
         <div className="lg:col-span-4 grid grid-cols-2 gap-10">
           <div>
             <h4 className="text-[10px] font-black uppercase tracking-[0.4em] mb-8 text-stone-400">REGISTRY</h4>
             <ul className="space-y-5 text-[11px] font-bold text-stone-600 uppercase tracking-[0.2em]">
-              <li>
-                <a href="https://vapes.pixiespantryshop.com" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500 transition-colors">
-                  PROVISIONS
-                </a>
-              </li>
+              <li><a href="https://vapes.pixiespantryshop.com" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500 transition-colors">PROVISIONS</a></li>
               <li><Link to="/" className="hover:text-rose-500 transition-colors">MAIN PORTAL</Link></li>
               <li><Link to="/audit" className="hover:text-rose-500 transition-colors">THE AUDIT</Link></li>
             </ul>
@@ -48,7 +42,6 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-
         <div className="lg:col-span-3 lg:text-right space-y-8">
           <h4 className="text-[10px] font-black uppercase tracking-[0.4em] mb-8 text-stone-400">COORDINATES</h4>
           <div className="space-y-2">
@@ -62,7 +55,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      
       <div className="max-w-7xl mx-auto pt-10 border-t border-stone-200/60 text-center">
         <p className="text-[9px] text-stone-500 font-black uppercase tracking-[0.4em]">© 2026 PIXIE'S PANTRY // PROFESSIONAL REGISTRY</p>
       </div>
