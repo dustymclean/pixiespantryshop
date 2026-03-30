@@ -32,7 +32,7 @@ export default function Footer() {
             <ul className="space-y-5 text-[11px] font-bold text-stone-600 uppercase tracking-[0.2em]">
               {/* External link: Use <a> to go to the subdomain */}
               <li>
-                <a href="https://vapes.pixiespantryshop.com" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500 transition-colors">
+                <Link to="https://vapes.pixiespantryshop.com" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500 transition-colors">
                   PROVISIONS
                 </Link>
               </li>
