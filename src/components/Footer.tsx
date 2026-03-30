@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { Shield, Award, BookOpen } from 'lucide-react';
 
@@ -33,7 +34,7 @@ export default function Footer() {
               <li>
                 <a href="https://vapes.pixiespantryshop.com" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500 transition-colors">
                   PROVISIONS
-                </a>
+                </Link>
               </li>
               {/* Internal links: Use <Link> for SPA navigation */}
               <li>
