@@ -54,5 +54,37 @@
   "title": "5% off, mapped to my Awin publisher ID",
   "ends": "",
   "link": null
+ },
+ {
+  "merchant": "DaySavers",
+  "code": "DUSTY",
+  "exclusive": true,
+  "title": "10% off any order - confirmed by DaySavers",
+  "ends": "",
+  "link": null
+ },
+ {
+  "merchant": "Toputure - US",
+  "code": "DUSTY",
+  "exclusive": true,
+  "title": "10% off all products, no fixed expiry, not stackable with site promos",
+  "ends": "",
+  "link": null
+ },
+ {
+  "merchant": "COLMI",
+  "code": "DUSTY",
+  "exclusive": true,
+  "title": "My code at colmi.store (replaced DUST_BUNNIE)",
+  "ends": "",
+  "link": "https://colmi.store"
+ },
+ {
+  "merchant": "DHgate",
+  "code": "DH2026AUG16OFF",
+  "exclusive": false,
+  "title": "$16 off $160 - August offer confirmed by DHgate",
+  "ends": "",
+  "link": null
  }
 ]

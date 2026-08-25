@@ -56,6 +56,14 @@ HUBS = {
                 "name": "Accessories, Papers &amp; Hygiene",
                 "note": "The consumables. Cheap to replace, expensive to get wrong.",
                 "items": [
+                (
+                    "DHgate", "DHgate",
+                    "Wholesale marketplace selling glass, grinders, storage and shop supplies straight "
+                    "from the factories that produce them.",
+                    "Useful for bulk consumables and cases where brand does not matter. I would not buy "
+                    "anything you inhale through here &mdash; no lab reports, no material guarantees.",
+                    None,
+                ),
                     ("DaySavers", "DaySavers", "Rolling papers and cones tested to regulated-cannabis standards for heavy metals, microbials and pesticides.", "The only paper brand I've seen publish contaminant testing. You're inhaling the paper too &mdash; that matters more than the branding.", None),
                     ("King Palm", "King Palm", "Real palm-leaf wraps and cones, tobacco-free and hand-rolled.", "Slow, even burn without the chemical taste of flavoured blunt wraps. Good option if you're moving off tobacco leaf.", None),
                     ("Moose Labs LLC", "Moose Labs (MouthPeace)", "Silicone mouthpiece filters that sit between you and any shared pipe, filtering resin and bacteria.", "The most useful $10 accessory in the category, and the polite thing to carry in a session with friends.", None),
@@ -140,6 +148,14 @@ HUBS = {
                 "name": "Tech I Actually Use",
                 "note": "Consumer hardware that survived long enough to get recommended.",
                 "items": [
+                (
+                    "DHgate", "DHgate",
+                    "Factory-direct marketplace for electronics parts, camera accessories, cables, cages "
+                    "and rigging &mdash; often the same units sold under Western brand names.",
+                    "Where I source cheap accessories worth testing before recommending. Slow shipping and "
+                    "uneven quality control are the trade for the price.",
+                    None,
+                ),
                     ("AnkerSOLIX", "Anker SOLIX", "Portable power stations and solar generators from Anker.", "Mississippi storms take the power out. A SOLIX runs the router, the lights and a laptop through it.", None),
                     ("Eufy US", "Eufy", "Smart home cameras, robot vacuums and doorbells with local storage options.", "The local-storage models mean footage of your front door doesn't have to live on someone's cloud.", None),
                     ("SimpliSafe Home Security", "SimpliSafe", "DIY home security system with optional professional monitoring, no contract.", "Renter-friendly, no drilling, no lock-in. Good fit for a home-run business holding inventory.", None),
@@ -195,6 +211,14 @@ HUBS = {
                 "name": "Home &amp; Everyday",
                 "note": "Things in the house that earned their place.",
                 "items": [
+                (
+                    "DHgate", "DHgate",
+                    "China's big wholesale marketplace &mdash; the factory-direct source behind a lot of "
+                    "what gets rebranded and resold at four times the price on Amazon.",
+                    "Go here when you know exactly what part or accessory you want and do not care whose "
+                    "logo is on it. Read the seller ratings, not the listing photos.",
+                    None,
+                ),
                     ("The Sill", "The Sill", "Live houseplants shipped potted, with care instructions matched to your light.", "Plants change a room more than furniture does, and The Sill actually tells you what will survive your window.", None),
                     ("Teak Warehouse", "Teak Warehouse", "Solid A-grade teak and all-weather outdoor furniture.", "Buy-once outdoor furniture. Teak greys and lasts twenty years instead of rusting in two summers.", None),
                     ("Brondell", "Brondell", "Bidet seats, water filtration and air purification for the home.", "A $99 bidet seat is the highest quality-of-life-per-dollar purchase in this entire hub. That's not a joke.", None),
