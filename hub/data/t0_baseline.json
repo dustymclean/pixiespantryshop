@@ -1,0 +1,25 @@
+{
+ "recorded": "2026-08-25",
+ "note": "T0 index-state baseline. Movement is measured against this; do not overwrite, append new snapshots.",
+ "link_routing": {
+  "status": "CLOSED - do not reroute or clean up without a newly proven merchant/network defect",
+  "awin": 826, "impact": 148, "dynavap_goaffpro": 4, "viktor_referral": 4,
+  "code_attributed_plain": 3, "total": 985,
+  "unqualified": 0, "wrong_publisher_ids": 0, "cross_network_mismatches": 0
+ },
+ "t0_sample": {
+  "/promo-codes/": "DISCOVERED",
+  "/promo-codes/vevor/": "DISCOVERED",
+  "/promo-codes/lumary/": "DISCOVERED",
+  "/promo-codes/smoke-cartel/": "DISCOVERED",
+  "/promo-codes/dr-dabber/": "DISCOVERED",
+  "/promo-codes/dhgate/": "DISCOVERED",
+  "/promo-codes/viktor/": "DISCOVERED",
+  "/promo-codes/daysavers/": "DISCOVERED",
+  "/promo-codes/dynavap/": "UNKNOWN - crawl timing only; page verified technically healthy",
+  "/promo-codes/efe/": "NOT YET TESTED - correct URL, inspect at T+24h"
+ },
+ "invalid_test_urls": ["/promo-codes/efe-glasses/ - never existed; registry name is EFE. Not an indexing failure."],
+ "withheld_codes": 12,
+ "efe_dusty20": "WITHHELD until merchant evidence establishes the actual customer discount"
+}
