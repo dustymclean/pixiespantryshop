@@ -93,6 +93,75 @@ table.codes code{font-family:'Cinzel',serif;letter-spacing:.14em;color:var(--gol
   background:rgba(0,0,0,.5);border:1px solid rgba(212,175,55,.45);padding:2px 9px;white-space:nowrap}
 table.codes a{color:var(--pink-2);text-decoration:none}
 table.codes a:hover{color:var(--gold-2)}
+
+/* ---- merchant promo pages ---- */
+nav.crumbs{border-bottom:1px solid rgba(212,175,55,.22);padding:14px 0;font-size:.74rem;
+ letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+nav.crumbs a{color:var(--gold)}
+main.merch{padding:44px 0 70px;max-width:860px}
+main.merch h1{font-family:'Cinzel',serif;font-size:clamp(1.7rem,4.4vw,2.7rem);color:var(--gold-2);
+ line-height:1.15;margin:0 0 14px}
+main.merch h2{font-family:'Cinzel',serif;font-size:1.12rem;color:var(--gold);margin:38px 0 10px;
+ padding-top:16px;border-top:1px solid rgba(212,175,55,.18)}
+main.merch p{line-height:1.72;margin:0 0 12px}
+main.merch .lede{font-size:1.06rem;color:#f0e6d2}
+main.merch .verified{font-size:.78rem;color:var(--muted);letter-spacing:.06em}
+.hero-offer{margin:26px 0 8px;padding:26px 24px;border:1px solid var(--gold);border-radius:4px;
+ background:linear-gradient(160deg,rgba(255,77,157,.10),rgba(212,175,55,.07));text-align:center;
+ position:relative}
+.hero-offer:before,.hero-offer:after{content:"";position:absolute;width:16px;height:16px;
+ border:2px solid var(--gold-2)}
+.hero-offer:before{top:7px;left:7px;border-right:0;border-bottom:0}
+.hero-offer:after{bottom:7px;right:7px;border-left:0;border-top:0}
+.hero-offer .badge{font-family:'Cinzel',serif;letter-spacing:.22em;text-transform:uppercase;
+ font-size:.68rem;color:var(--pink);margin:0 0 10px}
+.hero-offer .bigcode{font-family:'Cinzel',serif;font-size:clamp(1.9rem,6vw,2.9rem);color:#fff;
+ letter-spacing:.14em;margin:0;text-shadow:0 0 22px rgba(255,77,157,.4)}
+.hero-offer .bigoff{font-size:1.25rem;color:var(--gold-2);margin:4px 0 6px;letter-spacing:.04em}
+.hero-offer .hmeta{font-size:.76rem;color:var(--muted);margin:0 0 16px}
+.hero-offer .hnote{font-size:.78rem;color:var(--muted);margin:14px 0 0;line-height:1.6}
+a.cta{display:inline-block;background:var(--pink);color:#1a0010;font-family:'Cinzel',serif;
+ letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;padding:13px 26px;border-radius:2px;
+ text-decoration:none;font-weight:600}
+a.cta:hover{background:var(--gold-2);color:#150f00}
+a.cta.small{background:transparent;border:1px solid var(--gold);color:var(--gold-2);font-size:.72rem;
+ padding:10px 20px}
+a.cta.small:hover{background:var(--gold);color:#120d00}
+table.offers{width:100%;border-collapse:collapse;margin:14px 0 6px;font-size:.85rem}
+table.offers th{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+ color:var(--gold);text-align:left;padding:8px 10px;border-bottom:1px solid rgba(212,175,55,.3)}
+table.offers td{padding:10px;border-bottom:1px solid rgba(255,255,255,.07);vertical-align:top}
+table.offers code{color:var(--pink);font-size:.92rem;letter-spacing:.08em}
+table.offers .ex{display:inline-block;margin-left:7px;font-size:.56rem;letter-spacing:.14em;
+ text-transform:uppercase;color:#1a0010;background:var(--gold-2);padding:2px 6px;border-radius:2px}
+.terms{color:var(--muted);font-size:.78rem;line-height:1.5}
+ul.sales{list-style:none;padding:0;margin:12px 0}
+ul.sales li{padding:11px 0;border-bottom:1px solid rgba(255,255,255,.07);line-height:1.6}
+ul.sales a{color:var(--gold-2);text-decoration:none}
+ul.sales a:hover{color:var(--pink)}
+.smeta{color:var(--muted);font-size:.76rem}
+.warn{color:var(--muted);font-size:.82rem}
+ul.expired{list-style:none;padding:0;margin:10px 0;opacity:.62;font-size:.82rem}
+ul.expired li{padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.xtag{display:inline-block;font-size:.56rem;letter-spacing:.14em;background:#5a1020;color:#ffb9cd;
+ padding:2px 6px;border-radius:2px;margin-right:8px}
+.xlinks a{color:var(--gold-2)}
+.disclose{margin-top:34px;padding-top:16px;border-top:1px solid rgba(212,175,55,.2);
+ font-size:.78rem;color:var(--muted);line-height:1.6}
+/* directory */
+.dirgrid{columns:3;column-gap:26px;margin:10px 0 0;font-size:.86rem}
+.dirgrid a{display:block;padding:4px 0;color:#e8dcc8;text-decoration:none;break-inside:avoid}
+.dirgrid a:hover{color:var(--pink)}
+.dirgrid .n{color:var(--muted);font-size:.72rem}
+.dirletter{font-family:'Cinzel',serif;color:var(--gold);margin:16px 0 4px;letter-spacing:.14em;
+ break-after:avoid}
+@media(max-width:860px){.dirgrid{columns:2}main.merch h1{font-size:1.55rem}}
+@media(max-width:560px){.dirgrid{columns:1}table.offers .terms{display:none}}
+.card .golinks{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:auto}
+.card a.go{text-decoration:none}
+.card a.mp{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+ text-decoration:none;border-bottom:1px dotted rgba(212,175,55,.5);padding-bottom:1px}
+.card a.mp:hover{color:var(--pink)}
 table.codes td.conf{font-size:.74rem;color:var(--muted);white-space:nowrap}
 .go{margin-top:20px;padding-top:16px;border-top:1px dashed rgba(212,175,55,.3);
   text-decoration:none;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pink-2)}
@@ -130,362 +199,362 @@ footer a{color:var(--gold-2)}
   <div class="sect-head"><h2>Travel &amp; Connectivity</h2><div class="rule"></div></div>
   <p class="sect-note">Data abroad without a roaming bill. Buy the eSIM before you fly.</p>
   <div class="grid">
-    <a class="card" href="https://airalo.pxf.io/c/5929369/1268485/15608" rel="sponsored noopener" target="_blank">
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Airalo</h3>
       <p class="what">The largest travel eSIM marketplace &mdash; buy a local data plan for 200+ countries and install it by QR code.</p>
       <p class="why"><b>Why I recommend it</b>First one I recommend because coverage and pricing are consistent everywhere. No SIM tray, no airport kiosk, no surprise roaming invoice.</p>
       
-      <span class="go">Visit Airalo &rarr;</span>
-    </a>
-    <a class="card" href="https://usmobileinc.pxf.io/c/5929369/2125271/26991" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://airalo.pxf.io/c/5929369/1268485/15608" rel="sponsored noopener" target="_blank">Visit Airalo &rarr;</a><a class="mp" href="/promo-codes/airalo/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>US Mobile</h3>
       <p class="what">US carrier running on major networks with unusually flexible, cheap plans.</p>
       <p class="why"><b>Why I recommend it</b>Half the price of the big three for the same towers. If you're on a legacy plan you're donating money.</p>
       
-      <span class="go">Visit US Mobile &rarr;</span>
-    </a>
-    <a class="card" href="https://heliummobile1.sjv.io/c/5929369/2959344/35175" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://usmobileinc.pxf.io/c/5929369/2125271/26991" rel="sponsored noopener" target="_blank">Visit US Mobile &rarr;</a><a class="mp" href="/promo-codes/mobile/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Helium Mobile</h3>
       <p class="what">US mobile service that offloads to a community-built wireless network to cut the price.</p>
       <p class="why"><b>Why I recommend it</b>Genuinely cheap nationwide coverage and an interesting model. Check coverage on your exact routes first.</p>
       
-      <span class="go">Visit Helium Mobile &rarr;</span>
-    </a>
-    <a class="card" href="https://amigoesim.pxf.io/c/5929369/2900873/34019?irck=xyz12" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://heliummobile1.sjv.io/c/5929369/2959344/35175" rel="sponsored noopener" target="_blank">Visit Helium Mobile &rarr;</a><a class="mp" href="/promo-codes/helium-mobile/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Amigo eSIM</h3>
       <p class="what">Prepaid travel eSIM plans with regional bundles.</p>
       <p class="why"><b>Why I recommend it</b>Good backup provider &mdash; I keep two eSIM vendors installed so one bad network isn't a dead phone.</p>
       <span class="code"><b>My code</b><code>REVIEWEDBYDUSTY</code><i>not stated by merchant</i></span>
-      <span class="go">Visit Amigo eSIM &rarr;</span>
-    </a>
-    <a class="card" href="https://esimcards.pxf.io/c/5929369/2193679/28225" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://amigoesim.pxf.io/c/5929369/2900873/34019?irck=xyz12" rel="sponsored noopener" target="_blank">Visit Amigo eSIM &rarr;</a><a class="mp" href="/promo-codes/amigo-esim/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>eSIMCards</h3>
       <p class="what">Travel eSIM store with country and multi-country data packages.</p>
       <p class="why"><b>Why I recommend it</b>Handy for multi-country trips where one regional plan beats five local ones.</p>
       
-      <span class="go">Visit eSIMCards &rarr;</span>
-    </a>
-    <a class="card" href="https://totalwireless.sjv.io/c/5929369/1286607/15774" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://esimcards.pxf.io/c/5929369/2193679/28225" rel="sponsored noopener" target="_blank">Visit eSIMCards &rarr;</a><a class="mp" href="/promo-codes/esimcards/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Total Wireless</h3>
       <p class="what">No-contract US prepaid phone service on a major network.</p>
       <p class="why"><b>Why I recommend it</b>Straightforward prepaid without a credit check. Good second line for a business number.</p>
       
-      <span class="go">Visit Total Wireless &rarr;</span>
-    </a>
-    <a class="card" href="https://vegas.vdvm.net/c/5929369/260030/4221" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://totalwireless.sjv.io/c/5929369/1286607/15774" rel="sponsored noopener" target="_blank">Visit Total Wireless &rarr;</a><a class="mp" href="/promo-codes/total-wireless/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>VEGAS.com</h3>
       <p class="what">Las Vegas hotels, shows and attraction tickets in one booking site.</p>
       <p class="why"><b>Why I recommend it</b>Where I price out trade-show trips. Bundling the room and the show beats booking them apart.</p>
       
-      <span class="go">Visit VEGAS.com &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/awclick.php?mid=124434&id=2520915" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://vegas.vdvm.net/c/5929369/260030/4221" rel="sponsored noopener" target="_blank">Visit VEGAS.com &rarr;</a><a class="mp" href="/promo-codes/vegas-com/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Airport Transfer Portal</h3>
       <p class="what">Pre-booked private airport transfers worldwide.</p>
       <p class="why"><b>Why I recommend it</b>Book the ride before you land and the trip starts calm instead of in a taxi queue.</p>
       
-      <span class="go">Visit Airport Transfer Portal &rarr;</span>
-    </a></div></div></section>
+      <span class="golinks"><a class="go" href="https://www.awin1.com/awclick.php?mid=124434&id=2520915" rel="sponsored noopener" target="_blank">Visit Airport Transfer Portal &rarr;</a><a class="mp" href="/promo-codes/airport-transfer-portal/">Codes &amp; deals</a></span>
+    </div></div></div></section>
 <section class="band" id="points-miles-loyalty"><div class="wrap">
   <div class="sect-head"><h2>Points, Miles &amp; Loyalty</h2><div class="rule"></div></div>
   <p class="sect-note">Points.com powers the official buy/transfer portals for these programs.</p>
   <div class="grid">
-    <a class="card" href="https://marriott.pxf.io/c/5929369/321373/4937" rel="sponsored noopener" target="_blank">
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Marriott Bonvoy</h3>
       <p class="what">Official portal to buy, gift or transfer Marriott Bonvoy points.</p>
       <p class="why"><b>Why I recommend it</b>Topping up a balance is often far cheaper than paying cash for the last night of a stay. Do the maths first.</p>
       
-      <span class="go">Visit Marriott Bonvoy &rarr;</span>
-    </a>
-    <a class="card" href="https://hilton.ijrn.net/c/5929369/314255/4823" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://marriott.pxf.io/c/5929369/321373/4937" rel="sponsored noopener" target="_blank">Visit Marriott Bonvoy &rarr;</a><a class="mp" href="/promo-codes/marriott-bonvoy-points-com/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Hilton Honors</h3>
       <p class="what">Official Hilton Honors points purchase and transfer portal.</p>
       <p class="why"><b>Why I recommend it</b>Same logic as Marriott. Watch for the periodic bonus sales &mdash; that's the only time buying points is a real deal.</p>
       
-      <span class="go">Visit Hilton Honors &rarr;</span>
-    </a>
-    <a class="card" href="https://hyatt.jewn.net/c/5929369/319067/4882" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://hilton.ijrn.net/c/5929369/314255/4823" rel="sponsored noopener" target="_blank">Visit Hilton Honors &rarr;</a><a class="mp" href="/promo-codes/hilton-honors-rewards-points-com/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>World of Hyatt</h3>
       <p class="what">Official World of Hyatt points portal.</p>
       <p class="why"><b>Why I recommend it</b>Hyatt points hold the highest real-world value per point of the big three chains.</p>
       
-      <span class="go">Visit World of Hyatt &rarr;</span>
-    </a>
-    <a class="card" href="https://united.elfm.net/c/5929369/302886/4704" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://hyatt.jewn.net/c/5929369/319067/4882" rel="sponsored noopener" target="_blank">Visit World of Hyatt &rarr;</a><a class="mp" href="/promo-codes/world-of-hyatt-points-com/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>United MileagePlus</h3>
       <p class="what">Official portal for buying and transferring United miles.</p>
       <p class="why"><b>Why I recommend it</b>Useful to close a small gap on an award ticket you already found.</p>
       
-      <span class="go">Visit United MileagePlus &rarr;</span>
-    </a>
-    <a class="card" href="https://swa.eyjo.net/c/5929369/302888/4705" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://united.elfm.net/c/5929369/302886/4704" rel="sponsored noopener" target="_blank">Visit United MileagePlus &rarr;</a><a class="mp" href="/promo-codes/united-airlines-mileageplus-points-com/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Southwest Rapid Rewards</h3>
       <p class="what">Official Southwest points portal.</p>
       <p class="why"><b>Why I recommend it</b>The practical one out of the South &mdash; two free bags and no change fees still beats a cheaper base fare.</p>
       
-      <span class="go">Visit Southwest Rapid Rewards &rarr;</span>
-    </a>
-    <a class="card" href="https://alaska.gqco.net/c/5929369/302892/4707" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://swa.eyjo.net/c/5929369/302888/4705" rel="sponsored noopener" target="_blank">Visit Southwest Rapid Rewards &rarr;</a><a class="mp" href="/promo-codes/southwest-airlines-rapid-rewards-points-com/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Alaska Mileage Plan</h3>
       <p class="what">Official Alaska Mileage Plan miles portal.</p>
       <p class="why"><b>Why I recommend it</b>Alaska's partner award chart is the best-kept secret in US loyalty.</p>
       
-      <span class="go">Visit Alaska Mileage Plan &rarr;</span>
-    </a>
-    <a class="card" href="https://afklm.tcux.net/c/5929369/321349/4926" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://alaska.gqco.net/c/5929369/302892/4707" rel="sponsored noopener" target="_blank">Visit Alaska Mileage Plan &rarr;</a><a class="mp" href="/promo-codes/alaska-airlines-atmos-rewards-points-com/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Flying Blue</h3>
       <p class="what">Official Air France/KLM Flying Blue miles portal.</p>
       <p class="why"><b>Why I recommend it</b>Monthly Promo Rewards make Europe cheap if your dates are flexible.</p>
       
-      <span class="go">Visit Flying Blue &rarr;</span>
-    </a>
-    <a class="card" href="https://jetblue.jyeh.net/c/5929369/319069/4883" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://afklm.tcux.net/c/5929369/321349/4926" rel="sponsored noopener" target="_blank">Visit Flying Blue &rarr;</a><a class="mp" href="/promo-codes/air-france-klm-flying-blue-points-com/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>JetBlue TrueBlue</h3>
       <p class="what">Official JetBlue TrueBlue points portal.</p>
       <p class="why"><b>Why I recommend it</b>Points never expire and family pooling is free &mdash; rare and genuinely useful.</p>
       
-      <span class="go">Visit JetBlue TrueBlue &rarr;</span>
-    </a>
-    <a class="card" href="https://choice.mtko.net/c/5929369/319073/4885" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://jetblue.jyeh.net/c/5929369/319069/4883" rel="sponsored noopener" target="_blank">Visit JetBlue TrueBlue &rarr;</a><a class="mp" href="/promo-codes/jetblue-trueblue-points-com/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Choice Privileges</h3>
       <p class="what">Official Choice Hotels points portal.</p>
       <p class="why"><b>Why I recommend it</b>Best coverage in small-town America, which is most of my actual driving.</p>
       
-      <span class="go">Visit Choice Privileges &rarr;</span>
-    </a>
-    <a class="card" href="https://ihg.hmxg.net/c/5929369/310617/4797" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://choice.mtko.net/c/5929369/319073/4885" rel="sponsored noopener" target="_blank">Visit Choice Privileges &rarr;</a><a class="mp" href="/promo-codes/choice-privileges-points-com/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>IHG One Rewards</h3>
       <p class="what">Official IHG points portal.</p>
       <p class="why"><b>Why I recommend it</b>Fourth-night-free on award stays is where the value is.</p>
       
-      <span class="go">Visit IHG One Rewards &rarr;</span>
-    </a></div></div></section>
+      <span class="golinks"><a class="go" href="https://ihg.hmxg.net/c/5929369/310617/4797" rel="sponsored noopener" target="_blank">Visit IHG One Rewards &rarr;</a><a class="mp" href="/promo-codes/ihg-rewards-club-points-com/">Codes &amp; deals</a></span>
+    </div></div></div></section>
 <section class="band" id="home-everyday"><div class="wrap">
   <div class="sect-head"><h2>Home &amp; Everyday</h2><div class="rule"></div></div>
   <p class="sect-note">Things in the house that earned their place.</p>
   <div class="grid">
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=90689&awinaffid=2520915&ued=https%3A%2F%2Fwww.dhgate.com%2Fsales%2Fmarket%2Fanniversarysale.html" rel="sponsored noopener" target="_blank">
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>DHgate</h3>
       <p class="what">China's big wholesale marketplace &mdash; the factory-direct source behind a lot of what gets rebranded and resold at four times the price on Amazon.</p>
       <p class="why"><b>Why I recommend it</b>Go here when you know exactly what part or accessory you want and do not care whose logo is on it. Read the seller ratings, not the listing photos.</p>
       <span class="code"><b>Code</b><code>DH9013AUGP</code><i>Anniversary Sale 14% coupons(£90-£13) &middot; ends 2026-09-01</i></span>
-      <span class="go">Visit DHgate &rarr;</span>
-    </a>
-    <a class="card" href="https://thesill.sjv.io/c/5929369/1339924/16184" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=90689&awinaffid=2520915&ued=https%3A%2F%2Fwww.dhgate.com%2Fsales%2Fmarket%2Fanniversarysale.html" rel="sponsored noopener" target="_blank">Visit DHgate &rarr;</a><a class="mp" href="/promo-codes/dhgate/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>The Sill</h3>
       <p class="what">Live houseplants shipped potted, with care instructions matched to your light.</p>
       <p class="why"><b>Why I recommend it</b>Plants change a room more than furniture does, and The Sill actually tells you what will survive your window.</p>
       
-      <span class="go">Visit The Sill &rarr;</span>
-    </a>
-    <a class="card" href="https://teakwarehouse.sjv.io/c/5929369/2987967/35809" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://thesill.sjv.io/c/5929369/1339924/16184" rel="sponsored noopener" target="_blank">Visit The Sill &rarr;</a><a class="mp" href="/promo-codes/the-sill/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Teak Warehouse</h3>
       <p class="what">Solid A-grade teak and all-weather outdoor furniture.</p>
       <p class="why"><b>Why I recommend it</b>Buy-once outdoor furniture. Teak greys and lasts twenty years instead of rusting in two summers.</p>
       
-      <span class="go">Visit Teak Warehouse &rarr;</span>
-    </a>
-    <a class="card" href="https://brondell.pxf.io/c/5929369/887206/12276" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://teakwarehouse.sjv.io/c/5929369/2987967/35809" rel="sponsored noopener" target="_blank">Visit Teak Warehouse &rarr;</a><a class="mp" href="/promo-codes/teak-warehouse/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Brondell</h3>
       <p class="what">Bidet seats, water filtration and air purification for the home.</p>
       <p class="why"><b>Why I recommend it</b>A $99 bidet seat is the highest quality-of-life-per-dollar purchase in this entire hub. That's not a joke.</p>
       
-      <span class="go">Visit Brondell &rarr;</span>
-    </a>
-    <a class="card" href="https://impact.munchkin.com/c/5929369/435609/7649" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://brondell.pxf.io/c/5929369/887206/12276" rel="sponsored noopener" target="_blank">Visit Brondell &rarr;</a><a class="mp" href="/promo-codes/brondell/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Munchkin</h3>
       <p class="what">Baby and toddler gear &mdash; feeding, bath, safety and cleaning.</p>
       <p class="why"><b>Why I recommend it</b>Family first. This is the stuff that's genuinely in our house.</p>
       
-      <span class="go">Visit Munchkin &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/awclick.php?mid=123566&id=2520915" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://impact.munchkin.com/c/5929369/435609/7649" rel="sponsored noopener" target="_blank">Visit Munchkin &rarr;</a><a class="mp" href="/promo-codes/munchkin/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>iTouchless</h3>
       <p class="what">Sensor trash cans, air-purifying bins and touch-free home hardware.</p>
       <p class="why"><b>Why I recommend it</b>Touch-free bins in a kitchen and a workshop &mdash; obvious once you've lived with one.</p>
       
-      <span class="go">Visit iTouchless &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/awclick.php?mid=33247&id=2520915" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/awclick.php?mid=123566&id=2520915" rel="sponsored noopener" target="_blank">Visit iTouchless &rarr;</a><a class="mp" href="/promo-codes/itouchless/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Gourmet Gift Baskets</h3>
       <p class="what">Curated food and gift baskets for holidays and corporate sending.</p>
       <p class="why"><b>Why I recommend it</b>My default answer for a vendor thank-you when a branded box would be tacky.</p>
       
-      <span class="go">Visit Gourmet Gift Baskets &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/awclick.php?mid=87259&id=2520915" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/awclick.php?mid=33247&id=2520915" rel="sponsored noopener" target="_blank">Visit Gourmet Gift Baskets &rarr;</a><a class="mp" href="/promo-codes/gourmet-gift-basket-store/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Snow Joe + Sun Joe</h3>
       <p class="what">Electric outdoor tools &mdash; pressure washers, mowers, blowers and snow gear.</p>
       <p class="why"><b>Why I recommend it</b>Electric yard tools with no fuel to store. The pressure washer earns its keep before every pop-up event.</p>
       
-      <span class="go">Visit Snow Joe + Sun Joe &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=89509&awinaffid=2520915&ued=https%3A%2F%2Fwww.piscifun.com%2Fcollections%2Ffishing-gear-special-offer" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/awclick.php?mid=87259&id=2520915" rel="sponsored noopener" target="_blank">Visit Snow Joe + Sun Joe &rarr;</a><a class="mp" href="/promo-codes/snow-joe-sun-joe/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Piscifun</h3>
       <p class="what">Value-focused fishing reels, rods and tackle storage.</p>
       <p class="why"><b>Why I recommend it</b>Mississippi water. Good gear at a price that doesn't hurt when a rod goes in the lake.</p>
       <span class="code"><b>Code</b><code>LIM15</code><i>Special Offer! Enjoy 15% off with code: LIM15 &middot; ends 2050-12-31</i></span>
-      <span class="go">Visit Piscifun &rarr;</span>
-    </a></div></div></section>
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=89509&awinaffid=2520915&ued=https%3A%2F%2Fwww.piscifun.com%2Fcollections%2Ffishing-gear-special-offer" rel="sponsored noopener" target="_blank">Visit Piscifun &rarr;</a><a class="mp" href="/promo-codes/piscifun/">Codes &amp; deals</a></span>
+    </div></div></div></section>
 <section class="band" id="wellness-recovery"><div class="wrap">
   <div class="sect-head"><h2>Wellness &amp; Recovery</h2><div class="rule"></div></div>
   <p class="sect-note">Slow-down category. Nothing here is a medical claim.</p>
   <div class="grid">
-    <a class="card" href="https://nalgene.pxf.io/c/5929369/970979/12848" rel="sponsored noopener" target="_blank">
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Nalgene</h3>
       <p class="what">Indestructible BPA-free water bottles made in the USA.</p>
       <p class="why"><b>Why I recommend it</b>One bottle, a decade, dishwasher safe. Hydration is the cheapest wellness intervention there is.</p>
       
-      <span class="go">Visit Nalgene &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=54361&awinaffid=2520915&ued=https%3A%2F%2Fshop.myhydaway.com%2F" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://nalgene.pxf.io/c/5929369/970979/12848" rel="sponsored noopener" target="_blank">Visit Nalgene &rarr;</a><a class="mp" href="/promo-codes/nalgene/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>HYDAWAY</h3>
       <p class="what">Collapsible water bottles and food containers that pack flat.</p>
       <p class="why"><b>Why I recommend it</b>For a camera bag that's already full. Flat when empty, real bottle when you need one.</p>
       <span class="code"><b>Code</b><code>MEET10</code><i>10% Off Sitewide &middot; ends 2026-12-31</i></span>
-      <span class="go">Visit HYDAWAY &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/awclick.php?mid=95093&id=2520915" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=54361&awinaffid=2520915&ued=https%3A%2F%2Fshop.myhydaway.com%2F" rel="sponsored noopener" target="_blank">Visit HYDAWAY &rarr;</a><a class="mp" href="/promo-codes/hydaway/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Shakti Warrior</h3>
       <p class="what">Eco-conscious yoga mats, props and meditation gear.</p>
       <p class="why"><b>Why I recommend it</b>Mobility work after a day hunched over a light tent isn't optional past thirty.</p>
       
-      <span class="go">Visit Shakti Warrior &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/awclick.php?mid=117883&id=2520915" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/awclick.php?mid=95093&id=2520915" rel="sponsored noopener" target="_blank">Visit Shakti Warrior &rarr;</a><a class="mp" href="/promo-codes/shakti-warrior/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Max Recovery</h3>
       <p class="what">Compression and recovery apparel for training and post-workout.</p>
       <p class="why"><b>Why I recommend it</b>Trade show floors are twelve-hour standing days. Compression is the difference between day two and day three.</p>
       
-      <span class="go">Visit Max Recovery &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=119629&awinaffid=2520915&ued=https%3A%2F%2Fpurtybody.com%2F" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/awclick.php?mid=117883&id=2520915" rel="sponsored noopener" target="_blank">Visit Max Recovery &rarr;</a><a class="mp" href="/promo-codes/max-recovery-clothing/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Purty Body</h3>
       <p class="what">Small-batch natural body care.</p>
       <p class="why"><b>Why I recommend it</b>Independent maker, clean formulations, and a founder who answers her own email.</p>
       <span class="code"><b>Code</b><code>PURTY15</code><i>15% Off Sitewide &middot; ends 2026-12-31</i></span>
-      <span class="go">Visit Purty Body &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/awclick.php?mid=110326&id=2520915" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=119629&awinaffid=2520915&ued=https%3A%2F%2Fpurtybody.com%2F" rel="sponsored noopener" target="_blank">Visit Purty Body &rarr;</a><a class="mp" href="/promo-codes/purty-body-affiliate-program/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Benigna Parfums</h3>
       <p class="what">Independent fragrance house selling directly.</p>
       <p class="why"><b>Why I recommend it</b>Small luxury, no department store markup. Sample before you commit to a bottle.</p>
       
-      <span class="go">Visit Benigna Parfums &rarr;</span>
-    </a></div></div></section>
+      <span class="golinks"><a class="go" href="https://www.awin1.com/awclick.php?mid=110326&id=2520915" rel="sponsored noopener" target="_blank">Visit Benigna Parfums &rarr;</a><a class="mp" href="/promo-codes/benigna-parfums/">Codes &amp; deals</a></span>
+    </div></div></div></section>
 <section class="band" id="style-gifts-small-luxuries"><div class="wrap">
   <div class="sect-head"><h2>Style, Gifts &amp; Small Luxuries</h2><div class="rule"></div></div>
   <p class="sect-note">Great Gatsby energy on a Mississippi budget.</p>
   <div class="grid">
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=88263&awinaffid=2520915&ued=https%3A%2F%2Fdiamondveneer.com" rel="sponsored noopener" target="_blank">
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Diamond Veneer</h3>
       <p class="what">Travel jewellery and simulated-stone pieces designed to be worn on the road.</p>
       <p class="why"><b>Why I recommend it</b>The sensible answer to travelling with anything you'd cry about losing.</p>
       <span class="code"><b>Code</b><code>STYLE</code><i>25% Off Sitewide &middot; ends 2027-12-31</i></span>
-      <span class="go">Visit Diamond Veneer &rarr;</span>
-    </a>
-    <a class="card" href="https://babygoldinc.pxf.io/c/5929369/2330918/29616" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=88263&awinaffid=2520915&ued=https%3A%2F%2Fdiamondveneer.com" rel="sponsored noopener" target="_blank">Visit Diamond Veneer &rarr;</a><a class="mp" href="/promo-codes/diamond-veneer-travel-jewelry/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Baby Gold</h3>
       <p class="what">Fine 14k gold jewellery, personalised and stackable.</p>
       <p class="why"><b>Why I recommend it</b>Real gold, direct pricing, and the personalisation is done well rather than gimmicky.</p>
       
-      <span class="go">Visit Baby Gold &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=59217&awinaffid=2520915&ued=https%3A%2F%2Fgreystateapparel.com%2F" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://babygoldinc.pxf.io/c/5929369/2330918/29616" rel="sponsored noopener" target="_blank">Visit Baby Gold &rarr;</a><a class="mp" href="/promo-codes/baby-gold/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Grey State Apparel</h3>
       <p class="what">Elevated everyday apparel in sustainable fabrics.</p>
       <p class="why"><b>Why I recommend it</b>Fits the brand: quiet, well made, no logo shouting.</p>
       <span class="code"><b>Code</b><code>Code will arrive via email</code><i>Sign Up for the Newsletter at GreyStateApparel.com and Receive 10% Off Your First Purchase! &middot; ends 2050-12-31</i></span>
-      <span class="go">Visit Grey State Apparel &rarr;</span>
-    </a>
-    <a class="card" href="https://totecarry.pxf.io/c/5929369/3082944/37936" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=59217&awinaffid=2520915&ued=https%3A%2F%2Fgreystateapparel.com%2F" rel="sponsored noopener" target="_blank">Visit Grey State Apparel &rarr;</a><a class="mp" href="/promo-codes/grey-state-apparel/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Tote &amp; Carry</h3>
       <p class="what">Bold luggage, duffels and backpacks from a Black-owned American brand.</p>
       <p class="why"><b>Why I recommend it</b>Loud in the right way, and the hardware holds up to real airport handling.</p>
       
-      <span class="go">Visit Tote &amp; Carry &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=123662&awinaffid=2520915&ued=https%3A%2F%2Fcosabella.com%2F" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://totecarry.pxf.io/c/5929369/3082944/37936" rel="sponsored noopener" target="_blank">Visit Tote &amp; Carry &rarr;</a><a class="mp" href="/promo-codes/tote-and-carry/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Cosabella</h3>
       <p class="what">Italian-made lingerie and loungewear.</p>
       <p class="why"><b>Why I recommend it</b>Genuine Italian manufacturing at a price that isn't runway-insane. Reliable gift.</p>
       <span class="code"><b>Code</b><code>NEW-COSABELLA15</code><i>Enjoy 15% Off Cosabella &middot; ends 2026-12-31</i></span>
-      <span class="go">Visit Cosabella &rarr;</span>
-    </a>
-    <a class="card" href="https://wineexpress.vneoga.net/c/5929369/88200/2181" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=123662&awinaffid=2520915&ued=https%3A%2F%2Fcosabella.com%2F" rel="sponsored noopener" target="_blank">Visit Cosabella &rarr;</a><a class="mp" href="/promo-codes/cosabella/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Wine Express</h3>
       <p class="what">Curated wine club and single-bottle delivery.</p>
       <p class="why"><b>Why I recommend it</b>Champagne coupes are the whole aesthetic here. This is how you keep them full.</p>
       
-      <span class="go">Visit Wine Express &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=120525&awinaffid=2520915&ued=https%3A%2F%2Fmemorialize.art%2F" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://wineexpress.vneoga.net/c/5929369/88200/2181" rel="sponsored noopener" target="_blank">Visit Wine Express &rarr;</a><a class="mp" href="/promo-codes/wine-express/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Memorialize Art</h3>
       <p class="what">Custom hand-drawn portraits from photographs.</p>
       <p class="why"><b>Why I recommend it</b>The gift that lands every time. Family, pets, people who are gone.</p>
       <span class="code"><b>Code</b><code>MEMART8</code><i>8% Off Custom Portraits &middot; ends 2026-12-31</i></span>
-      <span class="go">Visit Memorialize Art &rarr;</span>
-    </a></div></div></section>
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=120525&awinaffid=2520915&ued=https%3A%2F%2Fmemorialize.art%2F" rel="sponsored noopener" target="_blank">Visit Memorialize Art &rarr;</a><a class="mp" href="/promo-codes/memorialize-art/">Codes &amp; deals</a></span>
+    </div></div></div></section>
 <section class="band" id="for-the-household-zoo"><div class="wrap">
   <div class="sect-head"><h2>For the Household Zoo</h2><div class="rule"></div></div>
   <p class="sect-note">Pets get a section. Non-negotiable.</p>
   <div class="grid">
-    <a class="card" href="https://www.awin1.com/awclick.php?mid=52567&id=2520915" rel="sponsored noopener" target="_blank">
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>meowbox</h3>
       <p class="what">Monthly subscription box of cat toys and treats, with a box donated to shelters.</p>
       <p class="why"><b>Why I recommend it</b>The donation model is real, and the cats do not care about my quarterly targets.</p>
       
-      <span class="go">Visit meowbox &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=118439&awinaffid=2520915&campaign=happytrails20+for+id+2178573&ued=https%3A%2F%2Fwww.zealpetfood.com%2F" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/awclick.php?mid=52567&id=2520915" rel="sponsored noopener" target="_blank">Visit meowbox &rarr;</a><a class="mp" href="/promo-codes/meowbox/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Zeal Pet</h3>
       <p class="what">Pet supplies and accessories for cats and dogs.</p>
       <p class="why"><b>Why I recommend it</b>Everyday consumables without a boutique markup.</p>
       <span class="code"><b>Code</b><code>HAPPYTRAILS20</code><i>HAPPYTRAILS20 &middot; ends 2027-11-24</i></span>
-      <span class="go">Visit Zeal Pet &rarr;</span>
-    </a></div></div></section>
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=118439&awinaffid=2520915&campaign=happytrails20+for+id+2178573&ued=https%3A%2F%2Fwww.zealpetfood.com%2F" rel="sponsored noopener" target="_blank">Visit Zeal Pet &rarr;</a><a class="mp" href="/promo-codes/zeal-pet/">Codes &amp; deals</a></span>
+    </div></div></div></section>
 <footer><div class="wrap">
 <p class="disc"><b>Affiliate disclosure:</b> many links on this page are affiliate links. If you
 buy through them, Pixie&rsquo;s Pantry may earn a commission at no extra cost to you. It never

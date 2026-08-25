@@ -93,6 +93,75 @@ table.codes code{font-family:'Cinzel',serif;letter-spacing:.14em;color:var(--gol
   background:rgba(0,0,0,.5);border:1px solid rgba(212,175,55,.45);padding:2px 9px;white-space:nowrap}
 table.codes a{color:var(--pink-2);text-decoration:none}
 table.codes a:hover{color:var(--gold-2)}
+
+/* ---- merchant promo pages ---- */
+nav.crumbs{border-bottom:1px solid rgba(212,175,55,.22);padding:14px 0;font-size:.74rem;
+ letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+nav.crumbs a{color:var(--gold)}
+main.merch{padding:44px 0 70px;max-width:860px}
+main.merch h1{font-family:'Cinzel',serif;font-size:clamp(1.7rem,4.4vw,2.7rem);color:var(--gold-2);
+ line-height:1.15;margin:0 0 14px}
+main.merch h2{font-family:'Cinzel',serif;font-size:1.12rem;color:var(--gold);margin:38px 0 10px;
+ padding-top:16px;border-top:1px solid rgba(212,175,55,.18)}
+main.merch p{line-height:1.72;margin:0 0 12px}
+main.merch .lede{font-size:1.06rem;color:#f0e6d2}
+main.merch .verified{font-size:.78rem;color:var(--muted);letter-spacing:.06em}
+.hero-offer{margin:26px 0 8px;padding:26px 24px;border:1px solid var(--gold);border-radius:4px;
+ background:linear-gradient(160deg,rgba(255,77,157,.10),rgba(212,175,55,.07));text-align:center;
+ position:relative}
+.hero-offer:before,.hero-offer:after{content:"";position:absolute;width:16px;height:16px;
+ border:2px solid var(--gold-2)}
+.hero-offer:before{top:7px;left:7px;border-right:0;border-bottom:0}
+.hero-offer:after{bottom:7px;right:7px;border-left:0;border-top:0}
+.hero-offer .badge{font-family:'Cinzel',serif;letter-spacing:.22em;text-transform:uppercase;
+ font-size:.68rem;color:var(--pink);margin:0 0 10px}
+.hero-offer .bigcode{font-family:'Cinzel',serif;font-size:clamp(1.9rem,6vw,2.9rem);color:#fff;
+ letter-spacing:.14em;margin:0;text-shadow:0 0 22px rgba(255,77,157,.4)}
+.hero-offer .bigoff{font-size:1.25rem;color:var(--gold-2);margin:4px 0 6px;letter-spacing:.04em}
+.hero-offer .hmeta{font-size:.76rem;color:var(--muted);margin:0 0 16px}
+.hero-offer .hnote{font-size:.78rem;color:var(--muted);margin:14px 0 0;line-height:1.6}
+a.cta{display:inline-block;background:var(--pink);color:#1a0010;font-family:'Cinzel',serif;
+ letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;padding:13px 26px;border-radius:2px;
+ text-decoration:none;font-weight:600}
+a.cta:hover{background:var(--gold-2);color:#150f00}
+a.cta.small{background:transparent;border:1px solid var(--gold);color:var(--gold-2);font-size:.72rem;
+ padding:10px 20px}
+a.cta.small:hover{background:var(--gold);color:#120d00}
+table.offers{width:100%;border-collapse:collapse;margin:14px 0 6px;font-size:.85rem}
+table.offers th{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+ color:var(--gold);text-align:left;padding:8px 10px;border-bottom:1px solid rgba(212,175,55,.3)}
+table.offers td{padding:10px;border-bottom:1px solid rgba(255,255,255,.07);vertical-align:top}
+table.offers code{color:var(--pink);font-size:.92rem;letter-spacing:.08em}
+table.offers .ex{display:inline-block;margin-left:7px;font-size:.56rem;letter-spacing:.14em;
+ text-transform:uppercase;color:#1a0010;background:var(--gold-2);padding:2px 6px;border-radius:2px}
+.terms{color:var(--muted);font-size:.78rem;line-height:1.5}
+ul.sales{list-style:none;padding:0;margin:12px 0}
+ul.sales li{padding:11px 0;border-bottom:1px solid rgba(255,255,255,.07);line-height:1.6}
+ul.sales a{color:var(--gold-2);text-decoration:none}
+ul.sales a:hover{color:var(--pink)}
+.smeta{color:var(--muted);font-size:.76rem}
+.warn{color:var(--muted);font-size:.82rem}
+ul.expired{list-style:none;padding:0;margin:10px 0;opacity:.62;font-size:.82rem}
+ul.expired li{padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.xtag{display:inline-block;font-size:.56rem;letter-spacing:.14em;background:#5a1020;color:#ffb9cd;
+ padding:2px 6px;border-radius:2px;margin-right:8px}
+.xlinks a{color:var(--gold-2)}
+.disclose{margin-top:34px;padding-top:16px;border-top:1px solid rgba(212,175,55,.2);
+ font-size:.78rem;color:var(--muted);line-height:1.6}
+/* directory */
+.dirgrid{columns:3;column-gap:26px;margin:10px 0 0;font-size:.86rem}
+.dirgrid a{display:block;padding:4px 0;color:#e8dcc8;text-decoration:none;break-inside:avoid}
+.dirgrid a:hover{color:var(--pink)}
+.dirgrid .n{color:var(--muted);font-size:.72rem}
+.dirletter{font-family:'Cinzel',serif;color:var(--gold);margin:16px 0 4px;letter-spacing:.14em;
+ break-after:avoid}
+@media(max-width:860px){.dirgrid{columns:2}main.merch h1{font-size:1.55rem}}
+@media(max-width:560px){.dirgrid{columns:1}table.offers .terms{display:none}}
+.card .golinks{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:auto}
+.card a.go{text-decoration:none}
+.card a.mp{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+ text-decoration:none;border-bottom:1px dotted rgba(212,175,55,.5);padding-bottom:1px}
+.card a.mp:hover{color:var(--pink)}
 table.codes td.conf{font-size:.74rem;color:var(--muted);white-space:nowrap}
 .go{margin-top:20px;padding-top:16px;border-top:1px dashed rgba(212,175,55,.3);
   text-decoration:none;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pink-2)}

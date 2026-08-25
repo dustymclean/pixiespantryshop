@@ -93,6 +93,75 @@ table.codes code{font-family:'Cinzel',serif;letter-spacing:.14em;color:var(--gol
   background:rgba(0,0,0,.5);border:1px solid rgba(212,175,55,.45);padding:2px 9px;white-space:nowrap}
 table.codes a{color:var(--pink-2);text-decoration:none}
 table.codes a:hover{color:var(--gold-2)}
+
+/* ---- merchant promo pages ---- */
+nav.crumbs{border-bottom:1px solid rgba(212,175,55,.22);padding:14px 0;font-size:.74rem;
+ letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+nav.crumbs a{color:var(--gold)}
+main.merch{padding:44px 0 70px;max-width:860px}
+main.merch h1{font-family:'Cinzel',serif;font-size:clamp(1.7rem,4.4vw,2.7rem);color:var(--gold-2);
+ line-height:1.15;margin:0 0 14px}
+main.merch h2{font-family:'Cinzel',serif;font-size:1.12rem;color:var(--gold);margin:38px 0 10px;
+ padding-top:16px;border-top:1px solid rgba(212,175,55,.18)}
+main.merch p{line-height:1.72;margin:0 0 12px}
+main.merch .lede{font-size:1.06rem;color:#f0e6d2}
+main.merch .verified{font-size:.78rem;color:var(--muted);letter-spacing:.06em}
+.hero-offer{margin:26px 0 8px;padding:26px 24px;border:1px solid var(--gold);border-radius:4px;
+ background:linear-gradient(160deg,rgba(255,77,157,.10),rgba(212,175,55,.07));text-align:center;
+ position:relative}
+.hero-offer:before,.hero-offer:after{content:"";position:absolute;width:16px;height:16px;
+ border:2px solid var(--gold-2)}
+.hero-offer:before{top:7px;left:7px;border-right:0;border-bottom:0}
+.hero-offer:after{bottom:7px;right:7px;border-left:0;border-top:0}
+.hero-offer .badge{font-family:'Cinzel',serif;letter-spacing:.22em;text-transform:uppercase;
+ font-size:.68rem;color:var(--pink);margin:0 0 10px}
+.hero-offer .bigcode{font-family:'Cinzel',serif;font-size:clamp(1.9rem,6vw,2.9rem);color:#fff;
+ letter-spacing:.14em;margin:0;text-shadow:0 0 22px rgba(255,77,157,.4)}
+.hero-offer .bigoff{font-size:1.25rem;color:var(--gold-2);margin:4px 0 6px;letter-spacing:.04em}
+.hero-offer .hmeta{font-size:.76rem;color:var(--muted);margin:0 0 16px}
+.hero-offer .hnote{font-size:.78rem;color:var(--muted);margin:14px 0 0;line-height:1.6}
+a.cta{display:inline-block;background:var(--pink);color:#1a0010;font-family:'Cinzel',serif;
+ letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;padding:13px 26px;border-radius:2px;
+ text-decoration:none;font-weight:600}
+a.cta:hover{background:var(--gold-2);color:#150f00}
+a.cta.small{background:transparent;border:1px solid var(--gold);color:var(--gold-2);font-size:.72rem;
+ padding:10px 20px}
+a.cta.small:hover{background:var(--gold);color:#120d00}
+table.offers{width:100%;border-collapse:collapse;margin:14px 0 6px;font-size:.85rem}
+table.offers th{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+ color:var(--gold);text-align:left;padding:8px 10px;border-bottom:1px solid rgba(212,175,55,.3)}
+table.offers td{padding:10px;border-bottom:1px solid rgba(255,255,255,.07);vertical-align:top}
+table.offers code{color:var(--pink);font-size:.92rem;letter-spacing:.08em}
+table.offers .ex{display:inline-block;margin-left:7px;font-size:.56rem;letter-spacing:.14em;
+ text-transform:uppercase;color:#1a0010;background:var(--gold-2);padding:2px 6px;border-radius:2px}
+.terms{color:var(--muted);font-size:.78rem;line-height:1.5}
+ul.sales{list-style:none;padding:0;margin:12px 0}
+ul.sales li{padding:11px 0;border-bottom:1px solid rgba(255,255,255,.07);line-height:1.6}
+ul.sales a{color:var(--gold-2);text-decoration:none}
+ul.sales a:hover{color:var(--pink)}
+.smeta{color:var(--muted);font-size:.76rem}
+.warn{color:var(--muted);font-size:.82rem}
+ul.expired{list-style:none;padding:0;margin:10px 0;opacity:.62;font-size:.82rem}
+ul.expired li{padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.xtag{display:inline-block;font-size:.56rem;letter-spacing:.14em;background:#5a1020;color:#ffb9cd;
+ padding:2px 6px;border-radius:2px;margin-right:8px}
+.xlinks a{color:var(--gold-2)}
+.disclose{margin-top:34px;padding-top:16px;border-top:1px solid rgba(212,175,55,.2);
+ font-size:.78rem;color:var(--muted);line-height:1.6}
+/* directory */
+.dirgrid{columns:3;column-gap:26px;margin:10px 0 0;font-size:.86rem}
+.dirgrid a{display:block;padding:4px 0;color:#e8dcc8;text-decoration:none;break-inside:avoid}
+.dirgrid a:hover{color:var(--pink)}
+.dirgrid .n{color:var(--muted);font-size:.72rem}
+.dirletter{font-family:'Cinzel',serif;color:var(--gold);margin:16px 0 4px;letter-spacing:.14em;
+ break-after:avoid}
+@media(max-width:860px){.dirgrid{columns:2}main.merch h1{font-size:1.55rem}}
+@media(max-width:560px){.dirgrid{columns:1}table.offers .terms{display:none}}
+.card .golinks{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:auto}
+.card a.go{text-decoration:none}
+.card a.mp{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+ text-decoration:none;border-bottom:1px dotted rgba(212,175,55,.5);padding-bottom:1px}
+.card a.mp:hover{color:var(--pink)}
 table.codes td.conf{font-size:.74rem;color:var(--muted);white-space:nowrap}
 .go{margin-top:20px;padding-top:16px;border-top:1px dashed rgba(212,175,55,.3);
   text-decoration:none;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pink-2)}
@@ -130,246 +199,246 @@ footer a{color:var(--gold-2)}
   <div class="sect-head"><h2>The Review Desk</h2><div class="rule"></div></div>
   <p class="sect-note">Where the work gets published.</p>
   <div class="grid">
-    <a class="card" href="https://pixies-pantry.com/the-audit/" rel="noopener">
+    <div class="card">
       <span class="tag">Pixie&rsquo;s Pantry</span>
       <h3>The Audit</h3>
       <p class="what">Long-form teardowns and standardised testing of consumption hardware.</p>
       <p class="why"><b>Why I recommend it</b>Every device gets the same protocol: material safety, dosage consistency, surgical-grade check, and sanitisation. Same test, every brand.</p>
       
-      <span class="go">Visit The Audit &rarr;</span>
-    </a>
-    <a class="card" href="https://pixies-pantry.com/knowledge/" rel="noopener">
+      <span class="golinks"><a class="go" href="https://pixies-pantry.com/the-audit/" rel="noopener">Visit The Audit &rarr;</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Pixie&rsquo;s Pantry</span>
       <h3>Knowledge Base</h3>
       <p class="what">17+ explainer articles on how this hardware actually works.</p>
       <p class="why"><b>Why I recommend it</b>Start here if a review used a word you didn't recognise. No jargon left undefined.</p>
       
-      <span class="go">Visit Knowledge Base &rarr;</span>
-    </a>
-    <a class="card" href="https://pixies-pantry.com/compare-portable-devices/" rel="noopener">
+      <span class="golinks"><a class="go" href="https://pixies-pantry.com/knowledge/" rel="noopener">Visit Knowledge Base &rarr;</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Pixie&rsquo;s Pantry</span>
       <h3>Comparison Guides</h3>
       <p class="what">Head-to-head pages for glass filtration, portable devices and desktop devices.</p>
       <p class="why"><b>Why I recommend it</b>For when you've narrowed it to two and want the difference stated plainly.</p>
       
-      <span class="go">Visit Comparison Guides &rarr;</span>
-    </a></div></div></section>
+      <span class="golinks"><a class="go" href="https://pixies-pantry.com/compare-portable-devices/" rel="noopener">Visit Comparison Guides &rarr;</a></span>
+    </div></div></div></section>
 <section class="band" id="camera-capture-gear"><div class="wrap">
   <div class="sect-head"><h2>Camera &amp; Capture Gear</h2><div class="rule"></div></div>
   <p class="sect-note">What the photos and teardown video are shot on.</p>
   <div class="grid">
-    <a class="card" href="https://www.awin1.com/awclick.php?mid=36118&id=2520915" rel="sponsored noopener" target="_blank">
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Leica</h3>
       <p class="what">German camera manufacturer &mdash; M rangefinders, SL and Q series, and the optics behind them.</p>
       <p class="why"><b>Why I recommend it</b>Aspirational, not casual. Leica glass renders material texture (glass, anodising, machining marks) more honestly than anything else I've shot product on.</p>
       
-      <span class="go">Visit Leica &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=79552&awinaffid=2520915&ued=https%3A%2F%2Fwww.ulanzi.de%2F" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/awclick.php?mid=36118&id=2520915" rel="sponsored noopener" target="_blank">Visit Leica &rarr;</a><a class="mp" href="/promo-codes/leica-camera/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Ulanzi</h3>
       <p class="what">Affordable creator accessories: tripods, lights, mounts, cages and phone rigs.</p>
       <p class="why"><b>Why I recommend it</b>80% of the useful shot is lighting and a stable mount, and Ulanzi sells both for the price of a lens cap. Highest value-per-dollar on this page.</p>
       <span class="code"><b>Code</b><code>EXTRA3</code><i>Extra 3% for 10th Anniversary Sale &middot; ends 2027-01-01</i></span>
-      <span class="go">Visit Ulanzi &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=63994&awinaffid=2520915&ued=https%3A%2F%2Fwww.shopapexel.com%2Fproducts%2Fphonemicro-5-smartphone-microscope" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=79552&awinaffid=2520915&ued=https%3A%2F%2Fwww.ulanzi.de%2F" rel="sponsored noopener" target="_blank">Visit Ulanzi &rarr;</a><a class="mp" href="/promo-codes/ulanzi/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Apexel</h3>
       <p class="what">Phone lens attachments including macro and microscope optics.</p>
       <p class="why"><b>Why I recommend it</b>Their macro lenses are how I get usable close-ups of airpath surfaces and screen mesh without a studio rig.</p>
       <span class="code"><b>Code</b><code>JHKJSDB</code><i>PhoneMicro 5 3 in 1 Smartphone Microscope - Apexel &middot; ends 2028-07-12</i></span>
-      <span class="go">Visit Apexel &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=83571&awinaffid=2520915&ued=https%3A%2F%2Fwww.maono.com%2F" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=63994&awinaffid=2520915&ued=https%3A%2F%2Fwww.shopapexel.com%2Fproducts%2Fphonemicro-5-smartphone-microscope" rel="sponsored noopener" target="_blank">Visit Apexel &rarr;</a><a class="mp" href="/promo-codes/apexel/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Maono</h3>
       <p class="what">Budget-to-mid USB and XLR microphones for podcasting and voiceover.</p>
       <p class="why"><b>Why I recommend it</b>Bad audio kills a good review faster than bad video. Maono is the cheapest way to sound legitimate.</p>
       <span class="code"><b>Code</b><code>AFFNEW15</code><i>New User Discount &middot; ends 2026-12-31</i></span>
-      <span class="go">Visit Maono &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=120898&awinaffid=2520915&campaign=Pocket+Ranger+25&ued=https%3A%2F%2Fvsgotech.com%2F" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=83571&awinaffid=2520915&ued=https%3A%2F%2Fwww.maono.com%2F" rel="sponsored noopener" target="_blank">Visit Maono &rarr;</a><a class="mp" href="/promo-codes/maono-technology/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>VSGO</h3>
       <p class="what">Camera cleaning and maintenance gear &mdash; sensor swabs, air blowers, lens kits.</p>
       <p class="why"><b>Why I recommend it</b>Boring, and it protects thousands of dollars of glass. Buy it once.</p>
       <span class="code"><b>Code</b><code>SAVE15</code><i>15%Off Your Entire Order &middot; ends 2032-02-27</i></span>
-      <span class="go">Visit VSGO &rarr;</span>
-    </a></div></div></section>
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=120898&awinaffid=2520915&campaign=Pocket+Ranger+25&ued=https%3A%2F%2Fvsgotech.com%2F" rel="sponsored noopener" target="_blank">Visit VSGO &rarr;</a><a class="mp" href="/promo-codes/vsgo/">Codes &amp; deals</a></span>
+    </div></div></div></section>
 <section class="band" id="editing-ai-publishing-software"><div class="wrap">
   <div class="sect-head"><h2>Editing, AI &amp; Publishing Software</h2><div class="rule"></div></div>
   <p class="sect-note">The stack behind every post, video and product page.</p>
   <div class="grid">
-    <a class="card" href="https://capcutaffiliateprogram.pxf.io/c/5929369/1876054/22474" rel="sponsored noopener" target="_blank">
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>CapCut</h3>
       <p class="what">Video editor for desktop and mobile with auto-captions, templates and background removal.</p>
       <p class="why"><b>Why I recommend it</b>Fastest path from raw teardown footage to something watchable on TikTok. The auto-caption alone saves an hour per video.</p>
       
-      <span class="go">Visit CapCut &rarr;</span>
-    </a>
-    <a class="card" href="https://krisp.pxf.io/c/5929369/2859289/33230" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://capcutaffiliateprogram.pxf.io/c/5929369/1876054/22474" rel="sponsored noopener" target="_blank">Visit CapCut &rarr;</a><a class="mp" href="/promo-codes/capcut-affiliate-program/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Krisp</h3>
       <p class="what">AI noise cancellation and meeting transcription that sits on top of any mic or call app.</p>
       <p class="why"><b>Why I recommend it</b>I record in a house, not a studio. Krisp removes the HVAC and the dog and nothing else.</p>
       
-      <span class="go">Visit Krisp &rarr;</span>
-    </a>
-    <a class="card" href="https://bluehost.sjv.io/c/5929369/795082/11352" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://krisp.pxf.io/c/5929369/2859289/33230" rel="sponsored noopener" target="_blank">Visit Krisp &rarr;</a><a class="mp" href="/promo-codes/krisp/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Bluehost</h3>
       <p class="what">Shared and managed WordPress hosting with domains and one-click installs.</p>
       <p class="why"><b>Why I recommend it</b>The cheap on-ramp for a first WordPress site. Fine to start on, plan to outgrow it.</p>
       
-      <span class="go">Visit Bluehost &rarr;</span>
-    </a>
-    <a class="card" href="https://crazydomains.sjv.io/c/5929369/1250155/15393" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://bluehost.sjv.io/c/5929369/795082/11352" rel="sponsored noopener" target="_blank">Visit Bluehost &rarr;</a><a class="mp" href="/promo-codes/bluehost/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Crazy Domains</h3>
       <p class="what">Domain registration, hosting and business email.</p>
       <p class="why"><b>Why I recommend it</b>Where you go when the .com you want is taken and you need to compare twelve extensions fast.</p>
       
-      <span class="go">Visit Crazy Domains &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=93423&awinaffid=2520915&ued=https%3A%2F%2Facademy.101blockchains.com%2F" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://crazydomains.sjv.io/c/5929369/1250155/15393" rel="sponsored noopener" target="_blank">Visit Crazy Domains &rarr;</a><a class="mp" href="/promo-codes/crazy-domains-affiliate-program/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>101 Blockchains</h3>
       <p class="what">Structured certification training in blockchain and Web3 fundamentals.</p>
       <p class="why"><b>Why I recommend it</b>For people who want the vocabulary and the credential rather than a YouTube rabbit hole.</p>
       <span class="code"><b>Code</b><code>BCHAIN20</code><i>20% OFF on any certification and courses &middot; ends 2050-12-31</i></span>
-      <span class="go">Visit 101 Blockchains &rarr;</span>
-    </a></div></div></section>
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=93423&awinaffid=2520915&ued=https%3A%2F%2Facademy.101blockchains.com%2F" rel="sponsored noopener" target="_blank">Visit 101 Blockchains &rarr;</a><a class="mp" href="/promo-codes/101-blockchains/">Codes &amp; deals</a></span>
+    </div></div></div></section>
 <section class="band" id="business-back-office"><div class="wrap">
   <div class="sect-head"><h2>Business Back Office</h2><div class="rule"></div></div>
   <p class="sect-note">Boring infrastructure that keeps a one-person operation legal and paid.</p>
   <div class="grid">
-    <a class="card" href="https://www.awin1.com/awclick.php?mid=39136&id=2520915" rel="sponsored noopener" target="_blank">
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Business Anywhere</h3>
       <p class="what">LLC formation, registered agent, virtual mailbox, EIN filing and online notary in one dashboard.</p>
       <p class="why"><b>Why I recommend it</b>Formed properly, with a real registered address that isn't your kitchen. This is step one for anyone monetising a hobby.</p>
       
-      <span class="go">Visit Business Anywhere &rarr;</span>
-    </a>
-    <a class="card" href="https://easyship.ilbqy6.net/c/5929369/666308/10435" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/awclick.php?mid=39136&id=2520915" rel="sponsored noopener" target="_blank">Visit Business Anywhere &rarr;</a><a class="mp" href="/promo-codes/businessanywhere/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Easyship</h3>
       <p class="what">Multi-carrier shipping rate comparison and label generation for ecommerce.</p>
       <p class="why"><b>Why I recommend it</b>Shipping is the second biggest line item in a small store. Easyship is how you stop overpaying one carrier out of habit.</p>
       
-      <span class="go">Visit Easyship &rarr;</span>
-    </a>
-    <a class="card" href="https://talkroute.sjv.io/c/5929369/1668795/19348" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://easyship.ilbqy6.net/c/5929369/666308/10435" rel="sponsored noopener" target="_blank">Visit Easyship &rarr;</a><a class="mp" href="/promo-codes/easyship-ambassador-program/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Talkroute</h3>
       <p class="what">Virtual business phone system that routes a real business number to your devices.</p>
       <p class="why"><b>Why I recommend it</b>Keeps your personal cell off the internet while still answering every call.</p>
       
-      <span class="go">Visit Talkroute &rarr;</span>
-    </a>
-    <a class="card" href="https://sentrypc.7eer.net/c/5929369/200311/3022" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://talkroute.sjv.io/c/5929369/1668795/19348" rel="sponsored noopener" target="_blank">Visit Talkroute &rarr;</a><a class="mp" href="/promo-codes/talkroute-affiliate-program/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>SentryPC</h3>
       <p class="what">Cloud-based computer monitoring, filtering and time management.</p>
       <p class="why"><b>Why I recommend it</b>Practical for family devices and for locking a shared work machine to work.</p>
       
-      <span class="go">Visit SentryPC &rarr;</span>
-    </a>
-    <a class="card" href="https://bitdefender.f9tmep.net/c/5929369/278689/4466" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://sentrypc.7eer.net/c/5929369/200311/3022" rel="sponsored noopener" target="_blank">Visit SentryPC &rarr;</a><a class="mp" href="/promo-codes/sentrypc/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Bitdefender</h3>
       <p class="what">Antivirus and endpoint security for Windows, macOS, Android and iOS.</p>
       <p class="why"><b>Why I recommend it</b>One compromised laptop takes down a store, a mailbox and a payment processor at once. Cheap insurance.</p>
       
-      <span class="go">Visit Bitdefender &rarr;</span>
-    </a>
-    <a class="card" href="https://suppliesoutlet.pxf.io/c/5929369/2006697/24774" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://bitdefender.f9tmep.net/c/5929369/278689/4466" rel="sponsored noopener" target="_blank">Visit Bitdefender &rarr;</a><a class="mp" href="/promo-codes/bitdefender/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Supplies Outlet</h3>
       <p class="what">Discount printer ink and toner, including compatible cartridges.</p>
       <p class="why"><b>Why I recommend it</b>We print labels, inserts and event material constantly. OEM ink pricing is a scam and this is the fix.</p>
       
-      <span class="go">Visit Supplies Outlet &rarr;</span>
-    </a>
-    <a class="card" href="https://instantfunding.sjv.io/c/5929369/2386495/29840" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://suppliesoutlet.pxf.io/c/5929369/2006697/24774" rel="sponsored noopener" target="_blank">Visit Supplies Outlet &rarr;</a><a class="mp" href="/promo-codes/supplies-outlet/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Instant Funding</h3>
       <p class="what">Funding platform for traders and small operators seeking capital.</p>
       <p class="why"><b>Why I recommend it</b>Listed for transparency because it's in my portfolio. High-risk category &mdash; read every term before you fund anything.</p>
       
-      <span class="go">Visit Instant Funding &rarr;</span>
-    </a></div></div></section>
+      <span class="golinks"><a class="go" href="https://instantfunding.sjv.io/c/5929369/2386495/29840" rel="sponsored noopener" target="_blank">Visit Instant Funding &rarr;</a><a class="mp" href="/promo-codes/instant-funding/">Codes &amp; deals</a></span>
+    </div></div></div></section>
 <section class="band" id="tech-i-actually-use"><div class="wrap">
   <div class="sect-head"><h2>Tech I Actually Use</h2><div class="rule"></div></div>
   <p class="sect-note">Consumer hardware that survived long enough to get recommended.</p>
   <div class="grid">
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=90689&awinaffid=2520915&ued=https%3A%2F%2Fwww.dhgate.com%2Fsales%2Fmarket%2Fanniversarysale.html" rel="sponsored noopener" target="_blank">
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>DHgate</h3>
       <p class="what">Factory-direct marketplace for electronics parts, camera accessories, cables, cages and rigging &mdash; often the same units sold under Western brand names.</p>
       <p class="why"><b>Why I recommend it</b>Where I source cheap accessories worth testing before recommending. Slow shipping and uneven quality control are the trade for the price.</p>
       <span class="code"><b>Code</b><code>DH9013AUGP</code><i>Anniversary Sale 14% coupons(£90-£13) &middot; ends 2026-09-01</i></span>
-      <span class="go">Visit DHgate &rarr;</span>
-    </a>
-    <a class="card" href="https://ankersolix.pxf.io/c/5929369/2241990/29130" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=90689&awinaffid=2520915&ued=https%3A%2F%2Fwww.dhgate.com%2Fsales%2Fmarket%2Fanniversarysale.html" rel="sponsored noopener" target="_blank">Visit DHgate &rarr;</a><a class="mp" href="/promo-codes/dhgate/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Anker SOLIX</h3>
       <p class="what">Portable power stations and solar generators from Anker.</p>
       <p class="why"><b>Why I recommend it</b>Mississippi storms take the power out. A SOLIX runs the router, the lights and a laptop through it.</p>
       
-      <span class="go">Visit Anker SOLIX &rarr;</span>
-    </a>
-    <a class="card" href="https://eufy-us.sjv.io/c/5929369/999452/13094" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://ankersolix.pxf.io/c/5929369/2241990/29130" rel="sponsored noopener" target="_blank">Visit Anker SOLIX &rarr;</a><a class="mp" href="/promo-codes/ankersolix/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Eufy</h3>
       <p class="what">Smart home cameras, robot vacuums and doorbells with local storage options.</p>
       <p class="why"><b>Why I recommend it</b>The local-storage models mean footage of your front door doesn't have to live on someone's cloud.</p>
       
-      <span class="go">Visit Eufy &rarr;</span>
-    </a>
-    <a class="card" href="https://simplisafe.sjv.io/c/5929369/1402420/16688?utm_medium=affiliate" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://eufy-us.sjv.io/c/5929369/999452/13094" rel="sponsored noopener" target="_blank">Visit Eufy &rarr;</a><a class="mp" href="/promo-codes/eufy/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>SimpliSafe</h3>
       <p class="what">DIY home security system with optional professional monitoring, no contract.</p>
       <p class="why"><b>Why I recommend it</b>Renter-friendly, no drilling, no lock-in. Good fit for a home-run business holding inventory.</p>
       
-      <span class="go">Visit SimpliSafe &rarr;</span>
-    </a>
-    <a class="card" href="https://plaudus.sjv.io/c/5929369/2898403/33953" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://simplisafe.sjv.io/c/5929369/1402420/16688?utm_medium=affiliate" rel="sponsored noopener" target="_blank">Visit SimpliSafe &rarr;</a><a class="mp" href="/promo-codes/simplisafe-home-security/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>PLAUD</h3>
       <p class="what">AI voice recorders that transcribe and summarise meetings and notes.</p>
       <p class="why"><b>Why I recommend it</b>I talk through teardowns while my hands are busy. This turns that into usable notes.</p>
       
-      <span class="go">Visit PLAUD &rarr;</span>
-    </a>
-    <a class="card" href="https://atomstack.sjv.io/c/5929369/2110496/26755" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://plaudus.sjv.io/c/5929369/2898403/33953" rel="sponsored noopener" target="_blank">Visit PLAUD &rarr;</a><a class="mp" href="/promo-codes/plaud/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>AtomStack</h3>
       <p class="what">Desktop laser engravers and cutters for small-batch fabrication.</p>
       <p class="why"><b>Why I recommend it</b>How you get branded packaging, signage and event props without a print vendor and a minimum order.</p>
       
-      <span class="go">Visit AtomStack &rarr;</span>
-    </a>
-    <a class="card" href="https://roborockamazonseller.pxf.io/c/5929369/2378459/29805" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://atomstack.sjv.io/c/5929369/2110496/26755" rel="sponsored noopener" target="_blank">Visit AtomStack &rarr;</a><a class="mp" href="/promo-codes/atomstack/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Roborock</h3>
       <p class="what">Robot vacuums and mops with lidar mapping.</p>
       <p class="why"><b>Why I recommend it</b>A shop that photographs glass has to be dust-free. This runs while I sleep.</p>
       
-      <span class="go">Visit Roborock &rarr;</span>
-    </a>
-    <a class="card" href="https://mountit.pxf.io/c/5929369/2936681/34723" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://roborockamazonseller.pxf.io/c/5929369/2378459/29805" rel="sponsored noopener" target="_blank">Visit Roborock &rarr;</a><a class="mp" href="/promo-codes/roborock-amazon-seller/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Mount-It!</h3>
       <p class="what">Monitor arms, TV mounts, standing desk converters and ergonomic office hardware.</p>
       <p class="why"><b>Why I recommend it</b>Cheapest fix for the neck pain that comes with editing 8 hours a day.</p>
       
-      <span class="go">Visit Mount-It! &rarr;</span>
-    </a></div></div></section>
+      <span class="golinks"><a class="go" href="https://mountit.pxf.io/c/5929369/2936681/34723" rel="sponsored noopener" target="_blank">Visit Mount-It! &rarr;</a><a class="mp" href="/promo-codes/mount-it/">Codes &amp; deals</a></span>
+    </div></div></div></section>
 <footer><div class="wrap">
 <p class="disc"><b>Affiliate disclosure:</b> many links on this page are affiliate links. If you
 buy through them, Pixie&rsquo;s Pantry may earn a commission at no extra cost to you. It never

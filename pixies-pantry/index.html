@@ -93,6 +93,75 @@ table.codes code{font-family:'Cinzel',serif;letter-spacing:.14em;color:var(--gol
   background:rgba(0,0,0,.5);border:1px solid rgba(212,175,55,.45);padding:2px 9px;white-space:nowrap}
 table.codes a{color:var(--pink-2);text-decoration:none}
 table.codes a:hover{color:var(--gold-2)}
+
+/* ---- merchant promo pages ---- */
+nav.crumbs{border-bottom:1px solid rgba(212,175,55,.22);padding:14px 0;font-size:.74rem;
+ letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+nav.crumbs a{color:var(--gold)}
+main.merch{padding:44px 0 70px;max-width:860px}
+main.merch h1{font-family:'Cinzel',serif;font-size:clamp(1.7rem,4.4vw,2.7rem);color:var(--gold-2);
+ line-height:1.15;margin:0 0 14px}
+main.merch h2{font-family:'Cinzel',serif;font-size:1.12rem;color:var(--gold);margin:38px 0 10px;
+ padding-top:16px;border-top:1px solid rgba(212,175,55,.18)}
+main.merch p{line-height:1.72;margin:0 0 12px}
+main.merch .lede{font-size:1.06rem;color:#f0e6d2}
+main.merch .verified{font-size:.78rem;color:var(--muted);letter-spacing:.06em}
+.hero-offer{margin:26px 0 8px;padding:26px 24px;border:1px solid var(--gold);border-radius:4px;
+ background:linear-gradient(160deg,rgba(255,77,157,.10),rgba(212,175,55,.07));text-align:center;
+ position:relative}
+.hero-offer:before,.hero-offer:after{content:"";position:absolute;width:16px;height:16px;
+ border:2px solid var(--gold-2)}
+.hero-offer:before{top:7px;left:7px;border-right:0;border-bottom:0}
+.hero-offer:after{bottom:7px;right:7px;border-left:0;border-top:0}
+.hero-offer .badge{font-family:'Cinzel',serif;letter-spacing:.22em;text-transform:uppercase;
+ font-size:.68rem;color:var(--pink);margin:0 0 10px}
+.hero-offer .bigcode{font-family:'Cinzel',serif;font-size:clamp(1.9rem,6vw,2.9rem);color:#fff;
+ letter-spacing:.14em;margin:0;text-shadow:0 0 22px rgba(255,77,157,.4)}
+.hero-offer .bigoff{font-size:1.25rem;color:var(--gold-2);margin:4px 0 6px;letter-spacing:.04em}
+.hero-offer .hmeta{font-size:.76rem;color:var(--muted);margin:0 0 16px}
+.hero-offer .hnote{font-size:.78rem;color:var(--muted);margin:14px 0 0;line-height:1.6}
+a.cta{display:inline-block;background:var(--pink);color:#1a0010;font-family:'Cinzel',serif;
+ letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;padding:13px 26px;border-radius:2px;
+ text-decoration:none;font-weight:600}
+a.cta:hover{background:var(--gold-2);color:#150f00}
+a.cta.small{background:transparent;border:1px solid var(--gold);color:var(--gold-2);font-size:.72rem;
+ padding:10px 20px}
+a.cta.small:hover{background:var(--gold);color:#120d00}
+table.offers{width:100%;border-collapse:collapse;margin:14px 0 6px;font-size:.85rem}
+table.offers th{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+ color:var(--gold);text-align:left;padding:8px 10px;border-bottom:1px solid rgba(212,175,55,.3)}
+table.offers td{padding:10px;border-bottom:1px solid rgba(255,255,255,.07);vertical-align:top}
+table.offers code{color:var(--pink);font-size:.92rem;letter-spacing:.08em}
+table.offers .ex{display:inline-block;margin-left:7px;font-size:.56rem;letter-spacing:.14em;
+ text-transform:uppercase;color:#1a0010;background:var(--gold-2);padding:2px 6px;border-radius:2px}
+.terms{color:var(--muted);font-size:.78rem;line-height:1.5}
+ul.sales{list-style:none;padding:0;margin:12px 0}
+ul.sales li{padding:11px 0;border-bottom:1px solid rgba(255,255,255,.07);line-height:1.6}
+ul.sales a{color:var(--gold-2);text-decoration:none}
+ul.sales a:hover{color:var(--pink)}
+.smeta{color:var(--muted);font-size:.76rem}
+.warn{color:var(--muted);font-size:.82rem}
+ul.expired{list-style:none;padding:0;margin:10px 0;opacity:.62;font-size:.82rem}
+ul.expired li{padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.xtag{display:inline-block;font-size:.56rem;letter-spacing:.14em;background:#5a1020;color:#ffb9cd;
+ padding:2px 6px;border-radius:2px;margin-right:8px}
+.xlinks a{color:var(--gold-2)}
+.disclose{margin-top:34px;padding-top:16px;border-top:1px solid rgba(212,175,55,.2);
+ font-size:.78rem;color:var(--muted);line-height:1.6}
+/* directory */
+.dirgrid{columns:3;column-gap:26px;margin:10px 0 0;font-size:.86rem}
+.dirgrid a{display:block;padding:4px 0;color:#e8dcc8;text-decoration:none;break-inside:avoid}
+.dirgrid a:hover{color:var(--pink)}
+.dirgrid .n{color:var(--muted);font-size:.72rem}
+.dirletter{font-family:'Cinzel',serif;color:var(--gold);margin:16px 0 4px;letter-spacing:.14em;
+ break-after:avoid}
+@media(max-width:860px){.dirgrid{columns:2}main.merch h1{font-size:1.55rem}}
+@media(max-width:560px){.dirgrid{columns:1}table.offers .terms{display:none}}
+.card .golinks{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:auto}
+.card a.go{text-decoration:none}
+.card a.mp{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+ text-decoration:none;border-bottom:1px dotted rgba(212,175,55,.5);padding-bottom:1px}
+.card a.mp:hover{color:var(--pink)}
 table.codes td.conf{font-size:.74rem;color:var(--muted);white-space:nowrap}
 .go{margin-top:20px;padding-top:16px;border-top:1px dashed rgba(212,175,55,.3);
   text-decoration:none;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pink-2)}
@@ -130,286 +199,286 @@ footer a{color:var(--gold-2)}
   <div class="sect-head"><h2>Start Here</h2><div class="rule"></div></div>
   <p class="sect-note">The store itself, and the pages people ask for most.</p>
   <div class="grid">
-    <a class="card" href="https://pixies-pantry.com/shop" rel="noopener">
+    <div class="card">
       <span class="tag">Pixie&rsquo;s Pantry</span>
       <h3>Pixie's Pantry Shop</h3>
       <p class="what">Our own store: hemp &amp; THCa flower, glass, vaporizers and accessories, with $10 flat shipping and free shipping over $55.</p>
       <p class="why"><b>Why I recommend it</b>It's the only place where I control the sourcing, the photos, the descriptions and the aftercare. If I sell it, I've handled it.</p>
       
-      <span class="go">Visit Pixie's Pantry Shop &rarr;</span>
-    </a>
-    <a class="card" href="https://pixies-pantry.com/the-audit/" rel="noopener">
+      <span class="golinks"><a class="go" href="https://pixies-pantry.com/shop" rel="noopener">Visit Pixie's Pantry Shop &rarr;</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Pixie&rsquo;s Pantry</span>
       <h3>The Audit</h3>
       <p class="what">Our teardown and testing write-ups &mdash; material safety, thermal behaviour, cleanability, and what a device actually costs to own.</p>
       <p class="why"><b>Why I recommend it</b>This is the reason the store exists. Read the audit before you spend money anywhere, including here.</p>
       
-      <span class="go">Visit The Audit &rarr;</span>
-    </a>
-    <a class="card" href="https://pixies-pantry.com/trust-center/" rel="noopener">
+      <span class="golinks"><a class="go" href="https://pixies-pantry.com/the-audit/" rel="noopener">Visit The Audit &rarr;</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Pixie&rsquo;s Pantry</span>
       <h3>Trust Center</h3>
       <p class="what">Sourcing, testing, compliance and return policy in one place.</p>
       <p class="why"><b>Why I recommend it</b>Transparency isn't a feature &mdash; it's the foundation. If you want the receipts, they're here.</p>
       
-      <span class="go">Visit Trust Center &rarr;</span>
-    </a>
-    <a class="card" href="https://pixies-pantry.com/deals/" rel="noopener">
+      <span class="golinks"><a class="go" href="https://pixies-pantry.com/trust-center/" rel="noopener">Visit Trust Center &rarr;</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Pixie&rsquo;s Pantry</span>
       <h3>Current Deals</h3>
       <p class="what">Live discounts and bundles across the catalog.</p>
       <p class="why"><b>Why I recommend it</b>Where I put the actual price breaks instead of fake countdown timers.</p>
       
-      <span class="go">Visit Current Deals &rarr;</span>
-    </a></div></div></section>
+      <span class="golinks"><a class="go" href="https://pixies-pantry.com/deals/" rel="noopener">Visit Current Deals &rarr;</a></span>
+    </div></div></div></section>
 <section class="band" id="vaporizers-thermal-extraction"><div class="wrap">
   <div class="sect-head"><h2>Vaporizers &amp; Thermal Extraction</h2><div class="rule"></div></div>
   <p class="sect-note">Devices that heat rather than burn. These are the brands I've tested hardest.</p>
   <div class="grid">
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=15607&awinaffid=2520915&ued=https%3A%2F%2Fwww.storz-bickel.com%2Fen-us%2F" rel="sponsored noopener" target="_blank">
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Storz &amp; Bickel</h3>
       <p class="what">The German engineering house behind the Volcano, Mighty+, Venty and Crafty+, built under an ISO 13485 medical-device quality system.</p>
       <p class="why"><b>Why I recommend it</b>The only vaporizer maker whose manufacturing standard matches the medical claims people make about vaping. Expensive, and worth it &mdash; the Volcano outlives everything else in the room.</p>
       <span class="code"><b>Code</b><code>alice 10% off discount</code><i>alice 10% off discount &middot; ends 2026-12-31</i></span>
-      <span class="go">Visit Storz &amp; Bickel &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=100821&awinaffid=2520915&ued=https%3A%2F%2Feyce.com" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=15607&awinaffid=2520915&ued=https%3A%2F%2Fwww.storz-bickel.com%2Fen-us%2F" rel="sponsored noopener" target="_blank">Visit Storz &amp; Bickel &rarr;</a><a class="mp" href="/promo-codes/storz-and-bickel/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>DaVinci Vaporizers</h3>
       <p class="what">American portable vaporizers (IQ series, ARTIQ) built around precision temperature control and inert airpaths.</p>
       <p class="why"><b>Why I recommend it</b>DaVinci publishes real material information about its airpath &mdash; zirconia and glass, not mystery alloys. Best pick when you want clinical control in a pocket device.</p>
       <span class="code"><b>Code</b><code>SYNERGY10</code><i>10% Off eyce.com &middot; ends 2050-12-31</i></span>
-      <span class="go">Visit DaVinci Vaporizers &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/awclick.php?mid=120641&id=2520915" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=100821&awinaffid=2520915&ued=https%3A%2F%2Feyce.com" rel="sponsored noopener" target="_blank">Visit DaVinci Vaporizers &rarr;</a><a class="mp" href="/promo-codes/davinci-vaporizers/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>AirVape</h3>
       <p class="what">US portable dry-herb vaporizer brand known for very slim, well-finished devices.</p>
       <p class="why"><b>Why I recommend it</b>The one I hand to people who found the Mighty too bulky. Solid vapour quality per dollar and genuinely pocketable.</p>
       
-      <span class="go">Visit AirVape &rarr;</span>
-    </a>
-    <a class="card" href="https://drdabber.sjv.io/c/5929369/1892868/22644" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/awclick.php?mid=120641&id=2520915" rel="sponsored noopener" target="_blank">Visit AirVape &rarr;</a><a class="mp" href="/promo-codes/airvape/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Dr. Dabber</h3>
       <p class="what">Concentrate-focused electronic rigs and pens (Boost, SwitchXL) with induction and e-nail heating.</p>
       <p class="why"><b>Why I recommend it</b>We're an authorized vendor, so I know the warranty is real. If you dab, this is the least fussy way to do it accurately.</p>
       
-      <span class="go">Visit Dr. Dabber &rarr;</span>
-    </a></div></div></section>
+      <span class="golinks"><a class="go" href="https://drdabber.sjv.io/c/5929369/1892868/22644" rel="sponsored noopener" target="_blank">Visit Dr. Dabber &rarr;</a><a class="mp" href="/promo-codes/dr-dabber/">Codes &amp; deals</a></span>
+    </div></div></div></section>
 <section class="band" id="glass-filtration"><div class="wrap">
   <div class="sect-head"><h2>Glass &amp; Filtration</h2><div class="rule"></div></div>
   <p class="sect-note">Water pipes, rigs and modular systems &mdash; the part of the ritual you actually touch.</p>
   <div class="grid">
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=69822&awinaffid=2520915&ued=https%3A%2F%2Fsessiongoods.com" rel="sponsored noopener" target="_blank">
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Session Goods</h3>
       <p class="what">Modern, minimalist glassware &mdash; bongs, pipes and stash kits designed to look like homewares.</p>
       <p class="why"><b>Why I recommend it</b>For anyone who wants good filtration without a novelty dragon on the shelf. Also the easiest glass on this page to clean.</p>
       <span class="code"><b>Code</b><code>No Code Required</code><i>Free Shipping on Orders over $150 at Session Goods - No Code Required &middot; ends 2050-12-31</i></span>
-      <span class="go">Visit Session Goods &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=105485&awinaffid=2520915&ued=https%3A%2F%2Fwww.vitaeglass.com" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=69822&awinaffid=2520915&ued=https%3A%2F%2Fsessiongoods.com" rel="sponsored noopener" target="_blank">Visit Session Goods &rarr;</a><a class="mp" href="/promo-codes/session-goods/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>VITAE Glass</h3>
       <p class="what">Modular water pipes that break down into parts for cleaning, customising and replacing.</p>
       <p class="why"><b>Why I recommend it</b>Modularity is the single biggest upgrade to glass hygiene. One cracked piece stops being a whole new bong.</p>
       <span class="code"><b>Code</b><code>VITAE15RPM</code><i>Save 15% at VitaeGlass.com with Code VITAE15RPM. &middot; ends 2027-12-31</i></span>
-      <span class="go">Visit VITAE Glass &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/awclick.php?mid=123098&id=2520915" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=105485&awinaffid=2520915&ued=https%3A%2F%2Fwww.vitaeglass.com" rel="sponsored noopener" target="_blank">Visit VITAE Glass &rarr;</a><a class="mp" href="/promo-codes/vitae-glass/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>EYCE</h3>
       <p class="what">Platinum-cured silicone pipes, rigs and accessories &mdash; effectively unbreakable.</p>
       <p class="why"><b>Why I recommend it</b>The right answer for travel, outdoors, and households with hardwood floors. Silicone that's actually rated for it, not craft-store rubber.</p>
       
-      <span class="go">Visit EYCE &rarr;</span>
-    </a>
-    <a class="card" href="https://smokecartel.pxf.io/c/5929369/2120665/26924" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/awclick.php?mid=123098&id=2520915" rel="sponsored noopener" target="_blank">Visit EYCE &rarr;</a><a class="mp" href="/promo-codes/eyce/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Smoke Cartel</h3>
       <p class="what">One of the largest online headshops &mdash; 5,000+ products across glass, vapes and accessories.</p>
       <p class="why"><b>Why I recommend it</b>When I don't stock a shape you want, this is where the breadth is. 90-day cookie means their affiliate program is honest about how people shop.</p>
       <span class="code"><b>My code</b><code>MELLOWPIXIE</code><i>5% off</i></span>
-      <span class="go">Visit Smoke Cartel &rarr;</span>
-    </a>
-    <a class="card" href="https://dankstop.sjv.io/c/5929369/2120669/26925" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://smokecartel.pxf.io/c/5929369/2120665/26924" rel="sponsored noopener" target="_blank">Visit Smoke Cartel &rarr;</a><a class="mp" href="/promo-codes/smoke-cartel/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>DankStop</h3>
       <p class="what">Long-running online glass and accessory retailer under High Tide.</p>
       <p class="why"><b>Why I recommend it</b>Deep bench of American-made borosilicate. Good place to compare joint sizes and percolator styles side by side.</p>
       
-      <span class="go">Visit DankStop &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=68088&awinaffid=2520915&ued=https%3A%2F%2Fwww.cannabox.com" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://dankstop.sjv.io/c/5929369/2120669/26925" rel="sponsored noopener" target="_blank">Visit DankStop &rarr;</a><a class="mp" href="/promo-codes/dankstop/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Cannabox</h3>
       <p class="what">Monthly subscription box of glass, papers and accessories, plus a full online shop.</p>
       <p class="why"><b>Why I recommend it</b>The cheapest way to build an accessory drawer without buying 12 things at retail. Good gift, low commitment.</p>
       <span class="code"><b>Code</b><code>Sign up for email newsletter</code><i>10% Off First Purchase! &middot; ends 2050-12-31</i></span>
-      <span class="go">Visit Cannabox &rarr;</span>
-    </a>
-    <a class="card" href="https://daily-high-club-affiliate-program.pxf.io/c/5929369/673119/10481" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=68088&awinaffid=2520915&ued=https%3A%2F%2Fwww.cannabox.com" rel="sponsored noopener" target="_blank">Visit Cannabox &rarr;</a><a class="mp" href="/promo-codes/cannabox/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Daily High Club</h3>
       <p class="what">Subscription boxes and a large accessory catalog, heavy on papers, grinders and small glass.</p>
       <p class="why"><b>Why I recommend it</b>Similar idea to Cannabox with a different curation taste &mdash; pick whichever box matches how you actually smoke.</p>
       
-      <span class="go">Visit Daily High Club &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/awclick.php?mid=77270&id=2520915" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://daily-high-club-affiliate-program.pxf.io/c/5929369/673119/10481" rel="sponsored noopener" target="_blank">Visit Daily High Club &rarr;</a><a class="mp" href="/promo-codes/daily-high-club-affiliate-program/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Central Vapors</h3>
       <p class="what">Vape hardware and e-liquid retailer trading since 2013.</p>
       <p class="why"><b>Why I recommend it</b>Old guard, still shipping, still supporting what they sell &mdash; that longevity is rare in this category.</p>
       
-      <span class="go">Visit Central Vapors &rarr;</span>
-    </a></div></div></section>
+      <span class="golinks"><a class="go" href="https://www.awin1.com/awclick.php?mid=77270&id=2520915" rel="sponsored noopener" target="_blank">Visit Central Vapors &rarr;</a><a class="mp" href="/promo-codes/central-vapors/">Codes &amp; deals</a></span>
+    </div></div></div></section>
 <section class="band" id="accessories-papers-hygiene"><div class="wrap">
   <div class="sect-head"><h2>Accessories, Papers &amp; Hygiene</h2><div class="rule"></div></div>
   <p class="sect-note">The consumables. Cheap to replace, expensive to get wrong.</p>
   <div class="grid">
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=90689&awinaffid=2520915&ued=https%3A%2F%2Fwww.dhgate.com%2Fsales%2Fmarket%2Fanniversarysale.html" rel="sponsored noopener" target="_blank">
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>DHgate</h3>
       <p class="what">Wholesale marketplace selling glass, grinders, storage and shop supplies straight from the factories that produce them.</p>
       <p class="why"><b>Why I recommend it</b>Useful for bulk consumables and cases where brand does not matter. I would not buy anything you inhale through here &mdash; no lab reports, no material guarantees.</p>
       <span class="code"><b>Code</b><code>DH9013AUGP</code><i>Anniversary Sale 14% coupons(£90-£13) &middot; ends 2026-09-01</i></span>
-      <span class="go">Visit DHgate &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/awclick.php?mid=71173&id=2520915" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=90689&awinaffid=2520915&ued=https%3A%2F%2Fwww.dhgate.com%2Fsales%2Fmarket%2Fanniversarysale.html" rel="sponsored noopener" target="_blank">Visit DHgate &rarr;</a><a class="mp" href="/promo-codes/dhgate/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>DaySavers</h3>
       <p class="what">Rolling papers and cones tested to regulated-cannabis standards for heavy metals, microbials and pesticides.</p>
       <p class="why"><b>Why I recommend it</b>The only paper brand I've seen publish contaminant testing. You're inhaling the paper too &mdash; that matters more than the branding.</p>
       <span class="code"><b>My code</b><code>DUSTY</code><i>10% off any order &middot; terms last confirmed 2025-10-23</i></span>
-      <span class="go">Visit DaySavers &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/awclick.php?mid=82441&id=2520915" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/awclick.php?mid=71173&id=2520915" rel="sponsored noopener" target="_blank">Visit DaySavers &rarr;</a><a class="mp" href="/promo-codes/daysavers/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>King Palm</h3>
       <p class="what">Real palm-leaf wraps and cones, tobacco-free and hand-rolled.</p>
       <p class="why"><b>Why I recommend it</b>Slow, even burn without the chemical taste of flavoured blunt wraps. Good option if you're moving off tobacco leaf.</p>
       
-      <span class="go">Visit King Palm &rarr;</span>
-    </a>
-    <a class="card" href="https://mooselabs.pxf.io/c/5929369/2944306/34865" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/awclick.php?mid=82441&id=2520915" rel="sponsored noopener" target="_blank">Visit King Palm &rarr;</a><a class="mp" href="/promo-codes/king-palm/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Moose Labs (MouthPeace)</h3>
       <p class="what">Silicone mouthpiece filters that sit between you and any shared pipe, filtering resin and bacteria.</p>
       <p class="why"><b>Why I recommend it</b>The most useful $10 accessory in the category, and the polite thing to carry in a session with friends.</p>
       
-      <span class="go">Visit Moose Labs (MouthPeace) &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=83829&awinaffid=2520915&ued=https%3A%2F%2Fwww.O2VAPE.com" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://mooselabs.pxf.io/c/5929369/2944306/34865" rel="sponsored noopener" target="_blank">Visit Moose Labs (MouthPeace) &rarr;</a><a class="mp" href="/promo-codes/moose-labs/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>O2VAPE</h3>
       <p class="what">US Navy veteran- and woman-owned vape hardware maker with patented all-glass cartridge technology.</p>
       <p class="why"><b>Why I recommend it</b>All-glass carts avoid the plastic and cheap wick materials that dominate the market. Domestic, accountable, and they answer the phone.</p>
       <span class="code"><b>Code</b><code>VAPE510</code><i>&quot;Vape 510&quot; - 15% Discount Sitewide &middot; ends 2050-12-31</i></span>
-      <span class="go">Visit O2VAPE &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/awclick.php?mid=102363&id=2520915" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=83829&awinaffid=2520915&ued=https%3A%2F%2Fwww.O2VAPE.com" rel="sponsored noopener" target="_blank">Visit O2VAPE &rarr;</a><a class="mp" href="/promo-codes/o2vape/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Mason Jar Lifestyle</h3>
       <p class="what">Lids, seals and accessories that turn ordinary Mason jars into proper storage.</p>
       <p class="why"><b>Why I recommend it</b>Best cheap cure-and-storage system there is. Glass, airtight, no plastic off-gassing into your flower.</p>
       
-      <span class="go">Visit Mason Jar Lifestyle &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=85469&awinaffid=2520915&ued=https%3A%2F%2Fwww.vapebest.ca%2Fcollections%2Fpride-season-sale%3Futm_source%3Dawin%26utm_medium%3Dawin%26utm_campaign%3DPride%2BSeason%2BSale%2B%25E2%2580%2593%2BSave%2BUp%2Bto%2BCAD%2B%252415%2Bon%2BDisposable%2BVapes%2B%2526%2BPod%2BDevices" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/awclick.php?mid=102363&id=2520915" rel="sponsored noopener" target="_blank">Visit Mason Jar Lifestyle &rarr;</a><a class="mp" href="/promo-codes/mason-jar-lifestyle/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>VapeBest</h3>
       <p class="what">Broad vapor-product retailer carrying mainstream vape hardware.</p>
       <p class="why"><b>Why I recommend it</b>Useful for hardware we deliberately don't carry. Listed for completeness, not as a headline pick.</p>
       <span class="code"><b>Code</b><code>BEYOU10</code><i>Pride Season Sale – Save Up to CAD $15 on Disposable Vapes & Pod Devices &middot; ends 2027-02-28</i></span>
-      <span class="go">Visit VapeBest &rarr;</span>
-    </a></div></div></section>
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=85469&awinaffid=2520915&ued=https%3A%2F%2Fwww.vapebest.ca%2Fcollections%2Fpride-season-sale%3Futm_source%3Dawin%26utm_medium%3Dawin%26utm_campaign%3DPride%2BSeason%2BSale%2B%25E2%2580%2593%2BSave%2BUp%2Bto%2BCAD%2B%252415%2Bon%2BDisposable%2BVapes%2B%2526%2BPod%2BDevices" rel="sponsored noopener" target="_blank">Visit VapeBest &rarr;</a><a class="mp" href="/promo-codes/motivape/">Codes &amp; deals</a></span>
+    </div></div></div></section>
 <section class="band" id="hemp-cbd-cultivation"><div class="wrap">
   <div class="sect-head"><h2>Hemp, CBD &amp; Cultivation</h2><div class="rule"></div></div>
   <p class="sect-note">21+ only. Compliance rules vary by state &mdash; check yours before ordering.</p>
   <div class="grid">
-    <a class="card" href="https://www.awin1.com/awclick.php?mid=84735&id=2520915" rel="sponsored noopener" target="_blank">
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Penguin CBD</h3>
       <p class="what">Broad-spectrum CBD oils, gummies and creams with published third-party lab results.</p>
       <p class="why"><b>Why I recommend it</b>COAs on every batch, which is the entire bar for buying CBD online. If a brand won't show you the lab sheet, skip it.</p>
       
-      <span class="go">Visit Penguin CBD &rarr;</span>
-    </a>
-    <a class="card" href="https://imp.i295461.net/c/5929369/819381/11575" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/awclick.php?mid=84735&id=2520915" rel="sponsored noopener" target="_blank">Visit Penguin CBD &rarr;</a><a class="mp" href="/promo-codes/penguin-cbd/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>CBD For Life</h3>
       <p class="what">Topical-first CBD line &mdash; rubs, roll-ons and body care.</p>
       <p class="why"><b>Why I recommend it</b>Topicals are where CBD is easiest to judge for yourself. Good entry point for people who don't want to inhale anything.</p>
       
-      <span class="go">Visit CBD For Life &rarr;</span>
-    </a>
-    <a class="card" href="https://hempbombs.pxf.io/c/5929369/513867/8793" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://imp.i295461.net/c/5929369/819381/11575" rel="sponsored noopener" target="_blank">Visit CBD For Life &rarr;</a><a class="mp" href="/promo-codes/cbd-for-life/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Hemp Bombs</h3>
       <p class="what">High-potency CBD gummies, capsules and tinctures produced from US-grown hemp.</p>
       <p class="why"><b>Why I recommend it</b>Consistent dosing per piece, which is what actually matters for a daily routine.</p>
       
-      <span class="go">Visit Hemp Bombs &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=82355&awinaffid=2520915&ued=https%3A%2F%2FAvidhempcbd.com" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://hempbombs.pxf.io/c/5929369/513867/8793" rel="sponsored noopener" target="_blank">Visit Hemp Bombs &rarr;</a><a class="mp" href="/promo-codes/hemp-bombs/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Avid Hemp</h3>
       <p class="what">US hemp brand covering CBD flower, edibles and vapes.</p>
       <p class="why"><b>Why I recommend it</b>Wide format range from one source, so you can compare delivery methods without changing brands.</p>
       <span class="code"><b>Code</b><code>freeship</code><i>Free Shipping for Share a Sale &amp; CBD AFFS &middot; ends 2050-12-31</i></span>
-      <span class="go">Visit Avid Hemp &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=96767&awinaffid=2520915&ued=https%3A%2F%2Fenjoyhemp.co%2F" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=82355&awinaffid=2520915&ued=https%3A%2F%2FAvidhempcbd.com" rel="sponsored noopener" target="_blank">Visit Avid Hemp &rarr;</a><a class="mp" href="/promo-codes/avid-hemp/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Enjoy Hemp</h3>
       <p class="what">Hemp-derived cannabinoid products including Delta-8 and THCa formats.</p>
       <p class="why"><b>Why I recommend it</b>Relevant to what our own customers actually buy. Read your state law first &mdash; this category moves fast.</p>
       <span class="code"><b>Code</b><code>VIBEHIGH10</code><i>Elevate Your Mood With Enjoy Hemps Affiliate code &middot; ends 2026-09-30</i></span>
-      <span class="go">Visit Enjoy Hemp &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/awclick.php?mid=119681&id=2520915" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=96767&awinaffid=2520915&ued=https%3A%2F%2Fenjoyhemp.co%2F" rel="sponsored noopener" target="_blank">Visit Enjoy Hemp &rarr;</a><a class="mp" href="/promo-codes/enjoy-hemp/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Golden Goat CBD</h3>
       <p class="what">Hemp-derived cannabinoid retailer with a large flower and edible selection.</p>
       <p class="why"><b>Why I recommend it</b>Good breadth for comparison shopping when you're learning the difference between cannabinoids.</p>
       
-      <span class="go">Visit Golden Goat CBD &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=78108&awinaffid=2520915&ued=https%3A%2F%2Fwww.thehempdivision.com" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/awclick.php?mid=119681&id=2520915" rel="sponsored noopener" target="_blank">Visit Golden Goat CBD &rarr;</a><a class="mp" href="/promo-codes/golden-goat-cbd/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>The Hemp Division</h3>
       <p class="what">Hemp-derived product line spanning wellness and smokeable formats.</p>
       <p class="why"><b>Why I recommend it</b>Included for range. Judge it the same way as anything else here: labs first, marketing second.</p>
       <span class="code"><b>Code</b><code>THD-FIRST</code><i>Enjoy 15% off your first order with code THD-FIRST &middot; ends 2050-12-31</i></span>
-      <span class="go">Visit The Hemp Division &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=113386&awinaffid=2520915&ued=https%3A%2F%2Fblimburnseeds.com%2Fpromos-deals%2F" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=78108&awinaffid=2520915&ued=https%3A%2F%2Fwww.thehempdivision.com" rel="sponsored noopener" target="_blank">Visit The Hemp Division &rarr;</a><a class="mp" href="/promo-codes/the-hemp-division/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Blimburn Seeds</h3>
       <p class="what">Cannabis seed bank with feminised and autoflower genetics.</p>
       <p class="why"><b>Why I recommend it</b>For legal home growers only, in states that allow it. Genetics documentation is better than most seed banks.</p>
       <span class="code"><b>Code</b><code>HIPPO3</code><i>3 Hippo High Free Seeds &middot; ends 2026-09-30</i></span>
-      <span class="go">Visit Blimburn Seeds &rarr;</span>
-    </a>
-    <a class="card" href="https://www.awin1.com/cread.php?awinmid=82211&awinaffid=2520915&ued=https%3A%2F%2Fwww.thebudgrower.com" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=113386&awinaffid=2520915&ued=https%3A%2F%2Fblimburnseeds.com%2Fpromos-deals%2F" rel="sponsored noopener" target="_blank">Visit Blimburn Seeds &rarr;</a><a class="mp" href="/promo-codes/blimburn-seeds/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>The Bud Grower</h3>
       <p class="what">Complete home-grow kits &mdash; tent, light, nutrients, instructions in one box.</p>
       <p class="why"><b>Why I recommend it</b>The least intimidating way into growing legally at home. One box, no guessing which fittings match.</p>
       <span class="code"><b>Code</b><code>CHIEF5</code><i>Enjoy 5% off your order with code CHIEF5 &middot; ends 2050-12-31</i></span>
-      <span class="go">Visit The Bud Grower &rarr;</span>
-    </a>
-    <a class="card" href="https://mushroom-supplies.sjv.io/c/5929369/1554002/18134" rel="sponsored noopener" target="_blank">
+      <span class="golinks"><a class="go" href="https://www.awin1.com/cread.php?awinmid=82211&awinaffid=2520915&ued=https%3A%2F%2Fwww.thebudgrower.com" rel="sponsored noopener" target="_blank">Visit The Bud Grower &rarr;</a><a class="mp" href="/promo-codes/thebudgrower/">Codes &amp; deals</a></span>
+    </div>
+    <div class="card">
       <span class="tag">Affiliate Partner</span>
       <h3>Mushroom Supplies</h3>
       <p class="what">Gourmet and functional mushroom cultivation supplies &mdash; substrates, grow kits and sterile equipment.</p>
       <p class="why"><b>Why I recommend it</b>Same mindset as the grow kits: legal cultivation, done properly, with equipment that isn't improvised.</p>
       
-      <span class="go">Visit Mushroom Supplies &rarr;</span>
-    </a></div></div></section>
+      <span class="golinks"><a class="go" href="https://mushroom-supplies.sjv.io/c/5929369/1554002/18134" rel="sponsored noopener" target="_blank">Visit Mushroom Supplies &rarr;</a><a class="mp" href="/promo-codes/mushroomsupplies-com/">Codes &amp; deals</a></span>
+    </div></div></div></section>
 <footer><div class="wrap">
 <p class="disc"><b>Affiliate disclosure:</b> many links on this page are affiliate links. If you
 buy through them, Pixie&rsquo;s Pantry may earn a commission at no extra cost to you. It never

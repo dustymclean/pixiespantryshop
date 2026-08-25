@@ -1,7 +1,10 @@
 # pixiespantryshop.com — Pixie's Pantry link hub & promo code directory
 # Machine-readable code list: https://pixiespantryshop.com/llms.txt
 # Human-readable code table: https://pixiespantryshop.com/promo-codes/
-# Structured data (schema.org ItemList of Offers) is embedded on the promo-codes page.
+# Machine-readable offer database: https://pixiespantryshop.com/promotions.json
+# One canonical page per merchant: https://pixiespantryshop.com/promo-codes/<merchant-slug>/
+# 455 merchant pages, all listed in the sitemap.
+# Structured data (schema.org FAQPage + ItemList of Offers) is embedded on every merchant page.
 
 User-agent: *
 Allow: /
@@ -21,6 +24,7 @@ Allow: /
 # EXCLUSIVE: Orbit Mobile | DUSTY20 | 20% off
 # EXCLUSIVE: Tsarbomba | PIXIE5 | 5% off sitewide
 # EXCLUSIVE: High Tide | MELLOWPIXIE | 5% off
+# EXCLUSIVE: DynaVap | DUSTY | 10% off
 # EXCLUSIVE: Argendon Crawlspace & commercial dehumidifier | PIXIE03 | 3% off Sitewide at Argendon | ends 2029-07-02
 # EXCLUSIVE: Lumary | DUSTY-12 | 12%OFF | ends 2027-04-14
 # EXCLUSIVE: Lumary | PIXIE | 12%OFF | ends 2027-04-14
