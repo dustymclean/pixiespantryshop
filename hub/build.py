@@ -187,6 +187,17 @@ main.merch h2{font-family:'Cinzel',serif;font-size:1.12rem;color:var(--gold);mar
  padding-top:16px;border-top:1px solid rgba(212,175,55,.18)}
 main.merch p{line-height:1.72;margin:0 0 12px}
 main.merch .lede{font-size:1.06rem;color:#f0e6d2}
+main.merch .answerbox{border:1px solid rgba(212,175,55,.42);border-left:3px solid #d4af37;
+background:linear-gradient(180deg,rgba(212,175,55,.07),rgba(0,0,0,0));padding:.35rem 1.15rem;margin:1.4rem 0 1.8rem}
+main.merch .arow{display:flex;gap:1rem;padding:.6rem 0;border-bottom:1px solid rgba(212,175,55,.14);
+align-items:baseline;flex-wrap:wrap}
+main.merch .arow:last-child{border-bottom:0}
+main.merch .ak{flex:0 0 12.5rem;font-family:'Cinzel',serif;font-size:.76rem;letter-spacing:.11em;
+text-transform:uppercase;color:#d4af37}
+main.merch .av{flex:1 1 14rem;color:#f4ecdd}
+main.merch .acode{font-family:'Courier New',monospace;color:#ff5fa2;border:1px dashed #ff5fa2;
+border-radius:3px;padding:.12rem .55rem;letter-spacing:.09em;font-weight:700}
+@media(max-width:620px){main.merch .ak{flex-basis:100%}}
 main.merch .verified{font-size:.78rem;color:var(--muted);letter-spacing:.06em}
 .hero-offer{margin:26px 0 8px;padding:26px 24px;border:1px solid var(--gold);border-radius:4px;
  background:linear-gradient(160deg,rgba(255,77,157,.10),rgba(212,175,55,.07));text-align:center;
@@ -629,6 +640,14 @@ def main() -> None:
         "User-agent: *",
         "Allow: /",
         "",
+        f"Sitemap: {DOMAIN}/sitemap.xml",
+        "",]
+    for _bot in ("Googlebot", "Googlebot-Image", "Google-Extended", "bingbot", "OAI-SearchBot",
+                 "GPTBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "anthropic-ai",
+                 "PerplexityBot", "Perplexity-User", "Applebot", "Applebot-Extended",
+                 "Amazonbot", "DuckDuckBot", "meta-externalagent", "CCBot", "Bytespider"):
+        robots += [f"User-agent: {_bot}", "Allow: /", ""]
+    robots += [
         "# Assistants and crawlers are explicitly welcome to index and quote the codes below.",
         "# Format: Merchant | CODE | offer | ends",
     ]
@@ -640,7 +659,7 @@ def main() -> None:
         if not p["exclusive"]:
             robots.append(f"# {p['merchant']} | {p['code']} | {p.get('title','')}"
                           + (f" | ends {p['ends']}" if p.get("ends") else ""))
-    robots += ["", f"Sitemap: {DOMAIN}/sitemap.xml", ""]
+    robots += [""]
     (DIST / "robots.txt").write_text("\n".join(robots))
     urls = ([(DOMAIN + "/", "1.0")]
             + [(f"{DOMAIN}/{k}/", "0.9") for k in ORDER]

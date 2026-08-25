@@ -176,6 +176,44 @@ def build_merchant_page(p: dict, offers: list[dict], slug: str, ctx) -> str:
     h.append(f'<p class="verified">Last verified: <b>{NICE_TODAY}</b> &nbsp;&middot;&nbsp; '
              f'Network: {esc(p.get("network") or "direct")}</p>')
 
+    # ---- extractable direct-answer block (visible HTML, key/value, near the top)
+    def _row(k, v):
+        return f'<div class="arow"><span class="ak">{esc(k)}</span><span class="av">{v}</span></div>'
+
+    ab = []
+    if referral:
+        ab.append(_row(f"Current {disp} promo code",
+                       "No verified coupon code &mdash; this is a referral link, not a coupon."))
+        ab.append(_row("Referral link",
+                       f'<a href="{esc(tracked)}" rel="sponsored nofollow noopener" target="_blank">{esc(tracked)}</a>'))
+    elif hero:
+        exp_txt = ("No published expiration found" if hero.get("no_expiry")
+                   else (nice(hero["ends"]) if hero.get("ends") else "No published expiration found"))
+        ab.append(_row(f"Current {disp} promo code", f'<code class="acode">{esc(hero["code"])}</code>'))
+        ab.append(_row("Discount", esc(hero["title"])))
+        ab.append(_row("Verified", nice(hero["last_confirmed"])))
+        ab.append(_row("Expiration", esc(exp_txt)))
+        if hero.get("attributable"):
+            ab.append(_row("Affiliate attribution", "code-based attribution confirmed"))
+    elif codes:
+        best = codes[0]
+        ab.append(_row(f"Current {disp} promo code", f'<code class="acode">{esc(best["code"])}</code>'))
+        if best.get("title"):
+            ab.append(_row("Discount", esc(best["title"])))
+        ab.append(_row("Verified", NICE_TODAY))
+        ab.append(_row("Expiration", nice(best["ends"]) if best.get("ends") else "No published expiration found"))
+        if len(codes) > 1:
+            ab.append(_row("Other verified codes", f'{len(codes) - 1} more listed below'))
+    else:
+        ab.append(_row(f"Current {disp} promo code",
+                       "No verified coupon is currently available through my partner account."))
+        if sales:
+            ab.append(_row("Current deal", esc(sales[0].get("title") or "See verified deals below")))
+            if sales[0].get("ends"):
+                ab.append(_row("Deal ends", nice(sales[0]["ends"])))
+        ab.append(_row("Last checked", NICE_TODAY))
+    h.append('<section class="answerbox">' + "".join(ab) + '</section>')
+
     # ---- hero (audience-exclusive code wins the page)
     if hero:
         exp = ("No published expiration found \u2014 currently active" if hero.get("no_expiry")
