@@ -575,6 +575,15 @@
   }
  },
  {
+  "name": "Bighorn Outdoor",
+  "network": "In-house",
+  "url": "https://bighornoutdoor.com",
+  "sector": "Outdoors & Camping",
+  "link": "https://bighornoutdoor.com",
+  "desc": "Bighorn Outdoor sells outdoor and camping equipment \u2014 shelters, sleeping gear, and cooking and campsite hardware aimed at car campers and overlanders rather than ultralight backpackers.",
+  "code_attributed": true
+ },
+ {
   "name": "Binoid CBD",
   "network": "Awin",
   "url": "https://www.binoidcbd.com",
@@ -925,6 +934,15 @@
   }
  },
  {
+  "name": "COLMI",
+  "network": "In-house",
+  "url": "https://colmi.store",
+  "sector": "Consumer Electronics",
+  "link": "https://colmi.store",
+  "desc": "COLMI makes budget smartwatches and fitness bands \u2014 heart rate, SpO2, sleep and activity tracking, AMOLED displays and multi-day battery, at price points well under the major brands. Popular as a first smartwatch or a beater for the gym.",
+  "code_attributed": true
+ },
+ {
   "name": "COLORDIAMONDS LED MASK",
   "network": "Awin",
   "url": "https://colordiamonds.co.uk/",
@@ -1176,6 +1194,14 @@
   "link": "https://drdabber.sjv.io/c/5929369/1892868/22644",
   "sector": null,
   "desc": "Dr.Dabber\u00ae works tirelessly to develop and create the coolest, most innovative vaporizers on earth. We take chances that other companies won\u2019t in the pursuit of creating the best vape pens and electric dab rigs possible."
+ },
+ {
+  "name": "DynaVap",
+  "network": "GoAffPro / in-house",
+  "url": "https://www.dynavap.com",
+  "sector": "Vaporizers",
+  "link": "https://www.dynavap.com/?ref=DUSTY",
+  "desc": "DynaVap makes battery-free, torch-heated dry herb vaporizers machined from stainless steel and titanium. The signature design is a thermal-extraction device with a temperature-indicating cap that clicks when it reaches the right heat, so there is no electronics, no charging, and effectively nothing to fail. Made in Wisconsin, and heavily supported by a parts and accessories ecosystem."
  },
  {
   "name": "Easyship Ambassador Program",
@@ -4618,6 +4644,17 @@
   }
  },
  {
+  "name": "Viktor",
+  "network": "Referral",
+  "url": "https://viktor.com",
+  "sector": "Business & Software",
+  "link": "https://app.viktor.com/signin?ref=L5x4YcdisfwDjtgpXdjZob",
+  "desc": "Viktor is an AI employee platform: you connect it to the tools a business already runs on \u2014 email, Slack, Google Drive, Sheets, GitHub, affiliate networks, analytics \u2014 and it does the work inside them rather than just chatting about it. It writes and runs its own scripts, keeps reusable skills as memory, and can be put on a schedule for recurring jobs like reporting, data pulls, and site maintenance.",
+  "referral": true,
+  "cta": "Start with Viktor \u2192",
+  "referral_note": "This is a <b>referral link</b>, not a coupon. There is no percentage discount code for Viktor that I can verify right now. If Viktor issues one \u2014 a signup credit, a trial extension, a referral reward \u2014 it will be added to this same page rather than a new one."
+ },
+ {
   "name": "Visible",
   "network": "Impact",
   "url": "https://www.visible.com",
@@ -4789,6 +4826,15 @@
    "ends": "2027-10-11",
    "link": "https://www.awin1.com/cread.php?awinmid=68820&awinaffid=2520915&ued=https%3A%2F%2Fwww.wigfever.com%2F%3Futm_source%3Daffiliate%26utm_medium%3Dawin-code"
   }
+ },
+ {
+  "name": "Willow Boutique",
+  "network": "In-house",
+  "url": "https://willowboutique.com",
+  "sector": "Fashion & Apparel",
+  "link": "https://willowboutique.com",
+  "desc": "Willow Boutique is a women's fashion retailer selling trend-driven apparel, dresses, tops, denim and accessories, largely aimed at everyday and going-out wear at mid-market prices. It runs an in-house ambassador program rather than selling through a public affiliate network.",
+  "code_attributed": true
  },
  {
   "name": "Wine Express",
