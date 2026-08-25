@@ -12,6 +12,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import datetime as dt
 import shutil
 import sys
 from pathlib import Path
@@ -28,8 +29,20 @@ AWIN_AFFID = os.environ.get("AWIN_AFFID", "").strip()
 PARTNERS = {p["name"]: p for p in json.loads((ROOT / "data" / "partners.json").read_text())}
 PROMOS = json.loads((ROOT / "data" / "promos.json").read_text())
 
-# Personal codes confirmed on Impact or in writing by the merchant.
-EXTRA_EXCLUSIVE = json.loads((ROOT / "data" / "impact_codes.json").read_text())
+TODAY = dt.date.today().isoformat()
+
+# Drop anything the network feed says has already ended.
+PROMOS = [p for p in PROMOS if not p.get("ends") or p["ends"] >= TODAY]
+
+# Personal codes, each classified and provenance-tracked in data/personal_codes.json.
+PERSONAL = json.loads((ROOT / "data" / "personal_codes.json").read_text())
+EXTRA_EXCLUSIVE = [
+    {"merchant": c["merchant"], "code": c["code"], "exclusive": True,
+     "title": c["discount"], "ends": c.get("ends", ""), "link": c.get("link"),
+     "status": c["status"], "last_confirmed": c["last_confirmed"],
+     "registry_name": c.get("registry_name")}
+    for c in PERSONAL if c["publish"]
+]
 
 for _e in EXTRA_EXCLUSIVE:
     if not any(x["merchant"] == _e["merchant"] and x["code"] == _e["code"] for x in PROMOS):
@@ -57,6 +70,10 @@ def link_for(partner_name: str | None, override: str | None) -> tuple[str, bool,
         untracked.append(partner_name or "")
         link = p.get("url") or SHOP_URL
     promo = p.get("promo")
+    for _pc in EXTRA_EXCLUSIVE:
+        if _pc.get("registry_name") == partner_name:
+            promo = _pc
+            break
     # a voucher-specific tracking link beats the generic programme link
     if promo and promo.get("link"):
         link = promo["link"]
@@ -144,6 +161,7 @@ table.codes code{font-family:'Cinzel',serif;letter-spacing:.14em;color:var(--gol
   background:rgba(0,0,0,.5);border:1px solid rgba(212,175,55,.45);padding:2px 9px;white-space:nowrap}
 table.codes a{color:var(--pink-2);text-decoration:none}
 table.codes a:hover{color:var(--gold-2)}
+table.codes td.conf{font-size:.74rem;color:var(--muted);white-space:nowrap}
 .go{margin-top:20px;padding-top:16px;border-top:1px dashed rgba(212,175,55,.3);
   text-decoration:none;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pink-2)}
 .card:hover .go{color:var(--gold-2)}
@@ -236,6 +254,8 @@ def build_hub(key: str) -> str:
             if promo:
                 ends = f" &middot; ends {promo['ends']}" if promo.get("ends") else ""
                 label = "My code" if promo.get("exclusive") else "Code"
+                if promo.get("status", "").startswith("HISTORICALLY"):
+                    ends = f" &middot; terms last confirmed {promo['last_confirmed']}"
                 code_html = (f'<span class="code"><b>{label}</b><code>{promo["code"]}</code>'
                              f'<i>{promo.get("title","")}{ends}</i></span>')
             tag = "Affiliate Partner" if aff else ("Pixie&rsquo;s Pantry" if override and "pixies-pantry.com" in url else "Direct Link")
@@ -313,13 +333,17 @@ def build_promos() -> str:
         h = [f"""<section class="band" id="{anchor}"><div class="wrap">
   <div class="sect-head"><h2>{heading}</h2><div class="rule"></div></div>
   <p class="sect-note">{note}</p>
-  <table class="codes"><thead><tr><th>Brand</th><th>Code</th><th>Offer</th><th>Ends</th></tr></thead><tbody>"""]
+  <table class="codes"><thead><tr><th>Brand</th><th>Code</th><th>Offer</th><th>Ends</th><th>Confirmed</th></tr></thead><tbody>"""]
         for r in rows:
             link = r.get("link")
             brand = (f'<a href="{link}" rel="sponsored noopener" target="_blank">{r["merchant"]}</a>'
                      if link else r["merchant"])
+            conf = r.get("last_confirmed") or "network feed"
+            if r.get("status", "").startswith("HISTORICALLY"):
+                conf = f'{r["last_confirmed"]} &middot; recheck'
             h.append(f'<tr><td>{brand}</td><td><code>{r["code"]}</code></td>'
-                     f'<td>{r.get("title","")}</td><td>{r.get("ends") or "&mdash;"}</td></tr>')
+                     f'<td>{r.get("title","")}</td><td>{r.get("ends") or "&mdash;"}</td>'
+                     f'<td class="conf">{conf}</td></tr>')
         h.append("</tbody></table></div></section>")
         return "".join(h)
 
