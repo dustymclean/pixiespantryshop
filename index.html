@@ -23,6 +23,7 @@ body{margin:0;background:var(--ink);color:var(--champagne);
   font-family:'Josefin Sans',system-ui,sans-serif;font-size:17px;line-height:1.65;
   -webkit-font-smoothing:antialiased}
 a{color:inherit}
+.card *,.door *{text-decoration:none}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 .deco-top{height:6px;background:linear-gradient(90deg,var(--gold),var(--pink),var(--gold-2),var(--pink-2),var(--gold))}
 h1,h2,h3,.serif{font-family:'Cinzel',Georgia,serif}
@@ -61,8 +62,8 @@ section.band{padding:64px 0 8px}
 .sect-head .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
 .sect-note{margin:0 0 30px;color:var(--muted);font-size:.92rem;letter-spacing:.04em}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px}
-.card{position:relative;display:flex;flex-direction:column;padding:26px 24px 22px;
-  background:linear-gradient(180deg,rgba(255,79,163,.06),rgba(212,175,55,.03));
+.card{position:relative;display:flex;flex-direction:column;padding:26px 24px 22px;text-decoration:none;
+  background:linear-gradient(165deg,rgba(255,79,163,.11),rgba(212,175,55,.035) 60%,rgba(8,7,12,.6));
   border:1px solid rgba(212,175,55,.28);transition:border-color .2s,transform .2s,box-shadow .2s}
 .card:before,.card:after{content:"";position:absolute;width:13px;height:13px;border:1px solid var(--gold)}
 .card:before{top:7px;left:7px;border-right:none;border-bottom:none}
@@ -85,7 +86,7 @@ footer{margin-top:80px;padding:44px 0 60px;border-top:1px solid rgba(212,175,55,
 footer a{color:var(--gold-2)}
 .disc{max-width:720px;margin:0 auto 18px;font-size:.76rem;line-height:1.7;opacity:.85}
 .doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin:56px 0 0}
-.door{display:flex;flex-direction:column;justify-content:space-between;min-height:260px;
+.door{text-decoration:none;display:flex;flex-direction:column;justify-content:space-between;min-height:260px;
   padding:32px 26px;text-decoration:none;text-align:center;
   border:1px solid rgba(212,175,55,.4);background:linear-gradient(180deg,rgba(255,79,163,.07),rgba(8,7,12,.6));
   transition:transform .2s,border-color .2s,box-shadow .2s}
