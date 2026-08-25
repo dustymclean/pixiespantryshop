@@ -140,3 +140,37 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+def check_rel_qualification(dist):
+    """Google wants monetized outbound links qualified with rel="sponsored".
+    Own-property links (pixies-pantry.com) and internal links must NOT be sponsored."""
+    import re, collections
+    OWN = ("pixiespantryshop.com", "pixies-pantry.com")
+    stats = collections.Counter()
+    bad_missing, bad_internal = [], []
+    for f in dist.rglob("*.html"):
+        for m in re.finditer(r'<a\b([^>]*)>', f.read_text()):
+            at = m.group(1)
+            h = re.search(r'href="([^"]*)"', at)
+            if not h:
+                continue
+            u = h.group(1)
+            rel = (re.search(r'rel="([^"]*)"', at) or [None, ""])[1] if re.search(r'rel="([^"]*)"', at) else ""
+            own = u.startswith("/") or u.startswith("#") or any(d in u for d in OWN)
+            spon = "sponsored" in rel
+            if own:
+                stats["own_property"] += 1
+                if spon:
+                    bad_internal.append((str(f), u))
+            else:
+                stats["monetized"] += 1
+                if "sponsored" in rel and "nofollow" in rel:
+                    stats["sponsored_nofollow"] += 1
+                elif spon:
+                    stats["sponsored"] += 1
+                elif "nofollow" in rel:
+                    stats["nofollow_only"] += 1
+                else:
+                    bad_missing.append((str(f), u))
+    return stats, bad_missing, bad_internal
