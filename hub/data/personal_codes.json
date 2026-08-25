@@ -10,7 +10,9 @@
   "status": "ACTIVE VERIFIED",
   "publish": true,
   "link": "https://www.dynavap.com/?ref=DUSTY",
-  "no_expiry": true
+  "no_expiry": true,
+  "confidence": "A",
+  "public_label": "Verified today"
  },
  {
   "merchant": "Smoke Cartel",
@@ -21,7 +23,9 @@
   "source": "High Tide affiliate email",
   "last_confirmed": "2026-08-14",
   "status": "ACTIVE VERIFIED",
-  "publish": true
+  "publish": true,
+  "confidence": "A",
+  "public_label": "Verified today"
  },
  {
   "merchant": "High Tide",
@@ -32,7 +36,9 @@
   "source": "Impact /PromoCodes (ACTIVE)",
   "last_confirmed": "2026-08-25",
   "status": "ACTIVE VERIFIED",
-  "publish": true
+  "publish": true,
+  "confidence": "A",
+  "public_label": "Verified today"
  },
  {
   "merchant": "Tsarbomba",
@@ -43,7 +49,9 @@
   "source": "Tsarbomba email confirmation",
   "last_confirmed": "2026-08-14",
   "status": "ACTIVE VERIFIED",
-  "publish": true
+  "publish": true,
+  "confidence": "A",
+  "public_label": "Verified today"
  },
  {
   "merchant": "Toputure - US",
@@ -54,7 +62,9 @@
   "source": "Awin voucher feed + Toputure email",
   "last_confirmed": "2026-08-25",
   "status": "ACTIVE VERIFIED",
-  "publish": true
+  "publish": true,
+  "confidence": "A",
+  "public_label": "Verified today"
  },
  {
   "merchant": "Orbit Mobile",
@@ -65,7 +75,9 @@
   "source": "Impact /PromoCodes + Orbit email",
   "last_confirmed": "2026-08-25",
   "status": "ACTIVE VERIFIED",
-  "publish": true
+  "publish": true,
+  "confidence": "A",
+  "public_label": "Verified today"
  },
  {
   "merchant": "Dr. Dabber",
@@ -76,7 +88,9 @@
   "source": "Impact /PromoCodes (ACTIVE)",
   "last_confirmed": "2026-08-25",
   "status": "ACTIVE VERIFIED",
-  "publish": true
+  "publish": true,
+  "confidence": "A",
+  "public_label": "Verified today"
  },
  {
   "merchant": "Amigo eSIM",
@@ -87,7 +101,9 @@
   "source": "Impact /PromoCodes (ACTIVE)",
   "last_confirmed": "2026-08-25",
   "status": "ACTIVE VERIFIED",
-  "publish": true
+  "publish": true,
+  "confidence": "A",
+  "public_label": "Verified today"
  },
  {
   "merchant": "Amigo eSIM",
@@ -98,7 +114,9 @@
   "source": "Impact /PromoCodes (ACTIVE)",
   "last_confirmed": "2026-08-25",
   "status": "ACTIVE VERIFIED",
-  "publish": true
+  "publish": true,
+  "confidence": "A",
+  "public_label": "Verified today"
  },
  {
   "merchant": "Lumary",
@@ -110,7 +128,9 @@
   "last_confirmed": "2026-08-25",
   "status": "ACTIVE VERIFIED",
   "publish": true,
-  "ends": "2027-04-14"
+  "ends": "2027-04-14",
+  "confidence": "A",
+  "public_label": "Verified today"
  },
  {
   "merchant": "Lumary",
@@ -122,7 +142,9 @@
   "last_confirmed": "2026-08-25",
   "status": "ACTIVE VERIFIED",
   "publish": true,
-  "ends": "2027-04-14"
+  "ends": "2027-04-14",
+  "confidence": "A",
+  "public_label": "Verified today"
  },
  {
   "merchant": "Argendon",
@@ -134,7 +156,9 @@
   "last_confirmed": "2026-08-25",
   "status": "ACTIVE VERIFIED",
   "publish": true,
-  "ends": "2029-07-02"
+  "ends": "2029-07-02",
+  "confidence": "A",
+  "public_label": "Verified today"
  },
  {
   "merchant": "Rewarx Studio AI",
@@ -145,7 +169,9 @@
   "source": "Awin voucher feed (exclusive) + Rewarx email",
   "last_confirmed": "2026-08-25",
   "status": "ACTIVE VERIFIED",
-  "publish": true
+  "publish": true,
+  "confidence": "A",
+  "public_label": "Verified today"
  },
  {
   "merchant": "TWOPAGES",
@@ -156,7 +182,9 @@
   "source": "Awin voucher feed (exclusive)",
   "last_confirmed": "2026-08-25",
   "status": "ACTIVE VERIFIED",
-  "publish": true
+  "publish": true,
+  "confidence": "A",
+  "public_label": "Verified today"
  },
  {
   "merchant": "ZELEX",
@@ -167,7 +195,9 @@
   "source": "Awin voucher feed, titled 'Promo Code for Reviewed By Dusty'",
   "last_confirmed": "2026-08-25",
   "status": "ACTIVE VERIFIED",
-  "publish": true
+  "publish": true,
+  "confidence": "A",
+  "public_label": "Verified today"
  },
  {
   "merchant": "Mayerfeld Consulting",
@@ -179,7 +209,9 @@
   "last_confirmed": "2026-08-25",
   "status": "ACTIVE VERIFIED",
   "publish": true,
-  "ends": "2026-12-31"
+  "ends": "2026-12-31",
+  "confidence": "A",
+  "public_label": "Verified today"
  },
  {
   "merchant": "DaySavers",
@@ -190,7 +222,9 @@
   "source": "DaySavers email (Carly Koemptgen)",
   "last_confirmed": "2025-10-23",
   "status": "HISTORICALLY VERIFIED - RECHECK CURRENT TERMS",
-  "publish": true
+  "publish": true,
+  "confidence": "B",
+  "public_label": "Previously confirmed"
  },
  {
   "merchant": "COLMI",
@@ -202,7 +236,9 @@
   "last_confirmed": "2025-08-25",
   "status": "HISTORICALLY VERIFIED - RECHECK CURRENT TERMS",
   "publish": true,
-  "link": "https://colmi.store"
+  "link": "https://colmi.store",
+  "confidence": "B",
+  "public_label": "Previously confirmed"
  },
  {
   "merchant": "Willow Boutique",
@@ -214,7 +250,9 @@
   "last_confirmed": "2025-06-12",
   "status": "HISTORICALLY VERIFIED - RECHECK CURRENT TERMS",
   "publish": true,
-  "link": "https://willowboutique.com"
+  "link": "https://willowboutique.com",
+  "confidence": "B",
+  "public_label": "Previously confirmed"
  },
  {
   "merchant": "Cerqular",
@@ -225,7 +263,9 @@
   "source": "Cerqular affiliates email",
   "last_confirmed": "2025-10-08",
   "status": "HISTORICALLY VERIFIED - RECHECK CURRENT TERMS",
-  "publish": true
+  "publish": true,
+  "confidence": "B",
+  "public_label": "Previously confirmed"
  },
  {
   "merchant": "Bighorn Outdoor",
@@ -237,7 +277,9 @@
   "last_confirmed": "2025-10-20",
   "status": "HISTORICALLY VERIFIED - RECHECK CURRENT TERMS",
   "publish": true,
-  "link": "https://bighornoutdoor.com"
+  "link": "https://bighornoutdoor.com",
+  "confidence": "B",
+  "public_label": "Previously confirmed"
  },
  {
   "merchant": "EFE Glasses",
@@ -248,7 +290,9 @@
   "source": "EFE affiliate emails (Oct 2025); NOT present in the Awin voucher feed on 2026-08-25",
   "last_confirmed": "2025-10-24",
   "status": "HISTORICALLY VERIFIED - RECHECK CURRENT TERMS",
-  "publish": false
+  "publish": false,
+  "confidence": "B",
+  "public_label": "Previously confirmed"
  },
  {
   "merchant": "Instant Funding",
@@ -259,7 +303,9 @@
   "source": "Merchant offered to set up a custom code; no activation confirmation found",
   "last_confirmed": "2026-08-11",
   "status": "PENDING CREATION / CONFIRMATION",
-  "publish": false
+  "publish": false,
+  "confidence": "WITHHELD",
+  "public_label": "Not published"
  },
  {
   "merchant": "ZEAL PET",
@@ -270,7 +316,9 @@
   "source": "Merchant offered a dedicated audience code; no code ever supplied",
   "last_confirmed": "2026-08-11",
   "status": "PENDING CREATION / CONFIRMATION",
-  "publish": false
+  "publish": false,
+  "confidence": "WITHHELD",
+  "public_label": "Not published"
  },
  {
   "merchant": "Meez Meals",
@@ -281,7 +329,9 @@
   "source": "Meez 'Your Meez Meals Code' thread describes the offer but never states the code string",
   "last_confirmed": "2026-08-07",
   "status": "PENDING CREATION / CONFIRMATION",
-  "publish": false
+  "publish": false,
+  "confidence": "WITHHELD",
+  "public_label": "Not published"
  },
  {
   "merchant": "Pyramid Pillow",
@@ -292,7 +342,9 @@
   "source": "You requested a custom code; no merchant reply confirming creation",
   "last_confirmed": "2026-07-22",
   "status": "PENDING CREATION / CONFIRMATION",
-  "publish": false
+  "publish": false,
+  "confidence": "WITHHELD",
+  "public_label": "Not published"
  },
  {
   "merchant": "Traverseon",
@@ -303,7 +355,9 @@
   "source": "Merchant offered a custom exclusive code; never taken up",
   "last_confirmed": "2026-08-02",
   "status": "PENDING CREATION / CONFIRMATION",
-  "publish": false
+  "publish": false,
+  "confidence": "WITHHELD",
+  "public_label": "Not published"
  },
  {
   "merchant": "Meez Meals",
@@ -314,7 +368,9 @@
   "source": "Creator sample credit issued to Dusty personally",
   "last_confirmed": "2026-08-19",
   "status": "CREATOR-ONLY / SAMPLE CREDIT - NEVER PUBLISH",
-  "publish": false
+  "publish": false,
+  "confidence": "WITHHELD",
+  "public_label": "Not published"
  },
  {
   "merchant": "tCheck",
@@ -325,7 +381,9 @@
   "source": "Affiliate program perk for the creator, not an audience offer",
   "last_confirmed": "2026-01-14",
   "status": "CREATOR-ONLY / SAMPLE CREDIT - NEVER PUBLISH",
-  "publish": false
+  "publish": false,
+  "confidence": "WITHHELD",
+  "public_label": "Not published"
  },
  {
   "merchant": "Amigo eSIM",
@@ -336,7 +394,9 @@
   "source": "Visible on your Impact account but not yours",
   "last_confirmed": "2026-08-25",
   "status": "CREATOR-ONLY / SAMPLE CREDIT - NEVER PUBLISH",
-  "publish": false
+  "publish": false,
+  "confidence": "WITHHELD",
+  "public_label": "Not published"
  },
  {
   "merchant": "Amigo eSIM",
@@ -347,7 +407,9 @@
   "source": "Visible on your Impact account but not yours",
   "last_confirmed": "2026-08-25",
   "status": "CREATOR-ONLY / SAMPLE CREDIT - NEVER PUBLISH",
-  "publish": false
+  "publish": false,
+  "confidence": "WITHHELD",
+  "public_label": "Not published"
  },
  {
   "merchant": "Amigo eSIM",
@@ -358,7 +420,9 @@
   "source": "Visible on your Impact account but not yours",
   "last_confirmed": "2026-08-25",
   "status": "CREATOR-ONLY / SAMPLE CREDIT - NEVER PUBLISH",
-  "publish": false
+  "publish": false,
+  "confidence": "WITHHELD",
+  "public_label": "Not published"
  },
  {
   "merchant": "FreshQ INC.",
@@ -369,7 +433,9 @@
   "source": "Visible on your Impact account but not yours",
   "last_confirmed": "2026-08-25",
   "status": "CREATOR-ONLY / SAMPLE CREDIT - NEVER PUBLISH",
-  "publish": false
+  "publish": false,
+  "confidence": "WITHHELD",
+  "public_label": "Not published"
  },
  {
   "merchant": "COLMI",
@@ -380,6 +446,8 @@
   "source": "Replaced by DUSTY at your request",
   "last_confirmed": "2025-08-25",
   "status": "EXPIRED",
-  "publish": false
+  "publish": false,
+  "confidence": "WITHHELD",
+  "public_label": "Expired"
  }
 ]
