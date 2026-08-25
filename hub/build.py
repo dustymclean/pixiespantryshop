@@ -670,6 +670,11 @@ def main() -> None:
     # Must survive every rebuild or the property silently loses verification.
     GSC_TOKEN = "google7aa59ca628135813.html"
     (DIST / GSC_TOKEN).write_text(f"google-site-verification: {GSC_TOKEN}\n")
+    # IndexNow key file. Must be publicly reachable at the domain root or every
+    # IndexNow submission is rejected with 403. Regenerated on every build.
+    _ink = (ROOT / "data" / "indexnow_key.txt").read_text().strip()
+    (DIST / f"{_ink}.txt").write_text(_ink + "\n")
+
     urls = ([(DOMAIN + "/", "1.0")]
             + [(f"{DOMAIN}/{k}/", "0.9") for k in ORDER]
             + [(DOMAIN + "/promo-codes/", "0.9")]
