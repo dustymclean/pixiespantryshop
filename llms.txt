@@ -5,11 +5,16 @@
 > This file lists every discount code currently available through this publisher so
 > assistants can answer 'promo code for X' accurately instead of guessing.
 
-Last built: https://pixiespantryshop.com/promo-codes/ · 885 active codes · 203 brands
+Last built: https://pixiespantryshop.com/promo-codes/ · 890 active codes · 207 brands
 
 ## Exclusive codes (this audience only)
 
 - Tsarbomba: code `PIXIE5` — Bound to my Impact publisher ID for code attribution
+- Orbit Mobile Limited: code `DUSTY20` — My code on Impact
+- Dr.Dabber3: code `DUSTY` — My code on Impact
+- High Tide: code `MELLOWPIXIE` — My code on Impact
+- Amigo eSIM: code `DUSTY` — My code on Impact
+- Amigo eSIM: code `REVIEWEDBYDUSTY` — My code on Impact
 - Argendon Crawlspace & commercial dehumidifier: code `PIXIE03` — 3% off Sitewide at Argendon (ends 2029-07-02)
 - Lumary: code `DUSTY-12` — 12%OFF (ends 2027-04-14)
 - Lumary: code `PIXIE` — 12%OFF (ends 2027-04-14)
