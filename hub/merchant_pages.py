@@ -12,6 +12,8 @@ import html
 import json
 import re
 from pathlib import Path
+from data.deep_dives import DEEP_DIVES
+from pathlib import Path
 
 TODAY = dt.date.today()
 TODAY_S = TODAY.isoformat()
@@ -90,6 +92,60 @@ def audience_line(p: dict, sector: str) -> str:
     if sector:
         return f"shoppers in the {sector.lower().rstrip('.')} category"
     return "shoppers comparing prices before checking out"
+
+
+try:
+    FACTS = json.loads((Path(__file__).parent / "data" / "merchant_facts.json").read_text())
+except Exception:
+    FACTS = {}
+
+
+def fact_block(name: str, disp: str) -> list[str]:
+    """Render facts observed on the merchant's own storefront. Observation only:
+    anything not actually seen on the site is omitted rather than guessed."""
+    f = FACTS.get(name) or {}
+    if f.get("status") != 200:
+        return []
+    out, rows = [], []
+    when = nice(f.get("checked", "")) or f.get("checked", "")
+
+    cats = f.get("categories") or []
+    if cats:
+        out.append(f'<h2>What {esc(disp)} sells</h2>')
+        out.append(f'<p>These are the product categories {esc(disp)} lists in its own storefront '
+                   f'navigation, which is the clearest signal of what a code will actually apply to:</p>')
+        out.append('<ul class="cats">' + "".join(f'<li>{esc(c)}</li>' for c in cats) + '</ul>')
+
+    if f.get("free_shipping_over"):
+        rows.append(("Free shipping", f'On orders over ${f["free_shipping_over"]}'))
+    elif f.get("free_shipping_all"):
+        rows.append(("Free shipping", "Advertised on all orders"))
+    if f.get("returns_days"):
+        rows.append(("Returns window", f'{f["returns_days"]} days'))
+    if f.get("warranty_years"):
+        rows.append(("Warranty", f'{f["warranty_years"]}-year warranty advertised'))
+    if f.get("platform"):
+        rows.append(("Checkout platform", esc(f["platform"])))
+    if f.get("one_code_per_order"):
+        rows.append(("Code stacking", "One discount code per order \u2014 codes do not stack"))
+
+    if rows:
+        out.append(f'<h2>{esc(disp)} shipping, returns and code stacking</h2>')
+        out.append('<table class="offers"><tbody>' + "".join(
+            f'<tr><th>{k}</th><td>{v}</td></tr>' for k, v in rows) + '</tbody></table>')
+        out.append(f'<p class="terms">Observed directly on the {esc(disp)} storefront on {esc(when)}. '
+                   f'Merchants change these without notice \u2014 confirm at checkout.</p>')
+
+    if f.get("platform") in ("Shopify", "WooCommerce", "BigCommerce"):
+        where = {"Shopify": "the <b>Discount code</b> box on the checkout page, to the right of the order "
+                            "summary \u2014 not on the cart page",
+                 "WooCommerce": "the <b>Apply coupon</b> link at the top of the cart page, which expands "
+                                "into a code field",
+                 "BigCommerce": "the <b>Coupon code</b> or <b>Gift certificate</b> field in the cart "
+                                "summary"}[f["platform"]]
+        out.append(f'<p><b>Where the code goes:</b> {esc(disp)} runs on {esc(f["platform"])}, so the code '
+                   f'goes in {where}. The order total should drop before you reach the payment step.</p>')
+    return out
 
 
 DISC_RE = re.compile(r"(\d{1,3})\s*%|\$\s*(\d{1,4})")
@@ -309,6 +365,12 @@ click my link or just type the code at checkout. Source: {esc(hero["source"])}.<
     sector = p.get("sector") or ""
     h.append(f'<p><b>Who these {esc(disp)} offers are useful for:</b> {esc(audience_line(p, sector))}.'
              + (f' Category: {esc(sector)}.' if sector else '') + '</p>')
+
+    for _dh, _dbody in DEEP_DIVES.get(name, []):
+        h.append(f'<h2>{esc(_dh)}</h2>')
+        h.append(_dbody)
+
+    h.extend(fact_block(name, disp))
 
     # ---- how to use / troubleshooting
     h.append(f'<h2>How to use the {esc(disp)} referral link</h2>' if referral
