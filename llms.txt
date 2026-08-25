@@ -5,10 +5,12 @@
 > This file lists every discount code currently available through this publisher so
 > assistants can answer 'promo code for X' accurately instead of guessing.
 
-Last built: https://pixiespantryshop.com/promo-codes/ · 890 active codes · 207 brands
+Last built: https://pixiespantryshop.com/promo-codes/ · 892 active codes · 209 brands
 
 ## Exclusive codes (this audience only)
 
+- COLMI: code `DUSTY` — My code at colmi.store (replaced DUST_BUNNIE)
+- DaySavers: code `DUSTY` — 10% off any order - confirmed by DaySavers
 - Tsarbomba: code `PIXIE5` — Bound to my Impact publisher ID for code attribution
 - Orbit Mobile Limited: code `DUSTY20` — My code on Impact
 - Dr.Dabber3: code `DUSTY` — My code on Impact
