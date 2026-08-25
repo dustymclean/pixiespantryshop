@@ -35,6 +35,7 @@ HUBS = {
                     ("Storz&Bickel", "Storz &amp; Bickel", "The German engineering house behind the Volcano, Mighty+, Venty and Crafty+, built under an ISO 13485 medical-device quality system.", "The only vaporizer maker whose manufacturing standard matches the medical claims people make about vaping. Expensive, and worth it &mdash; the Volcano outlives everything else in the room.", None),
                     ("DaVinci Vaporizers", "DaVinci Vaporizers", "American portable vaporizers (IQ series, ARTIQ) built around precision temperature control and inert airpaths.", "DaVinci publishes real material information about its airpath &mdash; zirconia and glass, not mystery alloys. Best pick when you want clinical control in a pocket device.", None),
                     ("Airvape USA", "AirVape", "US portable dry-herb vaporizer brand known for very slim, well-finished devices.", "The one I hand to people who found the Mighty too bulky. Solid vapour quality per dollar and genuinely pocketable.", None),
+                    ("DynaVap", "DynaVap", "Battery-free, torch-heated dry herb vaporizers machined from stainless steel and titanium, with a temperature-indicating cap that clicks when it hits the right heat.", "No electronics, no charging, nothing to fail &mdash; it is the vaporizer I recommend to anyone tired of replacing a battery device every eighteen months. Made in Wisconsin, and the parts ecosystem means you can rebuild rather than rebuy.", None),
                     ("Dr.Dabber", "Dr. Dabber", "Concentrate-focused electronic rigs and pens (Boost, SwitchXL) with induction and e-nail heating.", "We're an authorized vendor, so I know the warranty is real. If you dab, this is the least fussy way to do it accurately.", None),
                 ],
             },
@@ -124,6 +125,7 @@ HUBS = {
                 "name": "Editing, AI &amp; Publishing Software",
                 "note": "The stack behind every post, video and product page.",
                 "items": [
+                    ("Viktor", "Viktor", "An AI employee platform: you connect it to email, Slack, Drive, Sheets, GitHub and your affiliate networks, and it does work inside those tools rather than just answering questions about them.", "It writes and runs its own scripts, so it built and now maintains this entire promo-code system &mdash; 455 merchant pages, refreshed weekly against Awin and Impact. There is no coupon for it; the signup link on my page is a referral link, and I say so on the page.", None),
                     ("CapCut Affiliate Program", "CapCut", "Video editor for desktop and mobile with auto-captions, templates and background removal.", "Fastest path from raw teardown footage to something watchable on TikTok. The auto-caption alone saves an hour per video.", None),
                     ("Krisp", "Krisp", "AI noise cancellation and meeting transcription that sits on top of any mic or call app.", "I record in a house, not a studio. Krisp removes the HVAC and the dog and nothing else.", None),
                     ("Bluehost", "Bluehost", "Shared and managed WordPress hosting with domains and one-click installs.", "The cheap on-ramp for a first WordPress site. Fine to start on, plan to outgrow it.", None),
@@ -148,6 +150,7 @@ HUBS = {
                 "name": "Tech I Actually Use",
                 "note": "Consumer hardware that survived long enough to get recommended.",
                 "items": [
+                    ("DynaVap", "DynaVap", "Battery-free thermal-extraction vaporizer, machined in Wisconsin from stainless steel and titanium.", "I keep coming back to it in teardowns because there is almost nothing to tear down &mdash; no board, no cell, no firmware. Serviceable with a screwdriver and a $6 o-ring kit, which is rare in this category. Code DUSTY for 10% off.", None),
                 (
                     "DHgate", "DHgate",
                     "Factory-direct marketplace for electronics parts, camera accessories, cables, cages "
@@ -230,9 +233,10 @@ HUBS = {
                 ],
             },
             {
-                "name": "Wellness &amp; Recovery",
+"name": "Wellness &amp; Recovery",
                 "note": "Slow-down category. Nothing here is a medical claim.",
                 "items": [
+                    ("DynaVap", "DynaVap", "A torch-heated, battery-free vaporizer &mdash; a machined steel and titanium tip with a cap that clicks when it reaches temperature.", "The one piece of gear in my bag that never needs charging. It is slow, deliberate and mechanical, which is exactly the point on a quiet evening. Code DUSTY takes 10% off.", None),
                     ("Nalgene", "Nalgene", "Indestructible BPA-free water bottles made in the USA.", "One bottle, a decade, dishwasher safe. Hydration is the cheapest wellness intervention there is.", None),
                     ("HYDAWAY", "HYDAWAY", "Collapsible water bottles and food containers that pack flat.", "For a camera bag that's already full. Flat when empty, real bottle when you need one.", None),
                     ("Shakti Warrior", "Shakti Warrior", "Eco-conscious yoga mats, props and meditation gear.", "Mobility work after a day hunched over a light tent isn't optional past thirty.", None),
