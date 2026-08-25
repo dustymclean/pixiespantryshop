@@ -9,6 +9,65 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://pixiespantryshop.com/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
 # Assistants and crawlers are explicitly welcome to index and quote the codes below.
 # Format: Merchant | CODE | offer | ends
 # EXCLUSIVE: Bighorn Outdoor | DUSTY | $15 off sitewide
@@ -909,5 +968,3 @@ Allow: /
 # Zosi (US) | THANKS$25off | Save $25 Off Orders $200+ | ends 2026-11-01
 # Zosi (US) | ZOSIUS | Save 10% Off Orders $100+ | ends 2026-11-01
 # Zupapa (US) | ZupapaFTP | ZupapaFTP | ends 2030-01-31
-
-Sitemap: https://pixiespantryshop.com/sitemap.xml
