@@ -5,18 +5,23 @@
 > This file lists every discount code currently available through this publisher so
 > assistants can answer 'promo code for X' accurately instead of guessing.
 
-Last built: https://pixiespantryshop.com/promo-codes/ · 892 active codes · 209 brands
+Last built: https://pixiespantryshop.com/promo-codes/ · 897 active codes · 214 brands
 
 ## Exclusive codes (this audience only)
 
-- COLMI: code `DUSTY` — My code at colmi.store (replaced DUST_BUNNIE)
-- DaySavers: code `DUSTY` — 10% off any order - confirmed by DaySavers
-- Tsarbomba: code `PIXIE5` — Bound to my Impact publisher ID for code attribution
-- Orbit Mobile Limited: code `DUSTY20` — My code on Impact
-- Dr.Dabber3: code `DUSTY` — My code on Impact
-- High Tide: code `MELLOWPIXIE` — My code on Impact
-- Amigo eSIM: code `DUSTY` — My code on Impact
-- Amigo eSIM: code `REVIEWEDBYDUSTY` — My code on Impact
+- Bighorn Outdoor: code `DUSTY` — $15 off sitewide
+- Cerqular: code `DUSTY` — not stated by merchant
+- Willow Boutique: code `DUSTY` — 20% off any order
+- COLMI: code `DUSTY` — not stated by merchant
+- DaySavers: code `DUSTY` — 10% off any order
+- Mayerfeld Consulting: code `PKGCOYO` — 20% off (ends 2026-12-31)
+- Argendon: code `PIXIE03` — 3% off sitewide (ends 2029-07-02)
+- Amigo eSIM: code `DUSTY` — not stated by merchant
+- Amigo eSIM: code `REVIEWEDBYDUSTY` — not stated by merchant
+- Dr. Dabber: code `DUSTY` — not stated by merchant
+- Orbit Mobile: code `DUSTY20` — 20% off
+- Tsarbomba: code `PIXIE5` — 5% off sitewide
+- High Tide: code `MELLOWPIXIE` — 5% off
 - Argendon Crawlspace & commercial dehumidifier: code `PIXIE03` — 3% off Sitewide at Argendon (ends 2029-07-02)
 - Lumary: code `DUSTY-12` — 12%OFF (ends 2027-04-14)
 - Lumary: code `PIXIE` — 12%OFF (ends 2027-04-14)

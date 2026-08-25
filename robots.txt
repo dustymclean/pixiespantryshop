@@ -8,14 +8,19 @@ Allow: /
 
 # Assistants and crawlers are explicitly welcome to index and quote the codes below.
 # Format: Merchant | CODE | offer | ends
-# EXCLUSIVE: COLMI | DUSTY | My code at colmi.store (replaced DUST_BUNNIE)
-# EXCLUSIVE: DaySavers | DUSTY | 10% off any order - confirmed by DaySavers
-# EXCLUSIVE: Tsarbomba | PIXIE5 | Bound to my Impact publisher ID for code attribution
-# EXCLUSIVE: Orbit Mobile Limited | DUSTY20 | My code on Impact
-# EXCLUSIVE: Dr.Dabber3 | DUSTY | My code on Impact
-# EXCLUSIVE: High Tide | MELLOWPIXIE | My code on Impact
-# EXCLUSIVE: Amigo eSIM | DUSTY | My code on Impact
-# EXCLUSIVE: Amigo eSIM | REVIEWEDBYDUSTY | My code on Impact
+# EXCLUSIVE: Bighorn Outdoor | DUSTY | $15 off sitewide
+# EXCLUSIVE: Cerqular | DUSTY | not stated by merchant
+# EXCLUSIVE: Willow Boutique | DUSTY | 20% off any order
+# EXCLUSIVE: COLMI | DUSTY | not stated by merchant
+# EXCLUSIVE: DaySavers | DUSTY | 10% off any order
+# EXCLUSIVE: Mayerfeld Consulting | PKGCOYO | 20% off | ends 2026-12-31
+# EXCLUSIVE: Argendon | PIXIE03 | 3% off sitewide | ends 2029-07-02
+# EXCLUSIVE: Amigo eSIM | DUSTY | not stated by merchant
+# EXCLUSIVE: Amigo eSIM | REVIEWEDBYDUSTY | not stated by merchant
+# EXCLUSIVE: Dr. Dabber | DUSTY | not stated by merchant
+# EXCLUSIVE: Orbit Mobile | DUSTY20 | 20% off
+# EXCLUSIVE: Tsarbomba | PIXIE5 | 5% off sitewide
+# EXCLUSIVE: High Tide | MELLOWPIXIE | 5% off
 # EXCLUSIVE: Argendon Crawlspace & commercial dehumidifier | PIXIE03 | 3% off Sitewide at Argendon | ends 2029-07-02
 # EXCLUSIVE: Lumary | DUSTY-12 | 12%OFF | ends 2027-04-14
 # EXCLUSIVE: Lumary | PIXIE | 12%OFF | ends 2027-04-14
