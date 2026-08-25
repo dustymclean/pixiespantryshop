@@ -1,20 +1,46 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# pixiespantryshop.com — Link Hub
 
-# Run and deploy your AI Studio app
+The public site is a **static link hub** ("linktree, but Great Gatsby"). It is generated,
+not hand-edited.
 
-This contains everything you need to run your app locally.
+```
+/                    door chooser — Mellow Pixie · Pixie's Pantry · Reviewed by Dusty · Shop
+/mellow-pixie/       the operator: travel, points, home, wellness, style, pets
+/pixies-pantry/      the brand: store links, vaporizers, glass, accessories, hemp/CBD
+/reviewed-by-dusty/  the review desk: capture gear, software, back office, tech
+```
 
-View your app in AI Studio: https://ai.studio/apps/3c6f39ce-d641-4083-b87b-b3b92a171b09
+## Editing the content
 
-## Run Locally
+All copy lives in **`hub/data/content.py`** — one Python dict, one tuple per card:
 
-**Prerequisites:**  Node.js
+```python
+("Partner Name In partners.json" | None, "Display Name",
+ "What it actually is.", "Why I recommend it.", "https://override-url" | None)
+```
 
+- Pass the partner name to auto-resolve the affiliate link.
+- Pass `None` + an override URL for non-affiliate links (our own pages, etc.).
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+**`hub/data/partners.json`** is the affiliate registry (351 Awin + Impact programs) exported
+from the affiliate/vendor master workbook: network, category, merchant URL, Impact tracking
+link, Awin `advertiserId`, payout and cookie length.
+
+## Building & deploying
+
+```bash
+AWIN_AFFID=<your awin publisher id> python3 hub/build.py   # -> hub/dist/
+```
+
+Link resolution order: Impact tracking link → Awin deep link
+(`awin1.com/cread.php?awinmid=<advertiserId>&awinaffid=$AWIN_AFFID&ued=<merchant url>`) →
+plain merchant URL. Without `AWIN_AFFID` the build prints a warning listing every Awin
+partner that fell back to an untracked link — **never ship a build with that warning.**
+
+GitHub Pages serves the **`gh-pages`** branch, so deploy = copy `hub/dist/` onto `gh-pages`
+and push. `CNAME`, `.nojekyll`, `robots.txt`, `sitemap.xml` and a `404.html` fallback are
+generated automatically.
+
+## `legacy-react/`
+
+The previous Vite/React site, kept for reference only. Nothing builds from it.
