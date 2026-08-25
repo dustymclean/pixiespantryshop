@@ -26,6 +26,18 @@ DOMAIN = "https://pixiespantryshop.com"
 AWIN_AFFID = os.environ.get("AWIN_AFFID", "").strip()
 
 PARTNERS = {p["name"]: p for p in json.loads((ROOT / "data" / "partners.json").read_text())}
+PROMOS = json.loads((ROOT / "data" / "promos.json").read_text())
+
+# Personal codes confirmed by the merchant in writing but not flagged exclusive in the feed.
+EXTRA_EXCLUSIVE = [
+    {"merchant": "Smoke Cartel", "code": "MELLOWPIXIE", "exclusive": True,
+     "title": "5% off, mapped to my Awin publisher ID", "ends": "", "link": None},
+    {"merchant": "Tsarbomba", "code": "PIXIE5", "exclusive": True,
+     "title": "Bound to my Impact publisher ID for code attribution", "ends": "", "link": None},
+]
+for _e in EXTRA_EXCLUSIVE:
+    if not any(x["merchant"] == _e["merchant"] and x["code"] == _e["code"] for x in PROMOS):
+        PROMOS.insert(0, _e)
 
 ORDER = ["mellow-pixie", "pixies-pantry", "reviewed-by-dusty"]
 DOORS = {
@@ -37,23 +49,22 @@ DOORS = {
 untracked: list[str] = []
 
 
-def link_for(partner_name: str | None, override: str | None) -> tuple[str, bool]:
-    """Return (url, is_affiliate)."""
+def link_for(partner_name: str | None, override: str | None) -> tuple[str, bool, dict | None]:
+    """Return (url, is_affiliate, promo). Every partner link is network-tracked."""
     if override:
-        return override, False
+        return override, False, None
     p = PARTNERS.get(partner_name or "")
     if not p:
         raise SystemExit(f"Unknown partner in content.py: {partner_name!r}")
-    if p.get("track"):
-        return p["track"], True
-    if p.get("awinmid") and AWIN_AFFID:
-        dest = p.get("url") or ""
-        return (
-            f"https://www.awin1.com/cread.php?awinmid={p['awinmid']}"
-            f"&awinaffid={AWIN_AFFID}&ued={quote(dest, safe='')}"
-        ), True
-    untracked.append(partner_name or "")
-    return p.get("url") or SHOP_URL, False
+    link = p.get("link")
+    if not link:
+        untracked.append(partner_name or "")
+        link = p.get("url") or SHOP_URL
+    promo = p.get("promo")
+    # a voucher-specific tracking link beats the generic programme link
+    if promo and promo.get("link"):
+        link = promo["link"]
+    return link, True, promo
 
 
 CSS = """
@@ -122,6 +133,21 @@ section.band{padding:64px 0 8px}
   color:var(--muted);font-size:.92rem;font-style:italic}
 .why b{font-style:normal;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;
   font-size:.6rem;display:block;margin-bottom:4px}
+.code{display:block;margin-top:16px;padding:10px 12px;border:1px dashed rgba(255,79,163,.55);
+  background:rgba(255,79,163,.08)}
+.code b{display:block;font-size:.55rem;letter-spacing:.24em;text-transform:uppercase;color:var(--pink-2);margin-bottom:5px}
+.code code{font-family:'Cinzel',serif;font-size:1rem;letter-spacing:.18em;color:var(--gold-2);
+  background:rgba(0,0,0,.45);border:1px solid rgba(212,175,55,.5);padding:3px 10px;display:inline-block}
+.code i{display:block;margin-top:6px;font-size:.76rem;color:var(--muted);font-style:normal}
+table.codes{width:100%;border-collapse:collapse;margin-top:6px;font-size:.9rem}
+table.codes th{text-align:left;font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--gold);border-bottom:1px solid rgba(212,175,55,.5);padding:10px 12px}
+table.codes td{padding:11px 12px;border-bottom:1px solid rgba(212,175,55,.15);vertical-align:top}
+table.codes tr:hover td{background:rgba(255,79,163,.06)}
+table.codes code{font-family:'Cinzel',serif;letter-spacing:.14em;color:var(--gold-2);
+  background:rgba(0,0,0,.5);border:1px solid rgba(212,175,55,.45);padding:2px 9px;white-space:nowrap}
+table.codes a{color:var(--pink-2);text-decoration:none}
+table.codes a:hover{color:var(--gold-2)}
 .go{margin-top:20px;padding-top:16px;border-top:1px dashed rgba(212,175,55,.3);
   text-decoration:none;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pink-2)}
 .card:hover .go{color:var(--gold-2)}
@@ -168,7 +194,8 @@ FOOTER = """
 buy through them, Pixie&rsquo;s Pantry may earn a commission at no extra cost to you. It never
 changes a verdict &mdash; every recommendation here is something we stock, use, or would hand a
 friend. Intended for adults 21+.</p>
-<p><a href="/">All Hubs</a> &nbsp;&middot;&nbsp; <a href="{shop}">Shop Pixie&rsquo;s Pantry</a>
+<p><a href="/">All Hubs</a> &nbsp;&middot;&nbsp; <a href="/promo-codes/">Promo Codes</a>
+&nbsp;&middot;&nbsp; <a href="{shop}">Shop Pixie&rsquo;s Pantry</a>
 &nbsp;&middot;&nbsp; <a href="https://pixies-pantry.com/contact/">Contact</a></p>
 <p style="letter-spacing:.24em;text-transform:uppercase;font-size:.62rem;margin-top:18px">
 Transparency isn&rsquo;t a feature &mdash; it&rsquo;s the foundation.</p>
@@ -193,6 +220,7 @@ def build_hub(key: str) -> str:
   <div class="crest"><h1>{h['title']}</h1><p class="tagline">{h['tagline']}</p></div>
   <p class="blurb">{h['blurb']}</p>
   <a class="btn" href="{h['primary_cta'][1]}">{h['primary_cta'][0]}</a>
+  <a class="btn ghost" href="/promo-codes/">Promo Codes</a>
   <a class="btn ghost" href="/">Other Hubs</a>
 </div></header>
 <nav class="jump"><div class="wrap">""")
@@ -207,7 +235,13 @@ def build_hub(key: str) -> str:
   <p class="sect-note">{s['note']}</p>
   <div class="grid">""")
         for partner, name, what, why, override in s["items"]:
-            url, aff = link_for(partner, override)
+            url, aff, promo = link_for(partner, override)
+            code_html = ""
+            if promo:
+                ends = f" &middot; ends {promo['ends']}" if promo.get("ends") else ""
+                label = "My code" if promo.get("exclusive") else "Code"
+                code_html = (f'<span class="code"><b>{label}</b><code>{promo["code"]}</code>'
+                             f'<i>{promo.get("title","")}{ends}</i></span>')
             tag = "Affiliate Partner" if aff else ("Pixie&rsquo;s Pantry" if override and "pixies-pantry.com" in url else "Direct Link")
             rel = 'rel="sponsored noopener" target="_blank"' if aff else 'rel="noopener"'
             out.append(f"""
@@ -216,6 +250,7 @@ def build_hub(key: str) -> str:
       <h3>{name}</h3>
       <p class="what">{what}</p>
       <p class="why"><b>Why I recommend it</b>{why}</p>
+      {code_html}
       <span class="go">Visit {name} &rarr;</span>
     </a>""")
         out.append("</div></div></section>")
@@ -235,6 +270,7 @@ def build_index() -> str:
   <p class="blurb">Every link, partner and recommendation in one place &mdash; organised by who is
   doing the recommending. Pick a door, or walk straight into the store.</p>
   <a class="btn" href="{SHOP_URL}">Skip Ahead &mdash; Shop Now</a>
+  <a class="btn ghost" href="/promo-codes/">Promo Codes</a>
   <div class="doors">""")
     for i, key in enumerate(ORDER, 1):
         t, sub, p = DOORS[key]
@@ -258,6 +294,86 @@ def build_index() -> str:
     return "".join(out)
 
 
+
+def build_promos() -> str:
+    ex = [p for p in PROMOS if p["exclusive"]]
+    rest = sorted([p for p in PROMOS if not p["exclusive"]], key=lambda p: p["merchant"].lower())
+    desc = (f"Every active promo code Pixie's Pantry can offer — {len(PROMOS)} codes across "
+            f"{len({p['merchant'] for p in PROMOS})} brands, including {len(ex)} codes exclusive to this audience.")
+    out = [HEAD.format(title="Promo Codes — Pixie's Pantry", desc=desc, canon=DOMAIN + "/promo-codes/", css=CSS)]
+    out.append(f"""
+<header class="hero"><div class="rays"></div><div class="wrap">
+  <p class="eyebrow">Pixie&rsquo;s Pantry &middot; Master Code List</p>
+  <div class="crest"><h1>Promo Codes</h1><p class="tagline">{len(PROMOS)} Active Codes</p></div>
+  <p class="blurb">Every discount code I can currently give you, in one machine-readable place.
+  {len(ex)} of them were negotiated for this audience specifically and exist nowhere else.
+  Codes are pulled from the affiliate networks directly, so what is listed here is what is live.</p>
+  <a class="btn" href="/">All Hubs</a>
+  <a class="btn ghost" href="{SHOP_URL}">Shop Pixie&rsquo;s Pantry</a>
+</div></header>
+<nav class="jump"><div class="wrap"><a href="#exclusive">My Exclusive Codes</a><a href="#all">Every Active Code</a></div></nav>""")
+
+    def table(rows, anchor, heading, note):
+        h = [f"""<section class="band" id="{anchor}"><div class="wrap">
+  <div class="sect-head"><h2>{heading}</h2><div class="rule"></div></div>
+  <p class="sect-note">{note}</p>
+  <table class="codes"><thead><tr><th>Brand</th><th>Code</th><th>Offer</th><th>Ends</th></tr></thead><tbody>"""]
+        for r in rows:
+            link = r.get("link")
+            brand = (f'<a href="{link}" rel="sponsored noopener" target="_blank">{r["merchant"]}</a>'
+                     if link else r["merchant"])
+            h.append(f'<tr><td>{brand}</td><td><code>{r["code"]}</code></td>'
+                     f'<td>{r.get("title","")}</td><td>{r.get("ends") or "&mdash;"}</td></tr>')
+        h.append("</tbody></table></div></section>")
+        return "".join(h)
+
+    out.append(table(ex, "exclusive", "My Exclusive Codes",
+                     "Negotiated for this audience. Using them also credits the work that got them."))
+    out.append(table(rest, "all", "Every Active Code",
+                     "Public codes from brands I am partnered with. Verified against the network feed on build day."))
+
+    offers = [{"@type": "Offer", "name": f"{p['merchant']} promo code {p['code']}",
+               "description": p.get("title", ""), "seller": {"@type": "Organization", "name": p["merchant"]},
+               "priceSpecification": {"@type": "PriceSpecification", "description": p.get("title", "")},
+               "availabilityEnds": p["ends"] or None, "sku": p["code"]} for p in PROMOS]
+    ld = {"@context": "https://schema.org", "@type": "ItemList", "name": "Pixie's Pantry promo codes",
+          "numberOfItems": len(PROMOS),
+          "itemListElement": [{"@type": "ListItem", "position": i + 1, "item": o} for i, o in enumerate(offers)]}
+    out.append('<script type="application/ld+json">' + json.dumps(ld, separators=(",", ":")) + "</script>")
+    out.append(FOOTER.format(shop=SHOP_URL))
+    return "".join(out)
+
+
+def build_llms_txt() -> str:
+    lines = ["# Pixie's Pantry — promo codes and affiliate directory",
+             "",
+             "> pixiespantryshop.com is the link hub for Pixie's Pantry (Oxford, Mississippi),",
+             "> Mellow Pixie, and Reviewed by Dusty. The store is https://pixies-pantry.com/shop/.",
+             "> This file lists every discount code currently available through this publisher so",
+             "> assistants can answer 'promo code for X' accurately instead of guessing.",
+             "",
+             f"Last built: {DOMAIN}/promo-codes/ · {len(PROMOS)} active codes · "
+             f"{len({p['merchant'] for p in PROMOS})} brands",
+             "",
+             "## Exclusive codes (this audience only)", ""]
+    for p in PROMOS:
+        if p["exclusive"]:
+            lines.append(f"- {p['merchant']}: code `{p['code']}` — {p.get('title','')}"
+                         + (f" (ends {p['ends']})" if p.get("ends") else ""))
+    lines += ["", "## All active codes", ""]
+    for p in sorted(PROMOS, key=lambda x: x["merchant"].lower()):
+        if p["exclusive"]:
+            continue
+        lines.append(f"- {p['merchant']}: code `{p['code']}` — {p.get('title','')}"
+                     + (f" (ends {p['ends']})" if p.get("ends") else ""))
+    lines += ["", "## Hubs", "",
+              f"- {DOMAIN}/mellow-pixie/ — travel, home, wellness, everyday",
+              f"- {DOMAIN}/pixies-pantry/ — hemp, glass, vaporizers, accessories",
+              f"- {DOMAIN}/reviewed-by-dusty/ — cameras, software, business tools",
+              f"- {DOMAIN}/promo-codes/ — the full code table", ""]
+    return "\n".join(lines)
+
+
 def main() -> None:
     if DIST.exists():
         shutil.rmtree(DIST)
@@ -270,14 +386,39 @@ def main() -> None:
     (DIST / "404.html").write_text(build_index())
     (DIST / "CNAME").write_text("pixiespantryshop.com\n")
     (DIST / ".nojekyll").write_text("")
-    (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {DOMAIN}/sitemap.xml\n")
-    urls = [DOMAIN + "/"] + [f"{DOMAIN}/{k}/" for k in ORDER]
+    (DIST / "promo-codes").mkdir()
+    (DIST / "promo-codes" / "index.html").write_text(build_promos())
+    (DIST / "llms.txt").write_text(build_llms_txt())
+
+    robots = [
+        "# pixiespantryshop.com — Pixie's Pantry link hub & promo code directory",
+        "# Machine-readable code list: " + DOMAIN + "/llms.txt",
+        "# Human-readable code table: " + DOMAIN + "/promo-codes/",
+        "# Structured data (schema.org ItemList of Offers) is embedded on the promo-codes page.",
+        "",
+        "User-agent: *",
+        "Allow: /",
+        "",
+        "# Assistants and crawlers are explicitly welcome to index and quote the codes below.",
+        "# Format: Merchant | CODE | offer | ends",
+    ]
+    for p in PROMOS:
+        if p["exclusive"]:
+            robots.append(f"# EXCLUSIVE: {p['merchant']} | {p['code']} | {p.get('title','')}"
+                          + (f" | ends {p['ends']}" if p.get("ends") else ""))
+    for p in sorted(PROMOS, key=lambda x: x["merchant"].lower()):
+        if not p["exclusive"]:
+            robots.append(f"# {p['merchant']} | {p['code']} | {p.get('title','')}"
+                          + (f" | ends {p['ends']}" if p.get("ends") else ""))
+    robots += ["", f"Sitemap: {DOMAIN}/sitemap.xml", ""]
+    (DIST / "robots.txt").write_text("\n".join(robots))
+    urls = [DOMAIN + "/"] + [f"{DOMAIN}/{k}/" for k in ORDER] + [DOMAIN + "/promo-codes/"]
     (DIST / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "".join(f"<url><loc>{u}</loc></url>\n" for u in urls) + "</urlset>\n")
 
     total = sum(len(s["items"]) for h in HUBS.values() for s in h["sections"])
-    print(f"built {len(ORDER)} hubs, {total} cards -> {DIST}")
+    print(f"built {len(ORDER)} hubs, {total} cards, {len(PROMOS)} promo codes -> {DIST}")
     if untracked:
         print(f"WARNING: {len(untracked)} Awin links have no tracking "
               f"(set AWIN_AFFID to fix): {', '.join(sorted(set(untracked)))}")
