@@ -77,18 +77,18 @@
  {
   "name": "Air France KLM Flying Blue - Points.com",
   "network": "Impact",
-  "url": "http://www.points.com",
+  "url": "http://points.com",
   "link": "https://afklm.tcux.net/c/5929369/321349/4926",
-  "sector": "Travel / Creator Lifestyle",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Air France KLM FlyingBlue partners with Points to sell FlyingBlue points to its members, whether they need more to book an award flight or are stocking up for future trips. Frequent bonus/discount offers add incentive to buy miles."
  },
  {
   "name": "Airalo",
   "network": "Impact",
-  "url": "http://www.airalo.com",
+  "url": "https://www.airalo.com",
   "link": "https://airalo.pxf.io/c/5929369/1268485/15608",
-  "sector": "Travel / Creator Lifestyle",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Airalo is the world\u2019s leading eSIM provider, trusted by millions of travelers to stay connected in 200+ destinations. With an Airalo eSIM, travelers can wave goodbye to the airport SIM scrabble and get online the moment they land."
  },
  {
   "name": "Airbrush US",
@@ -103,8 +103,8 @@
   "network": "Impact",
   "url": "http://www.airhubapp.com",
   "link": "https://gighubsystemsinc.sjv.io/c/5929369/1790263/21179",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "At Airhub, we redefine seamless global connectivity for travelers. As a leading eSIM provider, we empower explorers to stay connected effortlessly in over 190 countries."
  },
  {
   "name": "Airport Transfer Portal",
@@ -123,12 +123,12 @@
   "desc": "AirVape is a leading U.S. brand for premium dry herb vaporizers, trusted for innovation, sleek design, and outstanding customer satisfaction."
  },
  {
-  "name": "Alaska Airlines Mileage Plan - Points.com",
+  "name": "Alaska Airlines ATMOS Rewards - Points.com",
   "network": "Impact",
   "url": "http://www.points.com",
   "link": "https://alaska.gqco.net/c/5929369/302892/4707",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Alaska Airlines' frequent flyer program partners with Points to sell ATMOS miles to its members, whether they need more to book an award flight or are stocking up for future trips. Frequent bonus/discount offers add incentive to buy miles."
  },
  {
   "name": "Alfred Systems - US",
@@ -219,16 +219,23 @@
   "network": "Impact",
   "url": "https://www.amigosim.com/",
   "link": "https://amigoesim.pxf.io/c/5929369/2900873/34019?irck=xyz12",
-  "sector": "Travel / Creator Lifestyle",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Join Amigo eSIMs Affiliate Program and earn by promoting global travel connectivity. High Tiered commissions, 60-day cookies, and worldwide demand make it easy to profit while helping travelers stay connected. Sign up and start earning today!",
+  "promo": {
+   "code": "REVIEWEDBYDUSTY",
+   "exclusive": true,
+   "title": "My code on Impact",
+   "ends": "",
+   "link": null
+  }
  },
  {
   "name": "AnkerSOLIX",
   "network": "Impact",
-  "url": "http://anker.com",
+  "url": "https://www.ankersolix.com",
   "link": "https://ankersolix.pxf.io/c/5929369/2241990/29130",
-  "sector": "Tech / Electronics",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Anker SOLIX is a global leader in solar energy solutions, offering innovative products like solar panels, SolarBanks, portable power stations, and best-selling solar generators. We're committed to sustainability, transforming how the world harnesses"
  },
  {
   "name": "Anthbot US",
@@ -297,6 +304,14 @@
    "ends": "2027-01-12",
    "link": "https://www.awin1.com/cread.php?awinmid=118701&awinaffid=2520915&ued=https%3A%2F%2Fwww.apolosign.com%2F"
   }
+ },
+ {
+  "name": "Arbiship - eBay Dropshipping Automation",
+  "network": "Impact",
+  "url": "http://arbiship.com",
+  "link": "https://arbishipebaydropshippingautomation.sjv.io/c/5929369/392638/5709",
+  "sector": null,
+  "desc": "Arbiship provides automatic ordering for eBay arbitrage sellers (drop shippers) who buy from online retailers including Walmart and Amazon.\r\n\r\nArbiship automatically processeses orders from multiple vendors and uploads tracking numbers."
  },
  {
   "name": "Argendon Crawlspace & commercial dehumidifier",
@@ -378,8 +393,8 @@
   "network": "Impact",
   "url": "https://www.atomstack.com/",
   "link": "https://atomstack.sjv.io/c/5929369/2110496/26755",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "AtomStack is an innovator in laser engraving and cutting technology. We provide high-quality, user-friendly laser machines to over 200,000 creators and businesses, empowering them to bring their genius to life with precision and efficiency."
  },
  {
   "name": "Aurzen",
@@ -463,16 +478,24 @@
   "network": "Impact",
   "url": "https://www.babygold.com",
   "link": "https://babygoldinc.pxf.io/c/5929369/2330918/29616",
-  "sector": "Lifestyle / Gift Guide",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Baby Gold is a fine jewelry brand specializing in personalized, 14K solid gold pieces proudly crafted in Los Angeles. Founded with the everyday woman in mind, Baby Gold offers custom-engraved jewelry."
+ },
+ {
+  "name": "Base44",
+  "network": "Impact",
+  "url": "https://base44.com",
+  "link": "https://base44.pxf.io/c/5929369/2049275/25619?trafcat=lp",
+  "sector": null,
+  "desc": "Base44 is the AI-powered platform that lets users build fully functioning apps in minutes. Using nothing but natural language, Base44 enables anyone to turn their words into personal productivity apps."
  },
  {
   "name": "Bcengi",
   "network": "Impact",
   "url": "https://www.bcengi.com",
   "link": "https://bcengi.sjv.io/c/5929369/3242903/41060",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "We build smarter eSIMs for business, travel & resellers. One reusable global eSIM, pay-as-you-go with no expiry in 200+ countries. Instant digital delivery. Affiliates earn 15% recurring commissions for 12 months, from one referral."
  },
  {
   "name": "Bedsure",
@@ -496,6 +519,14 @@
   "link": "https://www.awin1.com/awclick.php?mid=110326&id=2520915",
   "sector": "Health & Beauty",
   "desc": "\r\n\r\n\r\n\r\n"
+ },
+ {
+  "name": "Best Choice Products",
+  "network": "Impact",
+  "url": "https://bestchoiceproducts.com",
+  "link": "https://bestchoiceproducts.sjv.io/c/5929369/2873487/33479",
+  "sector": null,
+  "desc": "Building Products We Know They'll Love. \r\nAt BCP, we work with our customers to build the most elevated products at the most affordable pricing on the market. Explore the online store with something for everyone in the family."
  },
  {
   "name": "Betckey",
@@ -561,18 +592,18 @@
  {
   "name": "Bitdefender",
   "network": "Impact",
-  "url": "http://www.bitdefender.com",
+  "url": "https://www.bitdefender.com",
   "link": "https://bitdefender.f9tmep.net/c/5929369/278689/4466",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Bitdefender - global leader in cybersecurity, protecting millions of users worldwide. We value our affiliate partners, providing dedicated support to help you grow. Join now and take advantage of our Summer Growth Boost CPA promo through August 31!"
  },
  {
   "name": "Black Widow Pro Amazon",
   "network": "Impact",
   "url": "http://motisbrands.com/",
   "link": "https://blackwidowpro.pxf.io/c/5929369/2859484/33238",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Black Widow products continue to be developed by powersport enthusiasts, for powersport enthusiasts. Our team understands the need for valuable, reliable equipment, and you\u2019ll find Black Widow ramps, carriers, wheel chocks and more."
  },
  {
   "name": "Blackhawk Network  (Canada) Ltd.",
@@ -608,10 +639,10 @@
  {
   "name": "Bluehost",
   "network": "Impact",
-  "url": "https://www.bluehost.com/",
+  "url": "https://www.bluehost.com",
   "link": "https://bluehost.sjv.io/c/5929369/795082/11352",
-  "sector": "Business / Creator Tools",
-  "desc": "active impact contract; business/creator stack monetization fit"
+  "sector": null,
+  "desc": "Powering over 2 million websites, Bluehost offers the ultimate WordPress platform. Tuned for WordPress, we offer WordPress-centric dashboards and tools along with 1-click installation, a FREE domain name, email, FTP, and more. Easily scalable and bac"
  },
  {
   "name": "bmiMD (US)",
@@ -620,6 +651,14 @@
   "link": "https://www.awin1.com/awclick.php?mid=106761&id=2520915",
   "sector": "Pharmaceuticals",
   "desc": "Clinical weight loss, powered by Semaglutide  Tirzepatide, the same active ingredients as Wegovy\u00ae  Zepbound\u00ae, delivered to your door. Over 60K happy members enjoy affordable, seamless care with bmiMD\u2019s telehealth weight management programs. 4.9 \u2605 rating"
+ },
+ {
+  "name": "BookSeats",
+  "network": "Impact",
+  "url": "https://bookseats.com",
+  "link": "https://bookseats.pxf.io/c/5929369/3908823/53276",
+  "sector": null,
+  "desc": "BookSeats is a travel-and-ticket booking platform for sports and entertainment fans, offering customized packages that bundle event tickets with hotels and airfare."
  },
  {
   "name": "Border Free Health US",
@@ -649,16 +688,16 @@
   "network": "Impact",
   "url": "http://www.brondell.com",
   "link": "https://brondell.pxf.io/c/5929369/887206/12276",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Brondell delivers a healthy, vibrant home experience with products that feature a unique blend of the latest technology and modern design.  You and your loved ones deserve it all - the best water, the best air, and the best hygiene."
  },
  {
   "name": "Brondell Seller Program",
   "network": "Impact",
   "url": "http://www.brondell.com",
   "link": "https://brondellsellerprogram.sjv.io/c/5929369/3285166/42658",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "The Top Manufacturer of Bidets and Home Goods on Amazon."
  },
  {
   "name": "BurchdaBikes",
@@ -724,10 +763,10 @@
  {
   "name": "CapCut Affiliate Program",
   "network": "Impact",
-  "url": "http://www.capcut.com/zh-tw/",
+  "url": "http://www.capcut.com/",
   "link": "https://capcutaffiliateprogram.pxf.io/c/5929369/1876054/22474",
-  "sector": "Business / Creator Tools",
-  "desc": "active impact contract; business/creator stack monetization fit"
+  "sector": null,
+  "desc": "The campaign allows you to earn commissions by referring customers to CapCut Pro through tracked affiliate links and creatives. Create fun and engaging content for CapCut Pro edit tools, templates or AI features. Start referral, earn up to $15,000!"
  },
  {
   "name": "Capucinne Ltd, Inc.",
@@ -765,8 +804,8 @@
   "network": "Impact",
   "url": "https://www.cbdforlife.us/",
   "link": "https://imp.i295461.net/c/5929369/819381/11575",
-  "sector": "High-Risk Adjacent / Compliance Review",
-  "desc": "active impact contract; compliance/platform risk; use carefully"
+  "sector": null,
+  "desc": "One of the original CBD brands that helped start the wellness movement, now expanded to include plant-powered solutions for every part of your day. Our mission is simple: to create the highest-quality wellness products, so you feel better every day."
  },
  {
   "name": "CBDSOL",
@@ -801,6 +840,14 @@
   "desc": "Give your audience a smarter way to take control of their money. Changed helps people automate extra payments, track every balance in one place, and knock out debt years sooner \u2014 saving serious cash along the way. It\u2019s simple, proven, and built to make be"
  },
  {
+  "name": "Chefman",
+  "network": "Impact",
+  "url": "https://Chefman.com",
+  "link": "https://chefman.pxf.io/c/5929369/3804453/49263",
+  "sector": null,
+  "desc": "Chefman is one of North America\u2019s leading kitchen appliance brands, focused on making every day cooking easier, faster, and more enjoyable."
+ },
+ {
   "name": "CHEUNG FU INC",
   "network": "Awin",
   "url": "https://www.vanimy.com/",
@@ -818,10 +865,10 @@
  {
   "name": "Choice Privileges - Points.com",
   "network": "Impact",
-  "url": "http://www.points.com",
+  "url": "http://points.com",
   "link": "https://choice.mtko.net/c/5929369/319073/4885",
-  "sector": "Travel / Creator Lifestyle",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Choice Privileges program partners with Points to sell loyalty points to its members, whether they need more to book a hotel or are stocking up for future bookings"
  },
  {
   "name": "Cloth Vintage Affiliate Programme",
@@ -891,6 +938,14 @@
    "ends": "2029-08-23",
    "link": "https://www.awin1.com/cread.php?awinmid=124272&awinaffid=2520915&ued=https%3A%2F%2Fcolordiamonds.co.uk%2Fproduct%2Fcolordiamonds-premium-lab-grown-melee-diamonds%2F"
   }
+ },
+ {
+  "name": "Copa Airlines ConnectMiles - Points.com",
+  "network": "Impact",
+  "url": "https://www.copaair.com/en/web/us/connectmiles/about-connectmiles",
+  "link": "https://copa.sjv.io/c/5929369/343960/5123",
+  "sector": null,
+  "desc": "Copa Airlines' ConnectMiles program partners with Points to sell ConnectMiles points to its members, whether they need more to book an award flight or are stocking up for future trips. Frequent bonus/discount offers add incentive to buy."
  },
  {
   "name": "Cosabella (US)",
@@ -963,10 +1018,10 @@
  {
   "name": "Crazy Domains Affiliate Program",
   "network": "Impact",
-  "url": "crazydomains.com",
+  "url": "https://www.crazydomains.com",
   "link": "https://crazydomains.sjv.io/c/5929369/1250155/15393",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Crazy Domains is a world leading international domain name registrar, web hosting and online marketing company. We pride our brand on offering cutting edge products and services, coupled with the great pricing and support we feel everyone deserves."
  },
  {
   "name": "curtainuk",
@@ -994,10 +1049,10 @@
  {
   "name": "Daily High Club Affiliate Program",
   "network": "Impact",
-  "url": "http://www.dailyhighclub.com",
+  "url": "http://dailyhighclub.com",
   "link": "https://daily-high-club-affiliate-program.pxf.io/c/5929369/673119/10481",
-  "sector": "Core Pixie's Pantry Hardware",
-  "desc": "active impact contract; shop/category overlap and comparison-page fit"
+  "sector": null,
+  "desc": "Discover the ultimate smoking subscription! Daily High Club delivers monthly boxes packed with essential accessories like glassware, bongs, and dab rigs. Elevate your affiliate earnings by promoting our epic products. Join now and start earning big!"
  },
  {
   "name": "Daily Sale, Inc.",
@@ -1025,10 +1080,10 @@
  {
   "name": "DankStop",
   "network": "Impact",
-  "url": "http://hightideinc.com/",
+  "url": "http://dankstop.com/",
   "link": "https://dankstop.sjv.io/c/5929369/2120669/26925",
-  "sector": "Core Pixie's Pantry Hardware",
-  "desc": "active impact contract; shop/category overlap and comparison-page fit"
+  "sector": null,
+  "desc": "Join DankStop, the world's top online headshop! Promote our vast selection of smoking accessories! With diverse styles and prices, you'll earn industry-leading commissions. Don't miss out\u2014partner with DankStop and boost your earnings!"
  },
  {
   "name": "Databazaar.com",
@@ -1070,9 +1125,9 @@
  },
  {
   "name": "DHgate",
-  "network": "Awin",
+  "network": "Awin+Impact",
   "url": "https://www.dhgate.com",
-  "link": "https://www.awin1.com/awclick.php?mid=90689&id=2520915",
+  "link": "https://dhgate.sjv.io/c/5929369/868543/12108",
   "sector": "Lead Gen",
   "desc": "DHgate.com is the world's leading online wholesale marketplace for goods made in China, connecting international buyers with Chinese wholesale sellers who offer the same quality products found elsewhere at a fraction of the price.DHgate",
   "promo": {
@@ -1115,28 +1170,20 @@
   "desc": "Distacart is an e-commerce marketplace that sells Indian products to overseas markets. With 60,000+ product catalogue including Ayurvedic & Homeopathic products, beauty and personal care products, India"
  },
  {
-  "name": "DocuSign",
-  "network": "Impact",
-  "url": "http://www.docusign.com",
-  "link": "https://docusign.pxf.io/c/5929369/1679366/19450",
-  "sector": "Business / Creator Tools",
-  "desc": "active impact contract; business/creator stack monetization fit"
- },
- {
   "name": "Dr.Dabber",
   "network": "Impact",
   "url": "http://www.drdabber.com",
   "link": "https://drdabber.sjv.io/c/5929369/1892868/22644",
-  "sector": "Core Pixie's Pantry Hardware",
-  "desc": "active impact contract; priority device/accessory brand fit"
+  "sector": null,
+  "desc": "Dr.Dabber\u00ae works tirelessly to develop and create the coolest, most innovative vaporizers on earth. We take chances that other companies won\u2019t in the pursuit of creating the best vape pens and electric dab rigs possible."
  },
  {
   "name": "Easyship Ambassador Program",
   "network": "Impact",
-  "url": "https://www.easyship.com/",
+  "url": "http://www.easyship.com",
   "link": "https://easyship.ilbqy6.net/c/5929369/666308/10435",
-  "sector": "Business / Creator Tools",
-  "desc": "active impact contract; business/creator stack monetization fit"
+  "sector": null,
+  "desc": "Easyship is an All in One Shipping Platform trusted by 100k+ businesses to enable cross border shipping; making it simpler, more cost-effective & seamless. Print labels, issue returns, share tracking info & automate taxes & duties in seconds."
  },
  {
   "name": "Eayon hair",
@@ -1262,36 +1309,36 @@
   "desc": "Affiliate terms Model: RevShare Payout: from 20% lifetime You earn from 20% of the profit from every subscription for every user you refer, for the entire lifetime of that customer (including all renewals). Platform: iOS only GEO: Worldwide WW"
  },
  {
-  "name": "ESIM USA",
-  "network": "Impact",
-  "url": "esimusa.com",
-  "link": "https://esimusa.sjv.io/c/5929369/1645528/19103",
-  "sector": "Travel / Creator Lifestyle",
-  "desc": "active impact contract"
- },
- {
   "name": "eSIM4Travel - Best eSIM Packages for family travel",
   "network": "Impact",
-  "url": "https://www.esim4travel.com",
+  "url": "http://www.esim4travel.com/about",
   "link": "https://esim4travel.pxf.io/c/5929369/1899395/22726",
-  "sector": "Travel / Creator Lifestyle",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "eSIM4Travel is an eSIM service provider. Powered by trusted International Telecom, we offer a reliable network that keeps travellers connected across the globe in over 180 destinations."
  },
  {
   "name": "esimcards",
   "network": "Impact",
-  "url": "http://www.airhubapp.com",
+  "url": "http://esimcards.co.uk/",
   "link": "https://esimcards.pxf.io/c/5929369/2193679/28225",
-  "sector": "Travel / Creator Lifestyle",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "eSIMcards UK provides eSIMs for Tier 1 MNOs in the UK, helping people stay connected with a range of options including Vodafone, O2, EE, and 3UK. We also assist international travelers to the UK in staying connected during their visit."
+ },
+ {
+  "name": "ESIMUSA.com",
+  "network": "Impact",
+  "url": "https://esimusa.com/",
+  "link": "https://esimusa.sjv.io/c/5929369/1645528/19103",
+  "sector": null,
+  "desc": "ESIMJUSA.com is the No.1 USA eSIM store for travelers visiting the United States.\r\nWe offer reliable, easy-to-use eSIM plans tailored for your trip to the USA.\r\nStay connected effortlessly from arrival to departure with our trusted eSIM plans."
  },
  {
   "name": "eSIMX",
   "network": "Impact",
   "url": "https://esimx.com",
   "link": "https://skylarkconnectllc.pxf.io/c/5929369/2147759/27320",
-  "sector": "Travel / Creator Lifestyle",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "eSIMX is a digital channel for telecom services, enabling consumers to find and buy the best mobile offers through their favorite e-commerce platforms"
  },
  {
   "name": "ETechBuy.com",
@@ -1311,26 +1358,26 @@
  {
   "name": "Eufy NL & CA",
   "network": "Impact",
-  "url": "http://anker.com",
+  "url": "https://www.eufy.com",
   "link": "https://eufy.sjv.io/c/5929369/1543970/18024",
-  "sector": "Tech / Electronics",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "eury by Anker fields in Home Appliances, boasting Vacuum Cleaner, Security Camera, Baby Monitor to Make Smart Home Simplified. Loved by 5 million families and proven with over 50,000 5-star reviews."
  },
  {
   "name": "Eufy US",
   "network": "Impact",
-  "url": "http://www.eufy.com",
+  "url": "https://www.eufy.com",
   "link": "https://eufy-us.sjv.io/c/5929369/999452/13094",
-  "sector": "Tech / Electronics",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Join Eufy US and earn Commission per sale with 10% CR and $260 AOV. \r\nEufy Security Camera and Robovac \u201cSmart Home Simplified\u201d \"Built With Care\"."
  },
  {
   "name": "eufyMake",
   "network": "Impact",
-  "url": "http://anker.com",
+  "url": "https://www.eufymake.com",
   "link": "https://eufymake.sjv.io/c/5929369/1543974/18025",
-  "sector": "Tech / Electronics",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "eufyMake\r\neufyMake E1: \r\nthe 1st Personal 3D-Texture UV Printer"
  },
  {
   "name": "EVDANCE",
@@ -1532,6 +1579,14 @@
   }
  },
  {
+  "name": "GearUP",
+  "network": "Impact",
+  "url": "https://www.gearupbooster.com/",
+  "link": "https://gearup.sjv.io/c/5929369/3204502/40222",
+  "sector": null,
+  "desc": "Want to get rid of high ping, packet loss, spikes, and jitters? Here we are! As your game network guardian,\r\nGearUP will never let a poor internet connection stop your thrill gaming."
+ },
+ {
   "name": "GeekShare",
   "network": "Awin",
   "url": "https://geekshare.com/",
@@ -1597,8 +1652,16 @@
   "network": "Impact",
   "url": "https://gisou.com",
   "link": "https://gisou.sjv.io/c/5929369/2963230/35276",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Bee-powered haircare by Negin Mirsalehi\r\nSix-generation heritage. Sustainably-sourced"
+ },
+ {
+  "name": "Gizmo AI",
+  "network": "Impact",
+  "url": "https://gizmo.ai",
+  "link": "https://gizmoai.pxf.io/c/5929369/3933820/54152",
+  "sector": null,
+  "desc": "Gizmo is the AI study app that turns your notes and lecture slides into flashcards and quizzes using proven spaced repetition. Trusted by millions of students to learn faster and ace exams. A high-converting offer with mass-market appeal."
  },
  {
   "name": "GL Capital Ventures LLC",
@@ -1631,12 +1694,12 @@
   }
  },
  {
-  "name": "Global YO eSIM+",
+  "name": "Global YO",
   "network": "Impact",
-  "url": "http://globalyo.com",
+  "url": "https://www.globalyo.com/#get-data-section",
   "link": "https://globalyo.pxf.io/c/5929369/1964697/24001",
-  "sector": "Travel / Creator Lifestyle",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "GlobalYO is the traveler's best buddy. It\u2019s not your average eSIM \u2013 you get the best data deals, along with cheap calls, free indie movies, radio stations, curated maps, live DJ sets, unlimited rewards & fun, and so much more."
  },
  {
   "name": "Golden Goat CBD",
@@ -1645,14 +1708,6 @@
   "link": "https://www.awin1.com/awclick.php?mid=119681&id=2520915",
   "sector": "Wine, Spirits & Tobacco",
   "desc": "Golden Goat CBD provides premium, USA-made CBD  THC products including gummies, oils, topicals, and pet care. All items are lab-tested, Farm Bill compliant, and trusted by customers. Affiliates benefit from strong demand and recurring sales."
- },
- {
-  "name": "GoMoWorld",
-  "network": "Impact",
-  "url": "http://www.gomoworld.com",
-  "link": "https://gomoworld.pxf.io/c/5929369/2007335/24792",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
  },
  {
   "name": "Gonex LLC",
@@ -1701,6 +1756,14 @@
   }
  },
  {
+  "name": "Haus of Brilliance Amazon",
+  "network": "Impact",
+  "url": "https://www.hausofbrilliance.com",
+  "link": "https://hausofbrillianceamazon.sjv.io/c/5929369/2885015/33689",
+  "sector": null,
+  "desc": "Haus of Brilliance is a family legacy over 50 years strong, rooted in NYC\u2019s Diamond District. We craft fine jewelry with natural diamonds, gemstones, and pearls\u2014expertly made, honestly priced, and designed to become cherished heirlooms."
+ },
+ {
   "name": "HB Digital Inc (DealFuel)",
   "network": "Awin",
   "url": "https://dealfuel.com",
@@ -1735,16 +1798,16 @@
   "network": "Impact",
   "url": "https://hellohelium.com",
   "link": "https://heliummobile1.sjv.io/c/5929369/2959344/35175",
-  "sector": "Travel / Creator Lifestyle",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "The only mobile carrier to offer a 100% free plan, no credit card required. Network coverage from T-Mobile and even more coverage from the Helium Network."
  },
  {
   "name": "Hemp Bombs",
   "network": "Impact",
-  "url": "http://global-widget.com/",
+  "url": "https://www.hempbombs.com",
   "link": "https://hempbombs.pxf.io/c/5929369/513867/8793",
-  "sector": "High-Risk Adjacent / Compliance Review",
-  "desc": "active impact contract; compliance/platform risk; use carefully"
+  "sector": null,
+  "desc": "Hemp Bombs is an established company that manufactures high quality CBD products through domestic sourcing, in-house manufacturing, and quality control. Sold in-store and online through the United States."
  },
  {
   "name": "Hibrew.com",
@@ -1774,8 +1837,8 @@
   "network": "Impact",
   "url": "http://www.points.com",
   "link": "https://hilton.ijrn.net/c/5929369/314255/4823",
-  "sector": "Travel / Creator Lifestyle",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Hilton Honors program partners with Points to sell Honors points to its members, whether they need more to book a hotel room or are stocking up for future trips. Frequent bonus/discount offers add incentive to buy points."
  },
  {
   "name": "Himiway Affiliate Program",
@@ -1841,10 +1904,10 @@
  {
   "name": "Homestyler",
   "network": "Impact",
-  "url": "https://www.homestyler.com",
+  "url": "http://www.homestyler.com",
   "link": "https://homestyler.sjv.io/c/5929369/1917730/22993",
-  "sector": "Business / Creator Tools",
-  "desc": "active impact contract; business/creator stack monetization fit"
+  "sector": null,
+  "desc": "Homestyler offers two different home d\u00e9cor solutions: the Homestyler Floor planner, that you find on our website www.homestyler.com and the application Homestyler, that is available for both iOS and Android devices."
  },
  {
   "name": "HongKong Haowei technology Limited",
@@ -1920,16 +1983,16 @@
   "network": "Impact",
   "url": "https://store.iflytek.com/",
   "link": "https://iflytekhongkongcompanylimited.pxf.io/c/5929369/2783536/31878",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Introducing iFLYTEK: Innovative technology designed for seamless communication. From AI-powered translators to smart voice assistants, our products combine cutting-edge technology with user-friendly design. Join us to enhance your digital experience"
  },
  {
   "name": "IHG Rewards Club - Points.com",
   "network": "Impact",
   "url": "http://www.points.com",
   "link": "https://ihg.hmxg.net/c/5929369/310617/4797",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "IHG Rewards Club program partners with Points to sell IHG reward points to its members, whether they need more to book a hotel room or are stocking up for future trips. Frequent bonus/discount offers add incentive to buy miles."
  },
  {
   "name": "Imou FR",
@@ -1974,16 +2037,16 @@
   "network": "Impact",
   "url": "http://www.ie-cbd.com",
   "link": "https://innovative-extracts.pxf.io/c/5929369/1171993/14789",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Innovative Extracts is a 100% Veteran owned CBD grower and supplement manufacturer located in Western Pennsylvania. We offer an array of CBD products such as Full Spectrum CBD Tinctures, THC-Free Tinctures, Gummies, Creams, and Pet Products."
  },
  {
   "name": "Instant Funding",
   "network": "Impact",
   "url": "https://instantfunding.com/",
   "link": "https://instantfunding.sjv.io/c/5929369/2386495/29840",
-  "sector": "Business / Creator Tools",
-  "desc": "active impact contract; business/creator stack monetization fit"
+  "sector": null,
+  "desc": "At Instant Funding, we\u2019re revolutionizing proprietary trading and trader education with transparency, accessibility, and growth. Our mission: provide a trusted firm with clear rules, robust risk management, and integrity\u2014setting a new standard."
  },
  {
   "name": "IonPacific",
@@ -1998,8 +2061,8 @@
   "network": "Impact",
   "url": "http://www.iroamly.com",
   "link": "https://iroamly.pxf.io/c/5929369/1983437/24340",
-  "sector": "Travel / Creator Lifestyle",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "iRoamly provides 40+ eSIM packages per country, from basic to unlimited data, catering to diverse traveler needs. Benefit from a 5% CR, $25 AOV, 15% commission(at least $1), and a 30-day cookie window to maximize your earnings!"
  },
  {
   "name": "ISEE HAIR",
@@ -2081,10 +2144,10 @@
  {
   "name": "JetBlue TrueBlue - Points.com",
   "network": "Impact",
-  "url": "http://www.points.com",
+  "url": "http://points.com",
   "link": "https://jetblue.jyeh.net/c/5929369/319069/4883",
-  "sector": "Travel / Creator Lifestyle",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "JetBlue TrueBlue program partners with Points to sell TrueBlue points to its members, whether they need more to book an award flight or are stocking up for future trips. Frequent bonus/discount offers add incentive to buy miles."
  },
  {
   "name": "JMBricklayer",
@@ -2244,16 +2307,16 @@
   "network": "Impact",
   "url": "https://krisp.ai",
   "link": "https://krisp.pxf.io/c/5929369/2859289/33230",
-  "sector": "Business / Creator Tools",
-  "desc": "active impact contract; business/creator stack monetization fit"
+  "sector": null,
+  "desc": "Krisp is an AI voice productivity tool trusted by 7M+ users \u2014 real-time noise cancellation, meeting transcription, and AI meeting notes. Earn 30% recurring commission for 12 months on every referral. 90-day cookie window. Monthly payouts via Impact."
  },
  {
   "name": "Kroger Wireless",
   "network": "Impact",
-  "url": "http://www.krogerwireless.com",
+  "url": "https://www.krogerwireless.com",
   "link": "https://krogerwireless.pxf.io/c/5929369/1609087/18670",
-  "sector": "Travel / Creator Lifestyle",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Kroger Wireless, a Kroger company, is a no-contract pay as you go wireless service provider. We offer various cell phone coverage plans for less. Unlimited data, talk and text starting at $15/month. Subscribers can earn 4X Fuel Points for every plan."
  },
  {
   "name": "Kush Queen",
@@ -2297,10 +2360,10 @@
  {
   "name": "Lenovo India",
   "network": "Impact",
-  "url": "http://www.lenovo.com/in/en",
+  "url": "http://Lenovo.com/in/en",
   "link": "https://lenovo-in.zlvv.net/c/5929369/584269/9634",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Lenovo.com Is the owned ecommerce store for Lenovo India. We sell Laptops, PCs, Tablets and computer peripherals pan-India (only INDIA). Our site offers the entire range of brands Lenovo offers including Ideapad, Ideacentre, ThinkPad, Legion and Yoga"
  },
  {
   "name": "LifeVibe",
@@ -2320,10 +2383,10 @@
  {
   "name": "Lightailing",
   "network": "Impact",
-  "url": "https://www.funwhole.com/",
+  "url": "https://www.lightailing.com/",
   "link": "https://lightailing.sjv.io/c/5929369/1448258/17190",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "The led light can make the building blocks toys shine in an instant, and it means that it gives them brightness in the dark.\r\nBy joining Funwhole\u2019s affiliate program, you will have the news of promotions for the first time."
  },
  {
   "name": "Lighted Address Numbers",
@@ -2436,18 +2499,18 @@
  {
   "name": "Lux",
   "network": "Impact",
-  "url": "https://ebrands.com/",
+  "url": "https://luxsports.co/",
   "link": "https://lux.sjv.io/c/5929369/1980001/24275",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "World's #1 grip socks. Initially developed for football but these can also be used for running, tennis, rugby, yoga, gym, and many other sports. The grip on the socks means that your foot doesn't slide in the shoe which gives you more power to run"
  },
  {
   "name": "LycaMobile USA",
   "network": "Impact",
   "url": "https://www.lycamobile.us",
   "link": "https://lycamobileusa.sjv.io/c/5929369/2047927/25589",
-  "sector": "Travel / Creator Lifestyle",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Join the Lyca Mobile US affiliate program & promote our mobile service with plans as low as $5. We offer commissions staring at $10, and have real-time tracking & receive dedicated support to help you along the way. Help us connect people worldwide!"
  },
  {
   "name": "Makerhub LLC",
@@ -2504,20 +2567,28 @@
   }
  },
  {
+  "name": "Margovil",
+  "network": "Impact",
+  "url": "https://www.margovil.com",
+  "link": "https://margovil.pxf.io/c/5929369/3384076/44973",
+  "sector": null,
+  "desc": "Margovil, founded in Shanghai in 2019, is a women\u2019s fashion brand offering a vast range of dresses, tops, bottoms & more. We create timeless \"trends you keep\"\u2014versatile, high-quality pieces for a day-to-night lifestyle, all at an accessible price."
+ },
+ {
   "name": "Marriott Bonvoy - Points.com",
   "network": "Impact",
-  "url": "http://www.points.com",
+  "url": "http://points.com",
   "link": "https://marriott.pxf.io/c/5929369/321373/4937",
-  "sector": "Travel / Creator Lifestyle",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Marriott Bonvoy partners with Points to sell its reward points to members. whether they need more to book a hotel or are stocking up for future trips. Frequent bonus/discount offers add incentive to buy points."
  },
  {
   "name": "Martinic Audio",
   "network": "Impact",
-  "url": "http://www.martinic.com",
+  "url": "https://www.martinic.com/",
   "link": "https://martinic.evyy.net/c/5929369/281363/4482",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Audio software developers with a passion for accurately modeling classic electronic instruments and effects to the highest possible quality. Audio Plugins (Virtual Instruments and Virtual Effects) - VST Plugins, Audio Units."
  },
  {
   "name": "Mason Jar Lifestyle",
@@ -2747,8 +2818,8 @@
   "network": "Impact",
   "url": "https://mooselabs.us",
   "link": "https://mooselabs.pxf.io/c/5929369/2944306/34865",
-  "sector": "Adjacent Accessories / Adult Context",
-  "desc": "active impact contract; adjacent accessory/content fit"
+  "sector": null,
+  "desc": "Moose Labs makes MouthPeaces & Filters\u2014innovative accessories designed to make smoking safer, cleaner, and more enjoyable. Engineered for cannabis users who care about health & sharing responsibly."
  },
  {
   "name": "MorningBlues",
@@ -2786,24 +2857,24 @@
   "network": "Impact",
   "url": "https://www.mount-it.com",
   "link": "https://mountit.pxf.io/c/5929369/2936681/34723",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Mount-It! invites you to Elevate Your Space. Founded in 2006, Mount-It! is your solution to creating a better home and workspace environment. We combine visual appeal with functionality and back up our exceptional quality with a lifetime warranty."
  },
  {
   "name": "Munchkin",
   "network": "Impact",
   "url": "https://www.munchkin.com",
   "link": "https://impact.munchkin.com/c/5929369/435609/7649",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Munchkin is a beloved baby and infant brand known for designing trusted, innovative, and effective products for more than 30 years."
  },
  {
   "name": "MushroomSupplies.com",
   "network": "Impact",
-  "url": "http://mushroomsupplies.com",
+  "url": "https://mushroomsupplies.com",
   "link": "https://mushroom-supplies.sjv.io/c/5929369/1554002/18134",
-  "sector": "High-Risk Adjacent / Compliance Review",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "MushroomSupplies.com is the leader in mushroom grow kits and supplies for medicinal dung-long mushrooms. Our easy-to-use all-in-one bag allows first-timers and commercial cultivators to grow mushrooms without expensive equipment or prior knowledge."
  },
  {
   "name": "MYCHWAY",
@@ -2829,28 +2900,20 @@
   }
  },
  {
-  "name": "MyDataRemoval",
-  "network": "Impact",
-  "url": "https://www.mydataremoval.com",
-  "link": "https://goto.mydataremoval.com/c/5929369/2928977/34569",
-  "sector": "Business / Creator Tools",
-  "desc": "active impact contract; business/creator stack monetization fit"
- },
- {
   "name": "Mystic Labs",
   "network": "Impact",
-  "url": "http://global-widget.com/",
+  "url": "https://mysticlabsd8.com/",
   "link": "https://mysticlabs.sjv.io/c/5929369/1125213/14252",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Mystic Labs\u2122 is a one-stop-shop for the highest-quality Delta-8 and Delta-9 products, from gummies to tincture oils to vape."
  },
  {
   "name": "Nalgene",
   "network": "Impact",
-  "url": "http://www.nalgene.com",
+  "url": "http://nalgene.com/",
   "link": "https://nalgene.pxf.io/c/5929369/970979/12848",
-  "sector": "Adjacent Accessories / Adult Context",
-  "desc": "active impact contract; adjacent accessory/content fit"
+  "sector": null,
+  "desc": "Makers of the original reusable water bottle, and the trusted companion of adventurers everywhere. Nalgene bottles are BPA/BPS-free, incredibly durable and ready for anything, that\u2019s why we guarantee them for life."
  },
  {
   "name": "Natkina",
@@ -2878,10 +2941,10 @@
  {
   "name": "Naturecan Germany",
   "network": "Impact",
-  "url": "https://uk.naturecan.com",
+  "url": "http://www.naturecan.de",
   "link": "https://naturecan-de.sjv.io/c/5929369/1009676/13215",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "At Naturecan we track all of our products from the seed being planted to the product being delivered to your door.\r\n\r\nAlong that journey it's our mission to reduce our carbon footprint and give back to nature."
  },
  {
   "name": "Nexbie",
@@ -3017,8 +3080,8 @@
   "network": "Impact",
   "url": "https://orbitmobile.com",
   "link": "https://orbitmobile.sjv.io/c/5929369/2846112/32966",
-  "sector": "Travel / Creator Lifestyle",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Orbit Mobile makes travel easy with instant eSIMs. Stay connected in 190+ countries without roaming charges or physical SIM cards. Simple, affordable, and hassle-free. Join our affiliate program and earn while helping travelers stay online!"
  },
  {
   "name": "OUFER BODY JEWELRY",
@@ -3132,8 +3195,8 @@
   "network": "Impact",
   "url": "https://www.plaud.ai",
   "link": "https://plaudus.sjv.io/c/5929369/2898403/33953",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "This program is exclusively for the United States. Applications from other regions will be rejected."
  },
  {
   "name": "Pleasure Chest",
@@ -3228,14 +3291,6 @@
   }
  },
  {
-  "name": "Prop Money Inc.",
-  "network": "Impact",
-  "url": "http://propmoney.com",
-  "link": "https://propmoneyinc.pxf.io/c/5929369/1151627/14559",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
- },
- {
   "name": "Prosto Concept (US)",
   "network": "Awin",
   "url": "https://prostoconcept.com/",
@@ -3328,14 +3383,6 @@
   "desc": "Ravin Crossbows delivers apex performance for serious hunters. Known for cutting-edge technology, unmatched precision, and compact power, Ravin is the top choice for those who demand elite gear. Join Ravin Nation and earn 5% commission on high-value order"
  },
  {
-  "name": "Razer Affiliate Program",
-  "network": "Impact",
-  "url": "https://www.razer.com",
-  "link": "https://razer.a9yw.net/c/5929369/642901/10229",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
- },
- {
   "name": "Red Spectrum LLC",
   "network": "Awin",
   "url": "https://theredspectrum.com",
@@ -3425,8 +3472,8 @@
   "network": "Impact",
   "url": "https://us.roborock.com",
   "link": "https://roborockamazonseller.pxf.io/c/5929369/2378459/29805",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Roborock's intelligent automatic robot vacuum cleaners turn time spent vacuuming and mopping into free time for you to spend on the better things in life."
  },
  {
   "name": "ROCKBROS",
@@ -3524,10 +3571,10 @@
  {
   "name": "SentryPC",
   "network": "Impact",
-  "url": "https://www.sentrypc.com",
+  "url": "https://www.sentrypc.com/",
   "link": "https://sentrypc.7eer.net/c/5929369/200311/3022",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "SentryPC combines award-winning computer monitoring features with essential content filtering, time management, and access control abilities to create an all-in-one software solution for concerned parents and employers."
  },
  {
   "name": "Serwall Home Co., Ltd.",
@@ -3667,14 +3714,6 @@
   }
  },
  {
-  "name": "Shopify",
-  "network": "Impact",
-  "url": "https://www.shopify.com",
-  "link": "https://shopify.pxf.io/c/5929369/1061744/13624",
-  "sector": "Business / Creator Tools",
-  "desc": "active impact contract; business/creator stack monetization fit"
- },
- {
   "name": "Sicotas",
   "network": "Awin",
   "url": "https://www.sicotas.com",
@@ -3688,14 +3727,6 @@
    "ends": "2050-12-31",
    "link": "https://www.awin1.com/cread.php?awinmid=110532&awinaffid=2520915&ued=https%3A%2F%2Fwww.sicotas.com"
   }
- },
- {
-  "name": "Sider",
-  "network": "Impact",
-  "url": "https://sider.ai",
-  "link": "https://vidlineinc.pxf.io/c/5929369/2234186/28963",
-  "sector": "Business / Creator Tools",
-  "desc": "active impact contract; business/creator stack monetization fit"
  },
  {
   "name": "sikaic (US)",
@@ -3746,10 +3777,10 @@
  {
   "name": "SimpliSafe Home Security",
   "network": "Impact",
-  "url": "https://www.simplisafe.com",
+  "url": "https://simplisafe.com",
   "link": "https://simplisafe.sjv.io/c/5929369/1402420/16688?utm_medium=affiliate",
-  "sector": "Tech / Electronics",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "At SimpliSafe, safety is the only thing that matters. Our advanced home security is designed with cutting-edge tech and powered by 24/7 pro monitoring. Together, it\u2019s award-winning, intuitive and affordable protection so home can be safe for all."
  },
  {
   "name": "SIRUI",
@@ -3809,8 +3840,8 @@
   "network": "Impact",
   "url": "https://smilemakerscollection.com/",
   "link": "https://smilemakers.pxf.io/c/5929369/2081288/26106",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract; compliance/platform risk; use carefully"
+  "sector": null,
+  "desc": "At Smile Makers Collection, we create innovative, playful sexual wellness products that celebrate and prioritize pleasure. As a Smile Makers Collection affiliate, you\u2019ll get rewarded for sharing the love with friends, family and your community."
  },
  {
   "name": "Smoke Cartel",
@@ -3855,8 +3886,8 @@
   "network": "Impact",
   "url": "http://www.points.com",
   "link": "https://swa.eyjo.net/c/5929369/302888/4705",
-  "sector": "Travel / Creator Lifestyle",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Southwest Airlines' frequent flyer program partners with Points to sell Rapid Rewards points to its members, whether they need more to book an award flight or are stocking up for future trips. Frequent bonus/discount offers add incentive to buy."
  },
  {
   "name": "Sparkle GmbH",
@@ -3923,10 +3954,10 @@
  {
   "name": "Straight Talk",
   "network": "Impact",
-  "url": "https://www.tracfone.com/home",
+  "url": "https://www.straighttalk.com",
   "link": "https://straighttalk.sjv.io/c/5929369/1286597/15770",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Straight Talk provides nationwide coverage on America\u2019s best and most dependable networks, Verizon."
  },
  {
   "name": "Strong eSIM Affiliate Program",
@@ -4024,8 +4055,8 @@
   "network": "Impact",
   "url": "https://suppliesoutlet.com",
   "link": "https://suppliesoutlet.pxf.io/c/5929369/2006697/24774",
-  "sector": "Business / Creator Tools",
-  "desc": "active impact contract; business/creator stack monetization fit"
+  "sector": null,
+  "desc": "Supplies Outlet is an online retailer selling compatible printer ink & toner cartridges. We strive to provide the highest value to our customers by combining only quality tested products with competitive pricing and the best service in the business."
  },
  {
   "name": "Survive X US",
@@ -4048,16 +4079,16 @@
   "network": "Impact",
   "url": "https://t3micro.com/",
   "link": "https://t3microinc.pxf.io/c/5929369/2032298/25330",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "At T3, we care about one thing: HAIR.  Healthy, inspired, stop-you-in-your-tracks hair. We design tools for the woman who wants to style well and look great. The woman who wants her hair to make a statement (subtle or not) and radiate health."
  },
  {
   "name": "Talkroute Affiliate Program",
   "network": "Impact",
-  "url": "http://talkroute.com",
+  "url": "https://talkroute.com",
   "link": "https://talkroute.sjv.io/c/5929369/1668795/19348",
-  "sector": "Business / Creator Tools",
-  "desc": "active impact contract; business/creator stack monetization fit"
+  "sector": null,
+  "desc": "Talkroute is a Unified Communications Service that provides businesses and individuals with a full-featured professional phone system for calls along with texting and video conferencing features."
  },
  {
   "name": "Tameson (US)",
@@ -4094,8 +4125,16 @@
   "network": "Impact",
   "url": "https://teakwarehouse.com",
   "link": "https://teakwarehouse.sjv.io/c/5929369/2987967/35809",
-  "sector": "Event / Lifestyle Support",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "For over 25 years, Teak Warehouse has been handcrafting timeless luxury outdoor furniture using the finest materials, including A-grade teak, powder-coated aluminum, and outdoor rope\u2014designed to elevate residential and commercial spaces alike."
+ },
+ {
+  "name": "The Custom Chef US",
+  "network": "Impact",
+  "url": "https://thecustomchef.com",
+  "link": "https://thecustomchefus.pxf.io/c/5929369/3765522/47921",
+  "sector": null,
+  "desc": "THE CUSTOM CHEF\u2122 only produce the highest quality knives, forged with precision and bladesmith perfection"
  },
  {
   "name": "The GUU Shop (US)",
@@ -4132,8 +4171,8 @@
   "network": "Impact",
   "url": "http://thesill.com",
   "link": "https://thesill.sjv.io/c/5929369/1339924/16184",
-  "sector": "Event / Lifestyle Support",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "The Sill was founded on the premise that plants make people happy.\r\nShop thesill.com or one of our locations for live plants, artisan-made planters, plant care accessories, home decor, gifts and more. We also offer workshops to educate plant parents."
  },
  {
   "name": "The TeaBook",
@@ -4251,26 +4290,26 @@
  {
   "name": "Total Wireless",
   "network": "Impact",
-  "url": "https://www.tracfone.com/home",
+  "url": "http://www.totalwireless.com/",
   "link": "https://totalwireless.sjv.io/c/5929369/1286607/15774",
-  "sector": "Travel / Creator Lifestyle",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Total Wireless is a brand of TracFone Wireless, Inc., one of the largest wireless providers in the US. Total by Verizon provides nationwide coverage on America\u2019s best and most dependable network."
  },
  {
   "name": "TOTE & CARRY",
   "network": "Impact",
   "url": "https://www.totencarry.com/",
   "link": "https://totecarry.pxf.io/c/5929369/3082944/37936",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Shop Timeless Luggage Sets, Suitcases, & Purses. Bold colors. Head-turning design. Luxury looks without the luxury price tag, Shop Now."
  },
  {
   "name": "Tracfone",
   "network": "Impact",
   "url": "https://www.tracfone.com/home",
   "link": "https://tracfone.pxf.io/c/5929369/1286599/15771",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "No Contract 5G Prepaid Plans & Smartphones \r\nNow You're In Control"
  },
  {
   "name": "TracysDog",
@@ -4360,8 +4399,8 @@
   "network": "Impact",
   "url": "https://www.trucktok.com/",
   "link": "https://go.sjv.io/c/5929369/3335308/44072",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "TruckTok is a trusted auto parts brand offering diesel delete kits and intake & exhaust all-in-one kits for diesel trucks, including Ford Powerstroke, GM Duramax, and RAM Cummins."
  },
  {
   "name": "truehempstore",
@@ -4379,6 +4418,14 @@
   }
  },
  {
+  "name": "TSAR BOMBA WATCHES",
+  "network": "Impact",
+  "url": "https://tsarbomba.com",
+  "link": "https://landwinindustrialcolimited.sjv.io/c/5929369/2884658/33681",
+  "sector": null,
+  "desc": "2023 MUSE Gold Winner. Luxury mechanical watches featuring patented tool-free interchangeable bezels. Built with Carbon Fiber, Titanium, and Swiss movements ($500+ AOV). Endorsed by Rafael M\u00e1rquez & Producer Michael. 500k+ users from 40+ countries"
+ },
+ {
   "name": "Tsarbomba",
   "network": "Awin",
   "url": "https://tsarbomba.com",
@@ -4388,7 +4435,7 @@
   "promo": {
    "code": "PIXIE5",
    "exclusive": true,
-   "title": "Bound to my Impact publisher ID",
+   "title": "Bound to my Impact publisher ID for code attribution",
    "ends": "",
    "link": null
   }
@@ -4489,16 +4536,16 @@
   "network": "Impact",
   "url": "http://www.points.com",
   "link": "https://united.elfm.net/c/5929369/302886/4704",
-  "sector": "Travel / Creator Lifestyle",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "United Airlines' frequent flyer program partners with Points to sell MileagePlus miles to its members, whether they need more to book an award flight or are stocking up for future trips. Frequent bonus/discount offers add incentive to buy miles."
  },
  {
   "name": "US Mobile Inc.",
   "network": "Impact",
   "url": "https://www.usmobile.com",
   "link": "https://usmobileinc.pxf.io/c/5929369/2125271/26991",
-  "sector": "Travel / Creator Lifestyle",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Promote US Mobile's flexible phone plans that let users switch between major networks seamlessly. Earn commissions by offering customers the power to choose the best network for their needs and enjoy nationwide coverage."
  },
  {
   "name": "USIMS (US)",
@@ -4542,10 +4589,10 @@
  {
   "name": "VEGAS.com",
   "network": "Impact",
-  "url": "http://www.vegas.com/",
+  "url": "https://www.vegas.com",
   "link": "https://vegas.vdvm.net/c/5929369/260030/4221",
-  "sector": "Travel / Creator Lifestyle",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "We sell everything Vegas - and you can too. Among well-known brands, Vegas.com features some of the best commissions in the travel vertical. Earn up to 6% commission for every completed hotel and show booking and 1% for every vacation package."
  },
  {
   "name": "velagokotta",
@@ -4573,10 +4620,10 @@
  {
   "name": "Visible",
   "network": "Impact",
-  "url": "http://www.visible.com",
+  "url": "https://www.visible.com",
   "link": "https://visible.pxf.io/c/5929369/976691/12909",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "We're Visible. Our wireless plan has a lot to offer like unlimited data, messages and minutes\u2014 all powered by Verizon, 5G included. You can get our plan in addition to the latest phones, for as little as $25/mo."
  },
  {
   "name": "Vitae Glass",
@@ -4746,10 +4793,10 @@
  {
   "name": "Wine Express",
   "network": "Impact",
-  "url": "https://www.wineexpress.com",
+  "url": "https://www.wineexpress.com/",
   "link": "https://wineexpress.vneoga.net/c/5929369/88200/2181",
-  "sector": "General / Low Fit",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "Wine Express is a classic blend of value and service, offering both exclusive wines and the most popular brands. Customers can virtually taste before they buy with our engaging tasting videos. We guarantee satisfaction and speedy delivery."
  },
  {
   "name": "WINGGOOD",
@@ -4758,6 +4805,14 @@
   "link": "https://www.awin1.com/awclick.php?mid=37118&id=2520915",
   "sector": "Clothing Accessories",
   "desc": "BECOME A WALKHERO AFFILIATE\r\n\r\nThank you for your interest in the WalkHero Affiliate program!\r\n\r\nWalkHero is a pillar of classic workmanship and a beacon of American style. Since 2011, WalkHero has provided the highest quality products and set t"
+ },
+ {
+  "name": "WJS Home",
+  "network": "Impact",
+  "url": "https://wjshomestore.com",
+  "link": "https://guangzhouwenjiashengnetworktechnologycoltd.sjv.io/c/5929369/3862475/51470",
+  "sector": null,
+  "desc": "WJSHome offers comfortable, stain-resistant Cloud&Boness sofas, along with modern coffee tables and dining sets at great prices.High AOV, reliable conversion, flexible commissions, fresh creatives and full support help affiliates earn steady revenue."
  },
  {
   "name": "Woosir",
@@ -4785,10 +4840,10 @@
  {
   "name": "World of Hyatt - Points.com",
   "network": "Impact",
-  "url": "http://www.points.com",
+  "url": "",
   "link": "https://hyatt.jewn.net/c/5929369/319067/4882",
-  "sector": "Travel / Creator Lifestyle",
-  "desc": "active impact contract"
+  "sector": null,
+  "desc": "World of Hyatt program partners with Points to sell Hyatt reward points to its members, whether they need more to book a hotel room or are stocking up for future use. Frequent bonus/discount offers add incentive to buy points."
  },
  {
   "name": "WOSPORTS",

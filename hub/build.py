@@ -28,13 +28,9 @@ AWIN_AFFID = os.environ.get("AWIN_AFFID", "").strip()
 PARTNERS = {p["name"]: p for p in json.loads((ROOT / "data" / "partners.json").read_text())}
 PROMOS = json.loads((ROOT / "data" / "promos.json").read_text())
 
-# Personal codes confirmed by the merchant in writing but not flagged exclusive in the feed.
-EXTRA_EXCLUSIVE = [
-    {"merchant": "Smoke Cartel", "code": "MELLOWPIXIE", "exclusive": True,
-     "title": "5% off, mapped to my Awin publisher ID", "ends": "", "link": None},
-    {"merchant": "Tsarbomba", "code": "PIXIE5", "exclusive": True,
-     "title": "Bound to my Impact publisher ID for code attribution", "ends": "", "link": None},
-]
+# Personal codes confirmed on Impact or in writing by the merchant.
+EXTRA_EXCLUSIVE = json.loads((ROOT / "data" / "impact_codes.json").read_text())
+
 for _e in EXTRA_EXCLUSIVE:
     if not any(x["merchant"] == _e["merchant"] and x["code"] == _e["code"] for x in PROMOS):
         PROMOS.insert(0, _e)
