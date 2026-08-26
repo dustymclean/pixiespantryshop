@@ -21,6 +21,7 @@ from urllib.parse import quote
 
 sys.path.insert(0, str(Path(__file__).parent))
 import merchant_pages  # noqa: E402
+import search as ppsearch  # noqa: E402
 from data.content import HUBS, SHOP_URL  # noqa: E402
 
 ROOT = Path(__file__).parent
@@ -281,6 +282,8 @@ footer a{color:var(--gold-2)}
 @media(max-width:640px){body{font-size:16px}section.band{padding:46px 0 4px}}
 """
 
+CSS = CSS + ppsearch.SEARCH_CSS
+
 HEAD = """<!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8">
@@ -334,6 +337,7 @@ def build_hub(key: str) -> str:
   <a class="btn" href="{h['primary_cta'][1]}">{h['primary_cta'][0]}</a>
   <a class="btn ghost" href="/promo-codes/">Promo Codes</a>
   <a class="btn ghost" href="/">Other Hubs</a>
+  {ppsearch.search_html(key)}
 </div></header>
 <nav class="jump"><div class="wrap">""")
     for s in h["sections"]:
@@ -369,6 +373,7 @@ def build_hub(key: str) -> str:
       <span class="golinks"><a class="go" href="{url}" {rel}>Visit {name} &rarr;</a>{mp}</span>
     </div>""")
         out.append("</div></div></section>")
+    out.append(ppsearch.search_js())
     out.append(FOOTER.format(shop=SHOP_URL))
     return "".join(out)
 
@@ -386,6 +391,7 @@ def build_index() -> str:
   doing the recommending. Pick a door, or walk straight into the store.</p>
   <a class="btn" href="{SHOP_URL}">Skip Ahead &mdash; Shop Now</a>
   <a class="btn ghost" href="/promo-codes/">Promo Codes</a>
+  {ppsearch.search_html("home")}
   <div class="doors">""")
     for i, key in enumerate(ORDER, 1):
         t, sub, p = DOORS[key]
@@ -405,9 +411,9 @@ def build_index() -> str:
     </a>
   </div>
 </div></header>""")
+    out.append(ppsearch.search_js())
     out.append(FOOTER.format(shop=SHOP_URL))
     return "".join(out)
-
 
 
 def build_directory_section() -> str:
@@ -452,6 +458,7 @@ def build_promos() -> str:
   Codes are pulled from the affiliate networks directly, so what is listed here is what is live.</p>
   <a class="btn" href="/">All Hubs</a>
   <a class="btn ghost" href="{SHOP_URL}">Shop Pixie&rsquo;s Pantry</a>
+  {ppsearch.search_html("promo-codes")}
 </div></header>
 <nav class="jump"><div class="wrap"><a href="#exclusive">My Exclusive Codes</a><a href="#merchants">Every Partner A&ndash;Z</a><a href="#all">Every Active Code</a></div></nav>""")
 
@@ -489,6 +496,7 @@ def build_promos() -> str:
           "numberOfItems": len(PROMOS),
           "itemListElement": [{"@type": "ListItem", "position": i + 1, "item": o} for i, o in enumerate(offers)]}
     out.append('<script type="application/ld+json">' + json.dumps(ld, separators=(",", ":")) + "</script>")
+    out.append(ppsearch.search_js())
     out.append(FOOTER.format(shop=SHOP_URL))
     return "".join(out)
 
@@ -631,6 +639,13 @@ def main() -> None:
     made = build_merchant_pages()
     (DIST / "promotions.json").write_text(json.dumps(build_promotions_json(), indent=1))
     (DIST / "llms.txt").write_text(build_llms_txt())
+
+    # Visitor search index, generated from the same registry as the merchant pages.
+    _idx = ppsearch.build_index(PARTNER_LIST, PROMOS, OFFERS_BY_MERCHANT, SLUGS, PERSONAL, HUBS)
+    (DIST / "search-index.json").write_text(json.dumps(_idx, separators=(",", ":")))
+    print(f"  search index: {len(_idx)} merchants, "
+          f"{sum(len(m['cd']) for m in _idx)} codes, "
+          f"{len(json.dumps(_idx, separators=(',', ':')))//1024} KB")
 
     robots = [
         "# pixiespantryshop.com — Pixie's Pantry link hub & promo code directory",
