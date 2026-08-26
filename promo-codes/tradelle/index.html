@@ -199,6 +199,9 @@ footer a{color:var(--gold-2)}
 @media(max-width:640px){body{font-size:16px}section.band{padding:46px 0 4px}}
 
 header.hero{overflow:visible}
+/* the hero's inner wrap owns a stacking context; lift it above the sticky jump nav
+   so the results panel is not sliced by it */
+header.hero .wrap{z-index:40}
 header.hero .rayclip{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
 .ppsearch{position:relative;max-width:720px;margin:30px auto 0;text-align:left}
 .ppsearch .fieldwrap{position:relative}
@@ -248,7 +251,10 @@ header.hero .rayclip{position:absolute;inset:0;overflow:hidden;pointer-events:no
   border:1px solid rgba(212,175,55,.55)}
 .ppres .zero .opts a:hover{border-color:var(--pink);color:var(--gold-2)}
 @media(max-width:640px){
-  .ppsearch{margin-top:22px}
+  /* tighten the hero so the search field lands inside the first screen */
+  header.hero{padding:46px 0 42px}
+  header.hero .blurb{margin-top:18px;font-size:.96rem}
+  .ppsearch{margin-top:20px}
   .ppsearch input{font-size:16px;padding:14px 42px 14px 44px}
   .ppres{max-height:60vh}
   .ppres .bn{font-size:.95rem}
