@@ -330,7 +330,7 @@ def build_hub(key: str) -> str:
     desc = re.sub("<[^>]+>|&[a-z]+;", " ", h["blurb"])[:180].strip()
     out = [HEAD.format(title=f"{h['title']} — Links & Recommendations", desc=desc, canon=canon, css=CSS)]
     out.append(f"""
-<header class="hero"><div class="rays"></div><div class="wrap">
+<header class="hero"><div class="rayclip"><div class="rays"></div></div><div class="wrap">
   <p class="eyebrow">Pixie&rsquo;s Pantry &middot; Link Hub</p>
   <div class="crest"><h1>{h['title']}</h1><p class="tagline">{h['tagline']}</p></div>
   <p class="blurb">{h['blurb']}</p>
@@ -383,7 +383,7 @@ def build_index() -> str:
             "or go straight to the store.")
     out = [HEAD.format(title="Pixie's Pantry — Choose Your Door", desc=desc, canon=DOMAIN + "/", css=CSS)]
     out.append(f"""
-<header class="hero"><div class="rays"></div><div class="wrap">
+<header class="hero"><div class="rayclip"><div class="rays"></div></div><div class="wrap">
   <p class="eyebrow">Oxford, Mississippi &middot; Est. 2026</p>
   <div class="crest"><h1>Pixie&rsquo;s Pantry</h1>
   <p class="tagline">Three Doors. One Standard.</p></div>
@@ -450,7 +450,7 @@ def build_promos() -> str:
             f"{len({p['merchant'] for p in PROMOS})} brands, including {len(ex)} codes exclusive to this audience.")
     out = [HEAD.format(title="Promo Codes — Pixie's Pantry", desc=desc, canon=DOMAIN + "/promo-codes/", css=CSS)]
     out.append(f"""
-<header class="hero"><div class="rays"></div><div class="wrap">
+<header class="hero"><div class="rayclip"><div class="rays"></div></div><div class="wrap">
   <p class="eyebrow">Pixie&rsquo;s Pantry &middot; Master Code List</p>
   <div class="crest"><h1>Promo Codes</h1><p class="tagline">{len(PROMOS)} Active Codes</p></div>
   <p class="blurb">Every discount code I can currently give you, in one machine-readable place.

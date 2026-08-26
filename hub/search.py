@@ -168,11 +168,15 @@ def build_index(partners, promos, offers_by_merchant, slugs, personal, hubs=None
 # --------------------------------------------------------------------------- UI
 
 SEARCH_CSS = """
+header.hero{overflow:visible}
+header.hero .rayclip{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
 .ppsearch{position:relative;max-width:720px;margin:30px auto 0;text-align:left}
 .ppsearch .fieldwrap{position:relative}
 .ppsearch input{width:100%;padding:16px 46px 16px 48px;font-family:'Josefin Sans',sans-serif;
   font-size:1rem;color:var(--champagne);background:rgba(8,7,12,.82);
   border:1px solid rgba(212,175,55,.55);outline:none;transition:border-color .18s,box-shadow .18s}
+.ppsearch input::-webkit-search-cancel-button,
+.ppsearch input::-webkit-search-decoration{-webkit-appearance:none;appearance:none;display:none}
 .ppsearch input::placeholder{color:var(--muted);opacity:.85}
 .ppsearch input:focus{border-color:var(--pink);box-shadow:0 0 0 3px rgba(255,79,163,.22)}
 .ppsearch .ico{position:absolute;left:17px;top:50%;transform:translateY(-50%);
@@ -196,10 +200,10 @@ SEARCH_CSS = """
 .ppres a.r:focus-visible{outline:2px solid var(--pink);outline-offset:-2px}
 .ppres .bn{font-family:'Cinzel',Georgia,serif;font-size:1.02rem;letter-spacing:.05em;
   display:flex;align-items:center;gap:9px;flex-wrap:wrap}
-.ppres .of{color:var(--muted);font-size:.87rem;margin-top:3px}
+.ppres .of{display:block;color:var(--muted);font-size:.87rem;margin-top:5px;line-height:1.5}
 .ppres .of code{color:var(--gold-2);background:rgba(212,175,55,.12);
   border:1px solid rgba(212,175,55,.3);padding:1px 7px;font-size:.83rem;letter-spacing:.06em}
-.ppres .go{margin-top:6px;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pink-2)}
+.ppres .go{display:block;margin-top:7px;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pink-2)}
 .ppres .badge{font-family:'Josefin Sans',sans-serif;font-size:.58rem;letter-spacing:.18em;
   text-transform:uppercase;padding:3px 8px;border:1px solid var(--gold);color:#0A0710;
   background:linear-gradient(120deg,var(--pink-2),var(--gold-2))}
