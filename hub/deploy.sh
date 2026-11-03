@@ -15,13 +15,15 @@ grep -q "clean" /tmp/pp_audit.txt || { echo "Audit not clean -- refusing to depl
 
 WT=.worktrees/ghp
 if [ ! -e "$WT/.git" ]; then
-  git fetch -q origin gh-pages --depth 1
+  git fetch -q --depth 1 origin +gh-pages:refs/remotes/origin/gh-pages
   git worktree add -f "$WT" origin/gh-pages >/dev/null
 fi
-git -C "$WT" fetch -q origin gh-pages --depth 1
+git -C "$WT" fetch -q --depth 1 origin +gh-pages:refs/remotes/origin/gh-pages
 git -C "$WT" checkout -q --detach origin/gh-pages
 
-rsync -a --delete --exclude '.git' --exclude 'ig/' --exclude 'pins/' hub/dist/ "$WT"/
+# replace the published site, keeping .git and the hand-added ig/ and pins/ folders
+find "$WT" -mindepth 1 -maxdepth 1 ! -name .git ! -name ig ! -name pins -exec rm -rf {} +
+cp -a hub/dist/. "$WT"/
 git -C "$WT" add -A
 echo "--- changes vs live:"
 git -C "$WT" diff --cached --stat | tail -3

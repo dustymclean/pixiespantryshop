@@ -13,3 +13,4 @@ exports/
 Pixies/
 *.zip
 __pycache__/
+.worktrees/
