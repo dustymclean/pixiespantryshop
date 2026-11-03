@@ -27,15 +27,18 @@ from data.content import HUBS, SHOP_URL  # noqa: E402
 ROOT = Path(__file__).parent
 DIST = ROOT / "dist"
 DOMAIN = "https://pixiespantryshop.com"
-AWIN_AFFID = os.environ.get("AWIN_AFFID", "").strip()
+# Awin publisher ID. Hard default so a forgotten env var can never ship untracked links.
+AWIN_AFFID = os.environ.get("AWIN_AFFID", "2520915").strip()
 
-PARTNERS = {p["name"]: p for p in json.loads((ROOT / "data" / "partners.json").read_text())}
-PROMOS = json.loads((ROOT / "data" / "promos.json").read_text())
+from dates import TODAY, DATA_DATE, is_live  # noqa: E402
 
-TODAY = dt.date.today().isoformat()
-
-# Drop anything the network feed says has already ended.
-PROMOS = [p for p in PROMOS if not p.get("ends") or p["ends"] >= TODAY]
+PARTNER_LIST = json.loads((ROOT / "data" / "partners.json").read_text())
+PARTNERS = {p["name"]: p for p in PARTNER_LIST}
+SLUGS = merchant_pages.build_slugs(PARTNER_LIST)
+OFFERS = json.loads((ROOT / "data" / "offers.json").read_text())
+OFFERS_BY_MERCHANT: dict[str, list] = {}
+for _o in OFFERS:
+    OFFERS_BY_MERCHANT.setdefault(_o["merchant"], []).append(_o)
 
 # Personal codes, each classified and provenance-tracked in data/personal_codes.json.
 PERSONAL = json.loads((ROOT / "data" / "personal_codes.json").read_text())
@@ -47,16 +50,24 @@ EXTRA_EXCLUSIVE = [
     for c in PERSONAL if c["publish"]
 ]
 
-for _e in EXTRA_EXCLUSIVE:
-    if not any(x["merchant"] == _e["merchant"] and x["code"] == _e["code"] for x in PROMOS):
-        PROMOS.insert(0, _e)
-
-OFFERS = json.loads((ROOT / "data" / "offers.json").read_text())
-PARTNER_LIST = json.loads((ROOT / "data" / "partners.json").read_text())
-SLUGS = merchant_pages.build_slugs(PARTNER_LIST)
-OFFERS_BY_MERCHANT: dict[str, list] = {}
+# The master code list is derived from the same live offers the merchant pages use, so the
+# table, search, llms.txt and robots.txt can never disagree with a merchant page.
+PROMOS = list(EXTRA_EXCLUSIVE)
 for _o in OFFERS:
-    OFFERS_BY_MERCHANT.setdefault(_o["merchant"], []).append(_o)
+    if _o.get("code") and not _o.get("personal") and is_live(_o) and _o["merchant"] in PARTNERS:
+        PROMOS.append({"merchant": _o["merchant"], "code": _o["code"], "exclusive": False,
+                       "title": _o.get("title", ""), "ends": _o.get("ends", ""), "link": _o.get("link"),
+                       "last_confirmed": DATA_DATE})
+
+
+def best_promo(name: str) -> dict | None:
+    """Strongest live code for a partner card: the owner's personal code always wins."""
+    for pc in EXTRA_EXCLUSIVE:
+        if pc.get("registry_name") == name:
+            return pc
+    codes = [o for o in OFFERS_BY_MERCHANT.get(name, []) if o.get("code") and is_live(o)]
+    codes.sort(key=merchant_pages.strength, reverse=True)
+    return codes[0] if codes else None
 
 
 def merchant_url(name: str) -> str:
@@ -84,11 +95,7 @@ def link_for(partner_name: str | None, override: str | None) -> tuple[str, bool,
     if not link:
         untracked.append(partner_name or "")
         link = p.get("url") or SHOP_URL
-    promo = p.get("promo")
-    for _pc in EXTRA_EXCLUSIVE:
-        if _pc.get("registry_name") == partner_name:
-            promo = _pc
-            break
+    promo = best_promo(partner_name or "")
     # a voucher-specific tracking link beats the generic programme link
     if promo and promo.get("link"):
         link = promo["link"]
@@ -432,8 +439,7 @@ def build_directory_section() -> str:
         h.append(f'<div class="dirletter">{letter}</div>')
         for part in groups[letter]:
             offs = OFFERS_BY_MERCHANT.get(part["name"], [])
-            n = sum(1 for o in offs if o.get("code") and o.get("last_seen") == TODAY
-                    and (not o.get("ends") or o["ends"] >= TODAY))
+            n = sum(1 for o in offs if o.get("code") and is_live(o))
             ex = any(o.get("personal") for o in offs)
             tag = (' <span class="n">&middot; my code</span>' if ex else
                    (f' <span class="n">&middot; {n} code{"s" if n != 1 else ""}</span>' if n else
@@ -530,7 +536,7 @@ def build_llms_txt() -> str:
               + DOMAIN + "/promotions.json", ""]
     for part in sorted(PARTNER_LIST, key=lambda x: x["name"].lower()):
         offs = OFFERS_BY_MERCHANT.get(part["name"], [])
-        live = [o for o in offs if o.get("last_seen") == TODAY and (not o.get("ends") or o["ends"] >= TODAY)]
+        live = [o for o in offs if is_live(o)]
         cs = [o["code"] for o in live if o.get("code")]
         ex = [o["code"] for o in live if o.get("personal")]
         state = ("exclusive code " + ", ".join(ex)) if ex else (
@@ -578,19 +584,41 @@ def build_merchant_pages() -> list[tuple[str, str]]:
     return made
 
 
+def build_retired_pages() -> None:
+    """Partners we are no longer paid by keep their old URL (no 404 for past search traffic),
+    marked noindex, with no outbound merchant link -- an unpaid link helps nobody."""
+    for r in json.loads((ROOT / "data" / "retired.json").read_text()):
+        sl = r.get("slug") or merchant_pages.slugify(r["name"])
+        if sl in SLUGS.values():
+            continue
+        disp = merchant_pages.esc(re.sub(r"\s+(US|USA|UK)$|\s*\(US\)$", "", r["name"]).strip())
+        head = HEAD.format(title=f"{disp} &mdash; No Longer a Partner", canon=f"{DOMAIN}/promo-codes/{sl}/",
+                           desc=f"{disp} is no longer a Pixie's Pantry partner. Browse current verified codes instead.",
+                           css=CSS).replace("<head>", '<head>\n<meta name="robots" content="noindex,follow">', 1)
+        d = DIST / "promo-codes" / sl
+        d.mkdir(parents=True, exist_ok=True)
+        (d / "index.html").write_text(head + f"""
+<nav class="crumbs"><div class="wrap"><a href="/">Home</a> &rsaquo; <a href="/promo-codes/">Promo Codes</a>
+ &rsaquo; <span>{disp}</span></div></nav>
+<main class="wrap merch"><h1>{disp} is no longer a partner</h1>
+<p class="lede">I no longer have an affiliate relationship with {disp}, so I can&rsquo;t verify any
+code for them. Old codes from this page will not work.</p>
+<p><a class="cta" href="/promo-codes/">See every verified code</a></p></main>""" + FOOTER.format(shop=SHOP_URL))
+
+
 def build_promotions_json() -> dict:
     """Machine-readable database. Must agree exactly with the rendered pages."""
     out = []
     for part in PARTNER_LIST:
         name = part["name"]
         offs = OFFERS_BY_MERCHANT.get(name, [])
-        live = [o for o in offs if o.get("last_seen") == TODAY and (not o.get("ends") or o["ends"] >= TODAY)]
+        live = [o for o in offs if is_live(o)]
         rec = {
             "merchant": name,
             "page": f"{DOMAIN}/promo-codes/{SLUGS[name]}/",
             "network": part.get("network"),
             "tracked_url": part.get("link") or part.get("url"),
-            "last_verified": TODAY,
+            "last_verified": DATA_DATE,
             "offers": [],
         }
         for o in offs:
@@ -611,7 +639,7 @@ def build_promotions_json() -> dict:
             })
         out.append(rec)
     return {
-        "generated": TODAY,
+        "generated": TODAY, "data_date": DATA_DATE,
         "publisher": "pixiespantryshop.com",
         "note": ("One canonical page per merchant at /promo-codes/<slug>/. "
                  "Codes marked exclusive:true are assigned to this publisher's affiliate account. "
@@ -637,6 +665,7 @@ def main() -> None:
     (DIST / "promo-codes").mkdir()
     (DIST / "promo-codes" / "index.html").write_text(build_promos())
     made = build_merchant_pages()
+    build_retired_pages()
     (DIST / "promotions.json").write_text(json.dumps(build_promotions_json(), indent=1))
     (DIST / "llms.txt").write_text(build_llms_txt())
 
@@ -696,7 +725,7 @@ def main() -> None:
             + [(f"{DOMAIN}/promo-codes/{sl}/", "0.8") for sl, _ in sorted(made)])
     (DIST / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-        + "".join(f"<url><loc>{u}</loc><lastmod>{TODAY}</lastmod><priority>{pr}</priority></url>\n"
+        + "".join(f"<url><loc>{u}</loc><lastmod>{DATA_DATE}</lastmod><priority>{pr}</priority></url>\n"
                   for u, pr in urls) + "</urlset>\n")
     print(f"  {len(made)} merchant pages, {len(urls)} sitemap URLs")
 

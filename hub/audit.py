@@ -9,7 +9,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).parent
 DIST = ROOT / "dist"
-TODAY = dt.date.today().isoformat()
+import sys
+sys.path.insert(0, str(Path(__file__).parent))
+from dates import TODAY, is_live  # noqa: E402
 DOMAIN = "https://pixiespantryshop.com"
 
 
@@ -21,7 +23,9 @@ def main() -> None:
     for o in offers:
         by_m.setdefault(o["merchant"], []).append(o)
 
-    pages = sorted(p for p in (DIST / "promo-codes").iterdir() if p.is_dir())
+    # retired partners keep a noindex stub page; they are deliberately unlisted
+    pages = sorted(p for p in (DIST / "promo-codes").iterdir() if p.is_dir()
+                   and 'content="noindex' not in (p / "index.html").read_text()[:2000])
     sitemap = (DIST / "sitemap.xml").read_text()
     sm_urls = set(re.findall(r"<loc>(.*?)</loc>", sitemap))
     promotions = json.loads((DIST / "promotions.json").read_text())
@@ -35,7 +39,7 @@ def main() -> None:
         problems.setdefault(kind, []).append(item)
 
     live_offers = [o for o in offers
-                   if o.get("last_seen") == TODAY and (not o.get("ends") or o["ends"] >= TODAY)]
+                   if is_live(o)]
     slugs = {}
     for d in pages:
         html = (d / "index.html").read_text()

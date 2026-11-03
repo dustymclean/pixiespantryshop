@@ -7,3 +7,9 @@ coverage/
 .env*
 !.env.example
 hub/dist/
+
+# raw affiliate-network exports contain account identifiers; never commit them
+exports/
+Pixies/
+*.zip
+__pycache__/

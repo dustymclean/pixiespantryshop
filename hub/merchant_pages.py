@@ -13,12 +13,9 @@ import json
 import re
 from pathlib import Path
 from data.deep_dives import DEEP_DIVES
-from pathlib import Path
 
-TODAY = dt.date.today()
-TODAY_S = TODAY.isoformat()
-MONTH_YEAR = TODAY.strftime("%B %Y")
-NICE_TODAY = TODAY.strftime("%B %-d, %Y")
+from dates import TODAY as TODAY_S, DATA_DATE, NICE_DATA as NICE_TODAY, DATA_MONTH as MONTH_YEAR  # noqa: E402
+from dates import is_live as _is_live  # noqa: E402
 
 
 def slugify(s: str) -> str:
@@ -194,7 +191,7 @@ def build_merchant_page(p: dict, offers: list[dict], slug: str, ctx) -> str:
     referral = bool(p.get("referral"))
     shop_label = p.get("cta") or f"Shop {disp} \u2192"
 
-    live = [o for o in offers if is_live(o) and o.get("last_seen") == TODAY_S]
+    live = [o for o in offers if _is_live(o)]
     dead = [o for o in offers if o not in live]
     codes = [o for o in live if o.get("code")]
     sales = [o for o in live if not o.get("code")]
@@ -427,7 +424,7 @@ click my link or just type the code at checkout. Source: {esc(hero["source"])}.<
     ]
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "WebPage", "url": canon, "name": title, "description": meta,
-         "dateModified": TODAY_S,
+         "dateModified": DATA_DATE,
          "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [
              {"@type": "ListItem", "position": 1, "name": "Promo Codes", "item": f"{ctx.DOMAIN}/promo-codes/"},
              {"@type": "ListItem", "position": 2, "name": disp, "item": canon}]}},

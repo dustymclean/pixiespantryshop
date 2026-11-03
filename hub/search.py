@@ -16,7 +16,7 @@ import html
 import json
 import re
 
-TODAY_S = dt.date.today().isoformat()
+from dates import TODAY as TODAY_S, DATA_DATE  # noqa: E402
 
 # Endpoint that receives private on-site search telemetry (query, result count,
 # zero-result flag, merchant clicked). No cookies, no identifiers, no PII.
@@ -42,6 +42,9 @@ def _amount(s: str) -> float:
 
 
 def _live(o: dict) -> bool:
+    # personal codes and derived PROMOS carry no last_seen; feed offers must be in the latest export
+    if "last_seen" in o:
+        return o["last_seen"] == DATA_DATE and (not o.get("ends") or o["ends"] >= TODAY_S)
     return not o.get("ends") or o["ends"] >= TODAY_S
 
 
@@ -258,7 +261,7 @@ SEARCH_JS = """
       clr=box.querySelector('.clear'), ctx=box.getAttribute('data-ctx')||'page';
   var DATA=null, loading=false, sel=-1, rows=[], lastQ='', logTimer=null;
 
-  var PCT=/^\d{1,3}\s*%$/;
+  var PCT=/^\\d{1,3}\\s*%$/;
   function norm(s){return (s||'').toLowerCase().replace(/[^a-z0-9%]+/g,'');}
   function esc(s){return (s||'').replace(/[&<>"]/g,function(c){
     return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}

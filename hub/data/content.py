@@ -78,7 +78,6 @@ HUBS = {
                 "note": "21+ only. Compliance rules vary by state &mdash; check yours before ordering.",
                 "items": [
                     ("Penguin CBD", "Penguin CBD", "Broad-spectrum CBD oils, gummies and creams with published third-party lab results.", "COAs on every batch, which is the entire bar for buying CBD online. If a brand won't show you the lab sheet, skip it.", None),
-                    ("CBD For Life", "CBD For Life", "Topical-first CBD line &mdash; rubs, roll-ons and body care.", "Topicals are where CBD is easiest to judge for yourself. Good entry point for people who don't want to inhale anything.", None),
                     ("Hemp Bombs", "Hemp Bombs", "High-potency CBD gummies, capsules and tinctures produced from US-grown hemp.", "Consistent dosing per piece, which is what actually matters for a daily routine.", None),
                     ("Avid Hemp", "Avid Hemp", "US hemp brand covering CBD flower, edibles and vapes.", "Wide format range from one source, so you can compare delivery methods without changing brands.", None),
                     ("Enjoy Hemp", "Enjoy Hemp", "Hemp-derived cannabinoid products including Delta-8 and THCa formats.", "Relevant to what our own customers actually buy. Read your state law first &mdash; this category moves fast.", None),
@@ -252,7 +251,6 @@ HUBS = {
                     ("Diamond Veneer Travel Jewelry", "Diamond Veneer", "Travel jewellery and simulated-stone pieces designed to be worn on the road.", "The sensible answer to travelling with anything you'd cry about losing.", None),
                     ("Baby Gold", "Baby Gold", "Fine 14k gold jewellery, personalised and stackable.", "Real gold, direct pricing, and the personalisation is done well rather than gimmicky.", None),
                     ("Grey State Apparel", "Grey State Apparel", "Elevated everyday apparel in sustainable fabrics.", "Fits the brand: quiet, well made, no logo shouting.", None),
-                    ("TOTE & CARRY", "Tote &amp; Carry", "Bold luggage, duffels and backpacks from a Black-owned American brand.", "Loud in the right way, and the hardware holds up to real airport handling.", None),
                     ("Cosabella (US)", "Cosabella", "Italian-made lingerie and loungewear.", "Genuine Italian manufacturing at a price that isn't runway-insane. Reliable gift.", None),
                     ("Wine Express", "Wine Express", "Curated wine club and single-bottle delivery.", "Champagne coupes are the whole aesthetic here. This is how you keep them full.", None),
                     ("Memorialize Art (US)", "Memorialize Art", "Custom hand-drawn portraits from photographs.", "The gift that lands every time. Family, pets, people who are gone.", None),
