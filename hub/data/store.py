@@ -51,6 +51,16 @@ BOXES = [
      "blurb": "Your Puffco plus a Focus V Saber hot knife, hand-packed into a gasket-sealed hard case with cleaning gear."},
 ]
 
+
+# Temporarily hidden from the affiliate storefront.
+# Original product records are preserved above.
+HIDDEN_BOXES = {
+    "The Flower Box",
+    "The Flower + Glass Box",
+    "The Dab Box",
+}
+BOXES = [box for box in BOXES if box["name"] not in HIDDEN_BOXES]
+
 LINKS = [
     ("Shop everything", f"{STORE}/shop/"),
     ("Hemp & THCa flower", f"{STORE}/product-category/flower-hemp-thca-3/"),
