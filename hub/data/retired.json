@@ -12,6 +12,12 @@
   "retired": "2026-11-02"
  },
  {
+  "name": "Awin (USD)",
+  "network": "Awin",
+  "reason": "administrative programme, nothing for sale",
+  "retired": "2026-11-02"
+ },
+ {
   "name": "bmiMD (US)",
   "network": "Awin",
   "reason": "suspended",

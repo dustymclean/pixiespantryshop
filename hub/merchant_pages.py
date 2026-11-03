@@ -44,7 +44,9 @@ def build_slugs(partners: list[dict]) -> dict[str, str]:
     """Stable, unique slug per partner name. One canonical URL each."""
     slugs, used = {}, {}
     for p in sorted(partners, key=lambda x: x["name"].lower()):
-        base = slugify(p["name"])
+        # established URLs never move; partners added from a newer export get a slug from
+        # the brand shoppers search for rather than the network's legal-entity name
+        base = slugify(p.get("brand") if p.get("new") and p.get("brand") else p["name"])
         s = base
         n = 2
         while s in used:
@@ -181,10 +183,18 @@ TROUBLESHOOT = (
 
 # ---------------------------------------------------------------- page builder
 
+def sells_phrase(disp: str, sells: list[str], n: int = 99) -> str:
+    """'Brand bongs, Brand dab rigs and Brand grinders' -- every product line with the brand name."""
+    items = [f"{disp} {x}" for x in sells[:n]]
+    if len(items) <= 1:
+        return "".join(items)
+    return ", ".join(items[:-1]) + " and " + items[-1]
+
+
 def build_merchant_page(p: dict, offers: list[dict], slug: str, ctx) -> str:
     """ctx supplies HEAD/FOOTER/CSS/DOMAIN/SHOP_URL and hub back-links."""
     name = p["name"]
-    disp = re.sub(r"\s+(US|USA|UK)$", "", name).strip()
+    disp = p.get("brand") or re.sub(r"\s+(US|USA|UK)$", "", name).strip()
     canon = f"{ctx.DOMAIN}/promo-codes/{slug}/"
     tracked = p.get("link") or p.get("url") or ctx.SHOP_URL
     is_tracked = bool(p.get("link"))
@@ -217,14 +227,19 @@ def build_merchant_page(p: dict, offers: list[dict], slug: str, ctx) -> str:
                    (f"No verified {disp} promo code or current deal through my partner account as of "
                     f"{NICE_TODAY}. This page updates as offers appear."))
 
-    title = f"{disp} Promo Codes & Coupons \u2014 Updated {MONTH_YEAR}"
-    meta = summary[:180]
+    sells = p.get("sells") or []
+    cat = p.get("cat") or p.get("sector") or ""
+    title = f"{disp} Promo Code, Coupon & Discount \u2014 {MONTH_YEAR}"
+    meta = (summary + (f" Covers {', '.join(sells[:4])}." if sells else ""))[:200]
 
-    h = [ctx.HEAD.format(title=esc(title), desc=esc(meta), canon=canon, css=ctx.CSS)]
+    h = [ctx.HEAD.format(title=esc(title), desc=esc(meta), canon=canon, css=ctx.CSS)
+     .replace("<head>", "<head>\n<meta name=\"keywords\" content=\"" + esc(", ".join(
+         [f"{disp} promo code", f"{disp} coupon", f"{disp} coupon code", f"{disp} discount",
+          f"{disp} discount code", f"{disp} deals"] + [f"{disp} {x}" for x in sells])) + "\">", 1)]
     h.append(f'''<nav class="crumbs"><div class="wrap"><a href="/">Home</a> &rsaquo;
 <a href="/promo-codes/">Promo Codes</a> &rsaquo; <span>{esc(disp)}</span></div></nav>''')
     h.append('<main class="wrap merch">')
-    h.append(f'<h1>{esc(disp)} Promo Codes, Coupons &amp; Deals</h1>')
+    h.append(f'<h1>{esc(disp)} Promo Code, Coupon &amp; Discount</h1>')
     h.append(f'<p class="lede">{esc(summary)}</p>')
     h.append(f'<p class="verified">Last verified: <b>{NICE_TODAY}</b> &nbsp;&middot;&nbsp; '
              f'Network: {esc(p.get("network") or "direct")}</p>')
@@ -243,7 +258,7 @@ def build_merchant_page(p: dict, offers: list[dict], slug: str, ctx) -> str:
         exp_txt = ("No published expiration found" if hero.get("no_expiry")
                    else (nice(hero["ends"]) if hero.get("ends") else "No published expiration found"))
         ab.append(_row(f"Current {disp} promo code", f'<code class="acode">{esc(hero["code"])}</code>'))
-        ab.append(_row("Discount", esc(hero["title"])))
+        ab.append(_row(f"{disp} discount", esc(hero["title"])))
         ab.append(_row("Verified", nice(hero["last_confirmed"])))
         ab.append(_row("Expiration", esc(exp_txt)))
         if hero.get("attributable"):
@@ -251,8 +266,9 @@ def build_merchant_page(p: dict, offers: list[dict], slug: str, ctx) -> str:
     elif codes:
         best = codes[0]
         ab.append(_row(f"Current {disp} promo code", f'<code class="acode">{esc(best["code"])}</code>'))
+        ab.append(_row(f"{disp} coupon", f'<code class="acode">{esc(best["code"])}</code> works as a coupon code at checkout'))
         if best.get("title"):
-            ab.append(_row("Discount", esc(best["title"])))
+            ab.append(_row(f"{disp} discount", esc(best["title"])))
         ab.append(_row("Verified", NICE_TODAY))
         ab.append(_row("Expiration", nice(best["ends"]) if best.get("ends") else "No published expiration found"))
         if len(codes) > 1:
@@ -265,7 +281,13 @@ def build_merchant_page(p: dict, offers: list[dict], slug: str, ctx) -> str:
             if sales[0].get("ends"):
                 ab.append(_row("Deal ends", nice(sales[0]["ends"])))
         ab.append(_row("Last checked", NICE_TODAY))
+    if sells:
+        ab.append(_row(f"What {disp} sells", esc(", ".join(sells))))
     h.append('<section class="answerbox">' + "".join(ab) + '</section>')
+
+    # ---- the curated note: written for this partner specifically
+    h.append(f'<section class="take"><p class="badge">Pixie&rsquo;s take{(" &middot; " + esc(cat)) if cat else ""}</p>'
+             f'<p>{esc(p.get("take") or "")}</p></section>')
 
     # ---- hero (audience-exclusive code wins the page)
     if hero:
@@ -333,9 +355,25 @@ click my link or just type the code at checkout. Source: {esc(hero["source"])}.<
         h.append(f'<p><a class="cta small" href="{esc(tracked)}" rel="sponsored nofollow noopener" '
                  f'target="_blank">Shop {esc(disp)} &rarr;</a></p>')
 
+    # ---- discount answer (separate heading so "<brand> discount" has its own section)
+    h.append(f'<h2>Is there a {esc(disp)} discount right now?</h2>')
+    if hero or codes:
+        top = hero or codes[0]
+        h.append(f'<p>Yes. The best {esc(disp)} discount I can verify is <b>{esc(top.get("title") or "listed above")}</b> '
+                 f'with code <code>{esc(top["code"])}</code>'
+                 + (f', plus {len(sales)} sale{"s" if len(sales) != 1 else ""} running without a code' if sales else '')
+                 + f'. Verified {NICE_TODAY}.</p>')
+    elif sales:
+        h.append(f'<p>There&rsquo;s no {esc(disp)} discount code right now, but there '
+                 f'{"are" if len(sales) != 1 else "is"} {len(sales)} {esc(disp)} sale{"s" if len(sales) != 1 else ""} '
+                 f'you can use without a code, listed below. Verified {NICE_TODAY}.</p>')
+    else:
+        h.append(f'<p>No {esc(disp)} discount is running through my partner account as of {NICE_TODAY}. '
+                 f'The link below still takes you to {esc(disp)} directly, and this page updates when one appears.</p>')
+
     # ---- current sales
     if sales:
-        h.append(f'<h2>Current {esc(disp)} sales and deals</h2>')
+        h.append(f'<h2>Current {esc(disp)} discounts, sales &amp; deals</h2>')
         h.append('<ul class="sales">')
         for o in sales[:20]:
             end = f' &middot; ends {nice(o["ends"])}' if o.get("ends") else ""
@@ -350,18 +388,12 @@ click my link or just type the code at checkout. Source: {esc(hero["source"])}.<
         h.append(f'<p><a class="cta small" href="{esc(tracked)}" rel="sponsored nofollow noopener" '
                  f'target="_blank">{esc(shop_label)}</a></p>')
 
-    # ---- about
-    desc = first_sentences(p.get("desc", ""))
-    h.append(f'<h2>What is {esc(disp)}?</h2>')
-    if desc:
-        h.append(f'<p>{esc(desc)}</p>')
-    else:
-        h.append(f'<p>{esc(disp)} is a merchant I am partnered with through '
-                 f'{esc(p.get("network") or "a direct affiliate relationship")}. '
-                 f'The offers above come straight from that relationship.</p>')
-    sector = p.get("sector") or ""
-    h.append(f'<p><b>Who these {esc(disp)} offers are useful for:</b> {esc(audience_line(p, sector))}.'
-             + (f' Category: {esc(sector)}.' if sector else '') + '</p>')
+    # ---- what they sell: every product line, each with the brand name
+    if sells:
+        h.append(f'<h2>What does {esc(disp)} sell?</h2>')
+        h.append(f'<p>{esc(disp)} sells {esc(sells_phrase(disp, sells))}. Codes and sales above apply '
+                 f'to these unless their terms exclude a category, so read the restrictions column before checkout.</p>')
+        h.append('<ul class="cats">' + "".join(f'<li>{esc(disp)} {esc(x)}</li>' for x in sells) + '</ul>')
 
     for _dh, _dbody in DEEP_DIVES.get(name, []):
         h.append(f'<h2>{esc(_dh)}</h2>')
@@ -404,13 +436,26 @@ click my link or just type the code at checkout. Source: {esc(hero["source"])}.<
     # ---- structured data: agrees exactly with the visible page
     offers_ld = []
     for o in ([hero] if hero else []) + codes:
-        ld = {"@type": "Offer", "name": o.get("title") or f"{disp} promo code",
-              "seller": {"@type": "Organization", "name": disp},
-              "url": canon, "availability": "https://schema.org/InStock"}
+        ld = {"@type": "Offer", "name": f"{disp} promo code {o['code']}",
+              "description": o.get("title") or f"{disp} coupon code",
+              "category": "Promo code", "sku": o["code"],
+              "seller": {"@id": canon + "#brand"},
+              "url": canon, "availability": "https://schema.org/InStock",
+              "validFrom": o.get("starts") or None}
         if o.get("ends"):
             ld["priceValidUntil"] = o["ends"]
+        ld = {k: v for k, v in ld.items() if v}
         offers_ld.append(ld)
+    top = hero or (codes[0] if codes else None)
+    disc_ans = ((f"{top.get('title') or 'A discount'} with code {top['code']}, verified {NICE_TODAY}.") if top else
+                (f"No code, but {len(sales)} {disp} sale{'s' if len(sales) != 1 else ''} as of {NICE_TODAY}."
+                 if sales else f"No {disp} discount is running through this partner account as of {NICE_TODAY}."))
     faq = [
+        (f"Is there a {disp} discount?", disc_ans),
+        (f"Is there a {disp} coupon code?",
+         (f"Yes \u2014 {top['code']} works as a {disp} coupon code at checkout." if top else
+          f"No verified {disp} coupon code as of {NICE_TODAY}.")),
+    ] + ([(f"What does {disp} sell?", f"{disp} sells " + sells_phrase(disp, sells) + ".")] if sells else []) + [
         (f"What is the current {disp} promo code?",
          (f"{hero['code']} \u2014 {hero['title']}, verified {nice(hero['last_confirmed'])}." if hero else
           (f"{codes[0]['code']} \u2014 {codes[0].get('title') or 'see merchant for details'}." if codes else
@@ -422,8 +467,21 @@ click my link or just type the code at checkout. Source: {esc(hero["source"])}.<
         (f"How do I use a {disp} promo code?", re.sub("<[^>]+>", "", how_to_use(disp, bool(codes or hero), is_tracked))),
         (f"Why isn't my {disp} coupon working?", TROUBLESHOOT),
     ]
+    org = {"@type": ["Organization", "Brand"], "@id": canon + "#brand", "name": disp,
+           "url": p.get("url") or None, "logo": p.get("logo") or None,
+           "description": p.get("take") or None,
+           "knowsAbout": sells or None}
+    if sells:
+        org["hasOfferCatalog"] = {"@type": "OfferCatalog", "name": f"What {disp} sells",
+                                  "itemListElement": [{"@type": "OfferCatalog", "name": f"{disp} {x}"} for x in sells]}
+    if offers_ld:
+        org["makesOffer"] = offers_ld
+    org = {k: v for k, v in org.items() if v}
     ld = {"@context": "https://schema.org", "@graph": [
+        org,
         {"@type": "WebPage", "url": canon, "name": title, "description": meta,
+         "about": {"@id": canon + "#brand"},
+         "keywords": ", ".join([f"{disp} promo code", f"{disp} coupon", f"{disp} discount"] + [f"{disp} {x}" for x in sells]),
          "dateModified": DATA_DATE,
          "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [
              {"@type": "ListItem", "position": 1, "name": "Promo Codes", "item": f"{ctx.DOMAIN}/promo-codes/"},

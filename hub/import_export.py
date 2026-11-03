@@ -66,9 +66,10 @@ def main(export: Path) -> None:
     imp = {r["Programme ID"]: r for r in rd_csv(export / "Impact" / "IMPACT_ALL_AFFILIATE_LINKS.csv")}
     imp_camp = {c["CampaignId"]: c for c in json.loads((ia / "campaigns_raw.json").read_text())}
 
-    def awin_ok(aid):  # joined, not a programme that announced closure
+    def awin_ok(aid):  # joined, not closing, not Awin's own admin programme
         r = awin.get(aid)
-        return bool(r) and r["Relationship"] == "joined" and "CLOSED" not in r["Brand"].upper()
+        return (bool(r) and r["Relationship"] == "joined" and "CLOSED" not in r["Brand"].upper()
+                and r["Brand"] != "Awin (USD)")
 
     def imp_ok(cid):
         r = imp.get(cid)

@@ -32,7 +32,8 @@ AWIN_AFFID = os.environ.get("AWIN_AFFID", "2520915").strip()
 
 from dates import TODAY, DATA_DATE, is_live  # noqa: E402
 
-PARTNER_LIST = json.loads((ROOT / "data" / "partners.json").read_text())
+import notes  # noqa: E402
+PARTNER_LIST = notes.apply(json.loads((ROOT / "data" / "partners.json").read_text()))
 PARTNERS = {p["name"]: p for p in PARTNER_LIST}
 SLUGS = merchant_pages.build_slugs(PARTNER_LIST)
 OFFERS = json.loads((ROOT / "data" / "offers.json").read_text())
@@ -207,6 +208,11 @@ main.merch .acode{font-family:'Courier New',monospace;color:#ff5fa2;border:1px d
 border-radius:3px;padding:.12rem .55rem;letter-spacing:.09em;font-weight:700}
 @media(max-width:620px){main.merch .ak{flex-basis:100%}}
 main.merch .verified{font-size:.78rem;color:var(--muted);letter-spacing:.06em}
+main.merch .take{margin:0 0 1.8rem;padding:18px 20px;border-left:3px solid var(--pink);
+ background:linear-gradient(90deg,rgba(255,79,163,.09),rgba(0,0,0,0))}
+main.merch .take .badge{margin:0 0 6px;font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.2em;
+ text-transform:uppercase;color:var(--pink-2)}
+main.merch .take p:last-child{margin:0;font-size:1.02rem;color:#f4ecdd}
 .hero-offer{margin:26px 0 8px;padding:26px 24px;border:1px solid var(--gold);border-radius:4px;
  background:linear-gradient(160deg,rgba(255,77,157,.10),rgba(212,175,55,.07));text-align:center;
  position:relative}
@@ -426,8 +432,8 @@ def build_index() -> str:
 def build_directory_section() -> str:
     """A-Z index linking every registry partner to its canonical promo page. No orphans."""
     groups: dict[str, list] = {}
-    for part in sorted(PARTNER_LIST, key=lambda x: x["name"].lower()):
-        c = part["name"][0].upper()
+    for part in sorted(PARTNER_LIST, key=lambda x: x["brand"].lower()):
+        c = part["brand"][0].upper()
         groups.setdefault(c if c.isalpha() else "#", []).append(part)
     h = ['<section class="band" id="merchants"><div class="wrap">',
          '<div class="sect-head"><h2>Every Partner, A&ndash;Z</h2><div class="rule"></div></div>',
@@ -444,14 +450,15 @@ def build_directory_section() -> str:
             tag = (' <span class="n">&middot; my code</span>' if ex else
                    (f' <span class="n">&middot; {n} code{"s" if n != 1 else ""}</span>' if n else
                     ' <span class="n">&middot; deals</span>'))
-            h.append(f'<a href="{merchant_url(part["name"])}">{part["name"]}{tag}</a>')
+            h.append(f'<a href="{merchant_url(part["name"])}">{merchant_pages.esc(part["brand"])}{tag}</a>')
     h.append('</div></div></section>')
     return "".join(h)
 
 
 def build_promos() -> str:
     ex = [p for p in PROMOS if p["exclusive"]]
-    rest = sorted([p for p in PROMOS if not p["exclusive"]], key=lambda p: p["merchant"].lower())
+    rest = sorted([p for p in PROMOS if not p["exclusive"]],
+                  key=lambda p: PARTNERS.get(p["merchant"], {}).get("brand", p["merchant"]).lower())
     desc = (f"Every active promo code Pixie's Pantry can offer — {len(PROMOS)} codes across "
             f"{len({p['merchant'] for p in PROMOS})} brands, including {len(ex)} codes exclusive to this audience.")
     out = [HEAD.format(title="Promo Codes — Pixie's Pantry", desc=desc, canon=DOMAIN + "/promo-codes/", css=CSS)]
@@ -476,7 +483,8 @@ def build_promos() -> str:
         for r in rows:
             link = r.get("link")
             reg = r.get("registry_name") or r["merchant"]
-            brand = (f'<a href="{merchant_url(reg)}">{r["merchant"]}</a>' if reg in SLUGS
+            bname = merchant_pages.esc(PARTNERS[reg]["brand"]) if reg in PARTNERS else r["merchant"]
+            brand = (f'<a href="{merchant_url(reg)}">{bname}</a>' if reg in SLUGS
                      else (f'<a href="{link}" rel="sponsored noopener" target="_blank">{r["merchant"]}</a>'
                            if link else r["merchant"]))
             conf = r.get("last_confirmed") or "network feed"
@@ -542,7 +550,8 @@ def build_llms_txt() -> str:
         state = ("exclusive code " + ", ".join(ex)) if ex else (
             f"{len(cs)} code(s): " + ", ".join(cs[:6]) if cs else (
                 f"{len(live)} current deal(s), no code" if live else "no current code or deal"))
-        lines.append(f"- {part['name']}: {DOMAIN}/promo-codes/{SLUGS[part['name']]}/ — {state}")
+        lines.append(f"- {part['brand']} promo code, coupon & discount ({', '.join(part.get('sells') or [])}): "
+                     f"{DOMAIN}/promo-codes/{SLUGS[part['name']]}/ — {state}")
     lines += ["", "## Hubs", "",
               f"- {DOMAIN}/mellow-pixie/ — travel, home, wellness, everyday",
               f"- {DOMAIN}/pixies-pantry/ — hemp, glass, vaporizers, accessories",

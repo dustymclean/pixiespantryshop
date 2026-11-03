@@ -654,22 +654,6 @@
   "region": "US"
  },
  {
-  "name": "Awin (USD)",
-  "network": "Awin",
-  "url": "http://www.affiliatewindow.com",
-  "link": "https://www.awin1.com/awclick.php?mid=4032&id=2520915",
-  "sector": null,
-  "desc": "Welcome to the Awin affiliate program. This program exists for administrative purposes alongside the Awin Referral Scheme, which is currently inactive.",
-  "ids": {
-   "awin": "4032"
-  },
-  "logo": "https://ui.awin.com/images/upload/merchant/profile/4032.png",
-  "deeplink": true,
-  "epc": 0.11,
-  "conv_rate": 0.97,
-  "region": "US"
- },
- {
   "name": "AWIN AFFILIATE - M. Atlas Technologies",
   "network": "Awin",
   "url": "https://hoverecho.com/",

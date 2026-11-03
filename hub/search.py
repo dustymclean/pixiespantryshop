@@ -142,22 +142,23 @@ def build_index(partners, promos, offers_by_merchant, slugs, personal, hubs=None
         for stem, words in SECTOR_SYNONYMS.items():
             if any(stem in x.lower() for x in hk + [p.get("sector") or ""]):
                 syn += " " + words
-        blob = " ".join([(p.get("sector") or ""), " ".join(hk), syn]
+        blob = " ".join([p.get("cat") or "", " ".join(p.get("sells") or []), (p.get("sector") or ""),
+                         " ".join(hk), syn]
                         + [(o.get("title") or "") for o in (listed + feed)[:6]]
-                        + [re.sub(r"\s+", " ", (p.get("desc") or ""))[:180]])
+                        + [(p.get("take") or "")[:200]])
         words, wseen = [], set()
         for w in re.findall(r"[a-z0-9%$]{2,}", blob.lower()):
             if w in STOP or w in wseen:
                 continue
             wseen.add(w)
             words.append(w)
-            if len(words) >= 34:
+            if len(words) >= 60:
                 break
 
         out.append({
-            "n": name,
+            "n": p.get("brand") or name,
             "s": slug,
-            "c": (p.get("sector") or "").strip(),
+            "c": (p.get("cat") or p.get("sector") or "").strip(),
             "w": p.get("network", ""),
             "cd": codes[:8],
             "b": best,
