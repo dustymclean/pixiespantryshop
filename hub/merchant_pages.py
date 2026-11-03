@@ -176,7 +176,7 @@ TROUBLESHOOT = (
     "If a code is rejected, it is almost always one of four things: the offer has ended since it was last "
     "verified, your cart is under the minimum spend, the items are excluded (sale items and new releases "
     "usually are), or another discount is already applied and the store only allows one. Try it on a clean "
-    "cart first. Codes are re-checked against the network feeds every week and anything dead is moved down "
+    "cart first. Codes are re-checked against the network feeds on every refresh, and anything dead is moved down "
     "to the expired section rather than left sitting at the top of the page."
 )
 
@@ -238,7 +238,7 @@ def build_merchant_page(p: dict, offers: list[dict], slug: str, ctx) -> str:
           f"{disp} discount code", f"{disp} deals"] + [f"{disp} {x}" for x in sells])) + "\">", 1)]
     h.append(f'''<nav class="crumbs"><div class="wrap"><a href="/">Home</a> &rsaquo;
 <a href="/promo-codes/">Promo Codes</a> &rsaquo; <span>{esc(disp)}</span></div></nav>''')
-    h.append('<main class="wrap merch">')
+    h.append('<main id="main" class="wrap merch">')
     h.append(f'<h1>{esc(disp)} Promo Code, Coupon &amp; Discount</h1>')
     h.append(f'<p class="lede">{esc(summary)}</p>')
     h.append(f'<p class="verified">Last verified: <b>{NICE_TODAY}</b> &nbsp;&middot;&nbsp; '
@@ -336,7 +336,7 @@ click my link or just type the code at checkout. Source: {esc(hero["source"])}.<
             h.append(f'<p><b>No verified {esc(disp)} coupon code or current sale is available through my partner '
                      f'account as of {NICE_TODAY}.</b> I am partnered with {esc(disp)}, so this page updates '
                      f'automatically the moment they run an offer \u2014 it is re-checked against the network '
-                     f'feed every week. I am not going to invent a code so the page looks busier.</p>')
+                     f'feed each time it is refreshed. I am not going to invent a code so the page looks busier.</p>')
 
     # ---- current codes table
     if codes:
@@ -394,6 +394,7 @@ click my link or just type the code at checkout. Source: {esc(hero["source"])}.<
         h.append(f'<p>{esc(disp)} sells {esc(sells_phrase(disp, sells))}. Codes and sales above apply '
                  f'to these unless their terms exclude a category, so read the restrictions column before checkout.</p>')
         h.append('<ul class="cats">' + "".join(f'<li>{esc(disp)} {esc(x)}</li>' for x in sells) + '</ul>')
+    h.append(ctx.ad_slot(name))
 
     for _dh, _dbody in DEEP_DIVES.get(name, []):
         h.append(f'<h2>{esc(_dh)}</h2>')

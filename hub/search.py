@@ -236,6 +236,9 @@ header.hero .rayclip{position:absolute;inset:0;overflow:hidden;pointer-events:no
 """
 
 
+BRAND_COUNT = 500  # overwritten by build.py with the real registry size
+
+
 def search_html(where: str = "page") -> str:
     """The search box itself. `where` is only used for private telemetry context."""
     return f"""
@@ -248,7 +251,7 @@ def search_html(where: str = "page") -> str:
       placeholder="Search brands, promo codes &amp; deals&hellip;">
     <button class="clear" type="button" aria-label="Clear search">&times;</button>
   </div>
-  <p class="hint">455 brands &middot; every active code &middot; start typing</p>
+  <p class="hint">{BRAND_COUNT} brands &middot; every active code &middot; start typing</p>
   <div class="ppres" id="ppres" role="listbox" aria-label="Search results"></div>
 </div>
 """
@@ -267,7 +270,7 @@ SEARCH_JS = """
   function esc(s){return (s||'').replace(/[&<>"]/g,function(c){
     return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
 
-  /* bounded edit distance - enough for dynvap/lumry, cheap over 455 records */
+  /* bounded edit distance - enough for dynvap/lumry, cheap over ~500 records */
   function ed(a,b,max){
     if(Math.abs(a.length-b.length)>max) return max+1;
     var prev=[],cur=[],i,j;
@@ -423,6 +426,12 @@ SEARCH_JS = """
   clr.addEventListener('click',function(){inp.value='';close();inp.focus();});
   document.addEventListener('click',function(e){if(!box.contains(e.target)) close();});
   load();
+  // deep link: /promo-codes/?q=storz opens results (also what the WebSite SearchAction uses)
+  try{
+    var q0=new URLSearchParams(location.search).get('q');
+    if(q0){inp.value=q0.slice(0,80);var tq=setInterval(function(){if(DATA){clearInterval(tq);run();}},80);
+      setTimeout(function(){clearInterval(tq);},8000);}
+  }catch(err){}
 })();
 </script>
 """

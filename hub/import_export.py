@@ -215,7 +215,8 @@ def main(export: Path) -> None:
             "href": a["TrackingLink"],
             "pixel": f"https://imp.pxf.io/i/{IMPACT_PUB}/{a['Id']}/{a['CampaignId']}",
             "alt": clean(a.get("Description") or a.get("Name"))[:120],
-            "season": a.get("Season") or "", "top": a.get("TopSeller") == "true"})
+            "season": a.get("Season") or "", "top": a.get("TopSeller") == "true",
+            "start": (a.get("StartDate") or "")[:10], "mobile": a.get("MobileReady") == "true"})
 
     partners.sort(key=lambda p: p["name"].lower())
     (DATA / "partners.json").write_text(json.dumps(partners, indent=1, ensure_ascii=False))

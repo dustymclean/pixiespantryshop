@@ -36,6 +36,14 @@ import notes  # noqa: E402
 PARTNER_LIST = notes.apply(json.loads((ROOT / "data" / "partners.json").read_text()))
 PARTNERS = {p["name"]: p for p in PARTNER_LIST}
 SLUGS = merchant_pages.build_slugs(PARTNER_LIST)
+import ads  # noqa: E402
+ppsearch.BRAND_COUNT = len(PARTNER_LIST)
+ADS, AD_STATS = ads.build(PARTNERS, SLUGS)
+
+
+def ad_slot(partner_name: str | None = None) -> str:
+    sl = SLUGS.get(partner_name or "")
+    return ads.slot_html(sl if sl in ADS["own"] else None)
 OFFERS = json.loads((ROOT / "data" / "offers.json").read_text())
 OFFERS_BY_MERCHANT: dict[str, list] = {}
 for _o in OFFERS:
@@ -293,9 +301,14 @@ footer a{color:var(--gold-2)}
 .door p{color:var(--muted);font-size:.9rem;margin:14px 0 0}
 .door .enter{margin-top:22px;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--champagne)}
 @media(max-width:640px){body{font-size:16px}section.band{padding:46px 0 4px}}
+a.skip{position:absolute;left:-9999px;top:8px;z-index:99;background:var(--gold-2);color:#120d00;padding:8px 14px}
+a.skip:focus{left:8px}
+:focus-visible{outline:2px solid var(--pink-2);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}
+ .card:hover,.door:hover,a.box:hover,.btn:hover{transform:none}}
 """
 
-CSS = CSS + ppsearch.SEARCH_CSS
+CSS = CSS + ppsearch.SEARCH_CSS + ads.ADS_CSS
 
 HEAD = """<!DOCTYPE html>
 <html lang="en"><head>
@@ -308,12 +321,20 @@ HEAD = """<!DOCTYPE html>
 <meta property="og:description" content="{desc}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{canon}">
+<meta property="og:site_name" content="Pixie's Pantry">
+<meta property="og:image" content="https://pixiespantryshop.com/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#08070C">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Josefin+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-<style>{css}</style>
+{css}
 </head><body>
-<div class="deco-top"></div>
+<a class="skip" href="#main">Skip to content</a>
+<div class="deco-top" id="main-top"></div>
 """
 
 FOOTER = """
@@ -329,6 +350,7 @@ friend. Intended for adults 21+.</p>
 Transparency isn&rsquo;t a feature &mdash; it&rsquo;s the foundation.</p>
 <p style="opacity:.55;font-size:.7rem">&copy; Pixie&rsquo;s Pantry &middot; Oxford, Mississippi</p>
 </div></footer>
+""" + ads.ADS_JS.replace("{", "{{").replace("}", "}}") + """
 </body></html>
 """
 
@@ -343,7 +365,7 @@ def build_hub(key: str) -> str:
     desc = re.sub("<[^>]+>|&[a-z]+;", " ", h["blurb"])[:180].strip()
     out = [HEAD.format(title=f"{h['title']} — Links & Recommendations", desc=desc, canon=canon, css=CSS)]
     out.append(f"""
-<header class="hero"><div class="rayclip"><div class="rays"></div></div><div class="wrap">
+<header id="main" class="hero"><div class="rayclip"><div class="rays"></div></div><div class="wrap">
   <p class="eyebrow">Pixie&rsquo;s Pantry &middot; Link Hub</p>
   <div class="crest"><h1>{h['title']}</h1><p class="tagline">{h['tagline']}</p></div>
   <p class="blurb">{h['blurb']}</p>
@@ -357,7 +379,9 @@ def build_hub(key: str) -> str:
         out.append(f'<a href="#{slug(s["name"])}">{s["name"]}</a>')
     out.append("</div></nav>")
 
-    for s in h["sections"]:
+    for si, s in enumerate(h["sections"]):
+        if si == 2:
+            out.append(f'<div class="wrap">{ad_slot()}</div>')
         out.append(f"""
 <section class="band" id="{slug(s['name'])}"><div class="wrap">
   <div class="sect-head"><h2>{s['name']}</h2><div class="rule"></div></div>
@@ -391,42 +415,176 @@ def build_hub(key: str) -> str:
     return "".join(out)
 
 
+def offer_label(p: dict) -> str:
+    t = (p.get("title") or "").strip()
+    return "Audience code — discount set by the brand" if not t or "not stated" in t.lower() else t
+
+
 def build_index() -> str:
-    desc = ("Pixie's Pantry link hub — choose Mellow Pixie, Pixie's Pantry, or Reviewed by Dusty, "
-            "or go straight to the store.")
-    out = [HEAD.format(title="Pixie's Pantry — Choose Your Door", desc=desc, canon=DOMAIN + "/", css=CSS)]
-    out.append(f"""
-<header class="hero"><div class="rayclip"><div class="rays"></div></div><div class="wrap">
-  <p class="eyebrow">Oxford, Mississippi &middot; Est. 2026</p>
+    from data import store as st
+    esc = merchant_pages.esc
+    desc = ("Pixie's Pantry: hemp & THCa flower boxes, dab boxes, glass and the Mystery Surprise Box, "
+            f"plus verified promo codes for {len(PARTNER_LIST)} brands.")
+    head = HEAD.format(title="Pixie’s Pantry — Boxes, Drops &amp; Promo Codes", desc=desc,
+                       canon=DOMAIN + "/", css=CSS)
+    f = st.FEATURED
+    out = [head, f"""
+<header id="main" class="hero home"><div class="rayclip"><div class="rays"></div></div><div class="wrap">
+  <p class="eyebrow">Oxford, Mississippi &middot; Est. 2025</p>
   <div class="crest"><h1>Pixie&rsquo;s Pantry</h1>
-  <p class="tagline">Three Doors. One Standard.</p></div>
-  <p class="blurb">Every link, partner and recommendation in one place &mdash; organised by who is
-  doing the recommending. Pick a door, or walk straight into the store.</p>
-  <a class="btn" href="{SHOP_URL}">Skip Ahead &mdash; Shop Now</a>
-  <a class="btn ghost" href="/promo-codes/">Promo Codes</a>
+  <p class="tagline">Explained Before You Buy</p></div>
+  <p class="blurb">THCa flower, dabs and glass I&rsquo;ve handled myself, monthly boxes built from real
+  brand-name gear, and every working promo code from {len(PARTNER_LIST)} partner brands.</p>
   {ppsearch.search_html("home")}
+</div></header>
+
+<section class="drop"><div class="wrap drop-in">
+  <a class="drop-img" href="{f['url']}"><img src="{f['img']}" alt="{esc(f['name'])}" width="560" height="560"
+     fetchpriority="high" decoding="async"></a>
+  <div class="drop-copy">
+    <p class="eyebrow">{f['eyebrow']}</p>
+    <h2>{esc(f['name'])}</h2>
+    <ul>{"".join(f"<li>{esc(x)}</li>" for x in f['lines'])}</ul>
+    <a class="btn" href="{f['url']}">Pre-order &mdash; ${f['price'].split('.')[0]}</a>
+  </div>
+</div></section>
+
+<section class="band" id="boxes"><div class="wrap">
+  <div class="sect-head"><h2>The Boxes</h2><div class="rule"></div></div>
+  <p class="sect-note">Built from inventory I stock and brands I&rsquo;ve tried. Free shipping, no auto-renew
+  surprises. Prices as listed on the store {st.CHECKED[5:7].lstrip('0')}/{st.CHECKED[8:].lstrip('0')}.</p>
+  <div class="boxgrid">"""]
+    for bx in st.BOXES:
+        out.append(f"""
+    <a class="box" href="{bx['url']}">
+      <span class="box-img"><img src="{bx['img']}" alt="{esc(bx['name'])}" width="400" height="400" loading="lazy" decoding="async"></span>
+      <span class="box-body"><span class="price">{bx['from']}</span><h3>{esc(bx['name'])}</h3>
+      <span class="what">{esc(bx['blurb'])}</span></span>
+    </a>""")
+    out.append("""
+  </div>
+  <p class="quick">""" + " ".join(f'<a href="{u}">{esc(t)} &rarr;</a>' for t, u in st.LINKS) + """</p>
+</div></section>""")
+
+    # exclusive codes: the owner's own, straight from personal_codes.json
+    ex = [p for p in EXTRA_EXCLUSIVE if p.get("registry_name") in PARTNERS][:8]
+    if ex:
+        out.append(f"""
+<section class="band" id="codes"><div class="wrap">
+  <div class="sect-head"><h2>My Codes</h2><div class="rule"></div></div>
+  <p class="sect-note">Negotiated for this audience. Using them credits the work that got them.
+  <a href="/promo-codes/">All {len(PROMOS)} verified codes &rarr;</a></p>
+  <div class="codegrid">""")
+        for p in ex:
+            reg = p["registry_name"]
+            out.append(f'<a class="cbox" href="{merchant_url(reg)}"><b>{esc(PARTNERS[reg]["brand"])}</b>'
+                       f'<code>{esc(p["code"])}</code><span>{esc(offer_label(p))}</span></a>')
+        out.append("</div></div></section>")
+
+    out.append(f'<div class="wrap">{ad_slot()}</div>')
+    out.append("""
+<section class="band" id="doors"><div class="wrap">
+  <div class="sect-head"><h2>Three Doors</h2><div class="rule"></div></div>
+  <p class="sect-note">Every recommendation, organised by who&rsquo;s doing the recommending.</p>
   <div class="doors">""")
     for i, key in enumerate(ORDER, 1):
         t, sub, p = DOORS[key]
         out.append(f"""
     <a class="door" href="/{key}/">
-      <span class="num">Door {'I'*i if i<4 else i}</span>
-      <div><h2>{t}</h2><p class="sub">{sub}</p><p>{p}</p></div>
+      <span class="num">Door {'I'*i}</span>
+      <div><h3>{t}</h3><p class="sub">{sub}</p><p>{p}</p></div>
       <span class="enter">Enter &rarr;</span>
     </a>""")
     out.append(f"""
-    <a class="door" href="{SHOP_URL}">
-      <span class="num">The Store</span>
-      <div><h2>pixies-pantry.com</h2><p class="sub">Buy direct</p>
-      <p>Hemp &amp; THCa flower, glass and vaporizers &mdash; explained before you buy.
-      Free shipping over $55.</p></div>
-      <span class="enter">Shop &rarr;</span>
+    <a class="door" href="/promo-codes/">
+      <span class="num">The Directory</span>
+      <div><h3>Promo Codes</h3><p class="sub">{len(PARTNER_LIST)} brands</p>
+      <p>Every partner A&ndash;Z with its current code, coupon and discount.</p></div>
+      <span class="enter">Search &rarr;</span>
     </a>
   </div>
-</div></header>""")
+  <p class="vouch">Vouched for by <a href="https://www.reddit.com/r/hemp/" rel="noopener" target="_blank">r/hemp</a>
+  &mdash; and we vouch for them.</p>
+</div></section>""")
+
+    # structured data: the business, the site (with search), and the boxes as real products
+    products = [dict(**f, blurb=" · ".join(f["lines"]))] + st.BOXES
+    ld = {"@context": "https://schema.org", "@graph": [
+        {"@type": ["Organization", "OnlineStore"], "@id": DOMAIN + "/#org", "name": "Pixie's Pantry",
+         "url": st.STORE + "/", "logo": st.LOGO, "sameAs": st.SAME_AS + [DOMAIN + "/"],
+         "description": "Cannabis hardware, hemp & THCa flower, monthly boxes and a verified promo-code "
+                        "directory for partner brands.",
+         "areaServed": "US", "address": {"@type": "PostalAddress", "addressLocality": "Oxford",
+                                          "addressRegion": "MS", "addressCountry": "US"}},
+        {"@type": "WebSite", "@id": DOMAIN + "/#site", "url": DOMAIN + "/", "name": "Pixie's Pantry",
+         "publisher": {"@id": DOMAIN + "/#org"},
+         "potentialAction": {"@type": "SearchAction",
+                             "target": {"@type": "EntryPoint",
+                                        "urlTemplate": DOMAIN + "/promo-codes/?q={search_term_string}"},
+                             "query-input": "required name=search_term_string"}},
+        {"@type": "ItemList", "name": "Pixie's Pantry boxes", "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "item": {
+                "@type": "Product", "name": x["name"], "image": x["img"], "url": x["url"],
+                "description": x.get("blurb", ""), "brand": {"@type": "Brand", "name": "Pixie's Pantry"},
+                "offers": {"@type": "Offer", "price": x["price"], "priceCurrency": "USD", "url": x["url"],
+                           "availability": "https://schema.org/" + x.get("availability", "InStock"),
+                           "seller": {"@id": DOMAIN + "/#org"}}}}
+            for i, x in enumerate(products)]},
+    ]}
+    out.append('<script type="application/ld+json">' + json.dumps(ld, separators=(",", ":")) + "</script>")
     out.append(ppsearch.search_js())
     out.append(FOOTER.format(shop=SHOP_URL))
     return "".join(out)
+
+
+HOME_CSS = """
+header.hero.home{padding:64px 0 40px}
+section.drop{padding:8px 0 10px}
+.drop-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;align-items:center;
+ border:1px solid rgba(212,175,55,.45);padding:28px;background:linear-gradient(135deg,rgba(255,79,163,.12),rgba(212,175,55,.05) 55%,rgba(8,7,12,.4))}
+.drop-img img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;background:#fff}
+.drop-copy h2{margin:0 0 14px;font-size:clamp(1.6rem,4vw,2.5rem);letter-spacing:.06em;color:var(--gold-2)}
+.drop-copy ul{margin:0 0 6px;padding-left:18px;color:var(--champagne)}
+.drop-copy li{margin:6px 0}
+.boxgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+a.box{display:flex;flex-direction:column;text-decoration:none;border:1px solid rgba(212,175,55,.28);
+ background:rgba(255,255,255,.02);transition:transform .2s,border-color .2s}
+a.box:hover{transform:translateY(-4px);border-color:var(--pink)}
+.box-img img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;background:#fff}
+.box-body{display:block;padding:16px 18px 20px}
+.box-body .price{display:inline-block;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+ color:#1a0010;background:var(--gold-2);padding:3px 9px}
+.box-body h3{margin:10px 0 6px;font-size:1.05rem;letter-spacing:.06em;color:var(--gold-2)}
+.box-body .what{display:block;font-size:.9rem;color:var(--muted);line-height:1.55}
+p.quick{display:flex;flex-wrap:wrap;gap:10px 22px;margin:26px 0 0;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
+p.quick a{color:var(--pink-2);text-decoration:none}
+p.quick a:hover{color:var(--gold-2)}
+.codegrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+a.cbox{display:block;text-decoration:none;padding:16px;border:1px dashed rgba(255,79,163,.55);background:rgba(255,79,163,.06)}
+a.cbox b{display:block;font-family:'Cinzel',serif;letter-spacing:.08em;color:var(--gold-2);font-weight:400}
+a.cbox code{display:inline-block;margin:8px 0 6px;font-family:'Cinzel',serif;letter-spacing:.16em;color:#fff;
+ border:1px solid rgba(212,175,55,.5);padding:2px 10px;background:rgba(0,0,0,.4)}
+a.cbox span{display:block;font-size:.84rem;color:var(--muted)}
+.doors{margin:0;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.door h3{margin:16px 0 8px;font-family:'Cinzel',serif;font-size:1.25rem;letter-spacing:.1em;color:var(--gold-2)}
+p.vouch{text-align:center;margin:30px 0 0;color:var(--muted);font-size:.86rem}
+p.vouch a{color:var(--gold-2)}
+@media(max-width:760px){.drop-in{grid-template-columns:1fr;gap:22px;padding:18px}}
+"""
+
+
+def build_404() -> str:
+    head = HEAD.format(title="Page not found — Pixie’s Pantry", canon=DOMAIN + "/404.html",
+                       desc="That page doesn't exist. Search every brand and promo code instead.",
+                       css=CSS).replace("<head>", '<head>\n<meta name="robots" content="noindex">', 1)
+    return head + f"""
+<header id="main" class="hero"><div class="rayclip"><div class="rays"></div></div><div class="wrap">
+  <p class="eyebrow">404</p><div class="crest"><h1>Not Here</h1>
+  <p class="tagline">That page moved or never existed</p></div>
+  <p class="blurb">Search any brand for its current promo code, or head back to the front.</p>
+  {ppsearch.search_html("404")}
+  <a class="btn" href="/">Home</a> <a class="btn ghost" href="/promo-codes/">All promo codes</a>
+</div></header>""" + ppsearch.search_js() + FOOTER.format(shop=SHOP_URL)
 
 
 def build_directory_section() -> str:
@@ -463,7 +621,7 @@ def build_promos() -> str:
             f"{len({p['merchant'] for p in PROMOS})} brands, including {len(ex)} codes exclusive to this audience.")
     out = [HEAD.format(title="Promo Codes — Pixie's Pantry", desc=desc, canon=DOMAIN + "/promo-codes/", css=CSS)]
     out.append(f"""
-<header class="hero"><div class="rayclip"><div class="rays"></div></div><div class="wrap">
+<header id="main" class="hero"><div class="rayclip"><div class="rays"></div></div><div class="wrap">
   <p class="eyebrow">Pixie&rsquo;s Pantry &middot; Master Code List</p>
   <div class="crest"><h1>Promo Codes</h1><p class="tagline">{len(PROMOS)} Active Codes</p></div>
   <p class="blurb">Every discount code I can currently give you, in one machine-readable place.
@@ -498,6 +656,7 @@ def build_promos() -> str:
 
     out.append(table(ex, "exclusive", "My Exclusive Codes",
                      "Negotiated for this audience. Using them also credits the work that got them."))
+    out.append(f'<div class="wrap">{ad_slot()}</div>')
     out.append(build_directory_section())
     out.append(table(rest, "all", "Every Active Code",
                      "Public codes from brands I am partnered with. Verified against the network feed on build day."))
@@ -564,6 +723,7 @@ def build_llms_txt() -> str:
 class _Ctx:
     """Everything merchant_pages needs from the main build."""
     HEAD = None; FOOTER = None; CSS = None
+    ad_slot = staticmethod(ad_slot)
     DOMAIN = DOMAIN; SHOP_URL = SHOP_URL
 
     @staticmethod
@@ -609,7 +769,7 @@ def build_retired_pages() -> None:
         (d / "index.html").write_text(head + f"""
 <nav class="crumbs"><div class="wrap"><a href="/">Home</a> &rsaquo; <a href="/promo-codes/">Promo Codes</a>
  &rsaquo; <span>{disp}</span></div></nav>
-<main class="wrap merch"><h1>{disp} is no longer a partner</h1>
+<main id="main" class="wrap merch"><h1>{disp} is no longer a partner</h1>
 <p class="lede">I no longer have an affiliate relationship with {disp}, so I can&rsquo;t verify any
 code for them. Old codes from this page will not work.</p>
 <p><a class="cta" href="/promo-codes/">See every verified code</a></p></main>""" + FOOTER.format(shop=SHOP_URL))
@@ -659,7 +819,18 @@ def build_promotions_json() -> dict:
     }
 
 
+def _finalize_css() -> None:
+    """Swap the inline <style> for one shared stylesheet: written once, cached across all pages."""
+    global CSS, FULL_CSS
+    import hashlib
+    FULL_CSS = CSS + HOME_CSS
+    v = hashlib.sha1(FULL_CSS.encode()).hexdigest()[:10]
+    CSS = (f'<link rel="preload" href="/site.css?v={v}" as="style">'
+           f'<link rel="stylesheet" href="/site.css?v={v}">')
+
+
 def main() -> None:
+    _finalize_css()
     if DIST.exists():
         shutil.rmtree(DIST)
     DIST.mkdir(parents=True)
@@ -668,14 +839,22 @@ def main() -> None:
         d = DIST / key
         d.mkdir()
         (d / "index.html").write_text(build_hub(key))
-    (DIST / "404.html").write_text(build_index())
+    (DIST / "404.html").write_text(build_404())
     (DIST / "CNAME").write_text("pixiespantryshop.com\n")
+    (DIST / "site.css").write_text(FULL_CSS)
+    for asset in ("favicon.svg", "og.png", "apple-touch-icon.png"):
+        if (ROOT / "static" / asset).exists():
+            shutil.copy(ROOT / "static" / asset, DIST / asset)
     (DIST / ".nojekyll").write_text("")
     (DIST / "promo-codes").mkdir()
     (DIST / "promo-codes" / "index.html").write_text(build_promos())
     made = build_merchant_pages()
     build_retired_pages()
     (DIST / "promotions.json").write_text(json.dumps(build_promotions_json(), indent=1))
+    (DIST / "ads.json").write_text(json.dumps(ADS, separators=(",", ":")))
+    print(f"  ads: {AD_STATS['advertisers']} advertisers x median {AD_STATS['median']} = "
+          f"{AD_STATS['slots']} rotation slots ({AD_STATS['unique']} unique creatives; "
+          f"most {AD_STATS['most']} {AD_STATS['most_n']}, least {AD_STATS['least_n']})")
     (DIST / "llms.txt").write_text(build_llms_txt())
 
     # Visitor search index, generated from the same registry as the merchant pages.

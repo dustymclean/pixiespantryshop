@@ -5,7 +5,7 @@ If partner_name is given, the outbound link is resolved from data/partners.json
 (Impact tracking link, or an Awin deep link when AWIN_AFFID is configured).
 """
 
-SHOP_URL = "https://pixies-pantry.com/shop"
+SHOP_URL = "https://pixies-pantry.com/shop/"
 
 HUBS = {
     "pixies-pantry": {
@@ -24,7 +24,7 @@ HUBS = {
                 "items": [
                     (None, "Pixie's Pantry Shop", "Our own store: hemp &amp; THCa flower, glass, vaporizers and accessories, with $10 flat shipping and free shipping over $55.", "It's the only place where I control the sourcing, the photos, the descriptions and the aftercare. If I sell it, I've handled it.", SHOP_URL),
                     (None, "The Audit", "Our teardown and testing write-ups &mdash; material safety, thermal behaviour, cleanability, and what a device actually costs to own.", "This is the reason the store exists. Read the audit before you spend money anywhere, including here.", "https://pixies-pantry.com/the-audit/"),
-                    (None, "Trust Center", "Sourcing, testing, compliance and return policy in one place.", "Transparency isn't a feature &mdash; it's the foundation. If you want the receipts, they're here.", "https://pixies-pantry.com/trust-center/"),
+                    (None, "Trust Center", "Sourcing, testing, compliance and return policy in one place.", "Transparency isn't a feature &mdash; it's the foundation. If you want the receipts, they're here.", "https://pixies-pantry.com/trust-center-2/"),
                     (None, "Current Deals", "Live discounts and bundles across the catalog.", "Where I put the actual price breaks instead of fake countdown timers.", "https://pixies-pantry.com/deals/"),
                 ],
             },
