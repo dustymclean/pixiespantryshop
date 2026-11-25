@@ -286,6 +286,14 @@ CSS = CSS + ppsearch.SEARCH_CSS
 
 HEAD = """<!DOCTYPE html>
 <html lang="en"><head>
+<!-- Google Analytics 4: Pixie's Pantry Shop -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FKGKBW3RCY"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){{dataLayer.push(arguments);}}
+gtag('js', new Date());
+gtag('config', 'G-FKGKBW3RCY');
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title>
